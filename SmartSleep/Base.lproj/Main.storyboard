@@ -534,6 +534,7 @@ smartsleep.ku.dk</string>
                         <outlet property="bottomConstraint" destination="Ca0-SV-P6h" id="M9w-OM-Sdn"/>
                         <outlet property="input" destination="LcU-4j-fsL" id="wyr-ow-S9u"/>
                         <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Done" modalTransitionStyle="coverVertical" id="ko5-Dr-Vna"/>
+                        <segue destination="DdB-Sv-DXY" kind="showDetail" identifier="Next" id="fQt-tb-njy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUv-uM-Lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,25 +758,25 @@ smartsleep.ku.dk</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-Hf-JLn">
                                 <rect key="frame" x="250" y="88.5" width="50" height="65"/>
                                 <connections>
-                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekdayEvening" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="vJy-SX-i7q"/>
+                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekdayMorning" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="vJy-SX-i7q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-4U-Kno">
                                 <rect key="frame" x="20" y="88.5" width="50" height="65"/>
                                 <connections>
-                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekdayMorning" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="4JK-S0-mxc"/>
+                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekdayEvening" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="4JK-S0-mxc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ju-fw-q3L">
                                 <rect key="frame" x="250" y="223.5" width="50" height="65"/>
                                 <connections>
-                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekendEvening" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="kSA-W4-YPv"/>
+                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekendMorning" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="kSA-W4-YPv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xya-bP-pos">
                                 <rect key="frame" x="20" y="223.5" width="50" height="65"/>
                                 <connections>
-                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekendMorning" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="TTy-a7-5JW"/>
+                                    <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekendEvening" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="TTy-a7-5JW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -960,6 +961,64 @@ smartsleep.ku.dk</string>
             </objects>
             <point key="canvasLocation" x="3112.5" y="1804.2253521126761"/>
         </scene>
+        <!--Opkald-->
+        <scene sceneID="gP2-mO-TjO">
+            <objects>
+                <tableViewController id="NTm-eE-UlK" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lfz-a7-zXC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="xob-9h-hAF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyState" textLabel="pSV-gU-5El" rowHeight="300" style="IBUITableViewCellStyleDefault" id="XP0-ql-nll">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XP0-ql-nll" id="Ixn-xd-CaI">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ingen upbesvarede opkald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pSV-gU-5El">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="299.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="NTm-eE-UlK" id="7m1-91-Mzt"/>
+                            <outlet property="delegate" destination="NTm-eE-UlK" id="2J9-0E-r7a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Opkald" id="Rid-Y6-zyh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2G-DR-UAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3616.875" y="3882.0422535211269"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OTR-4w-NSn">
+            <objects>
+                <navigationController id="mZL-kd-dup" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVL-BB-a2J">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NTm-eE-UlK" kind="relationship" relationship="rootViewController" id="6Pi-LB-ZEl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ib-K1-dft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3617" y="3111"/>
+        </scene>
         <!--Tonight Controller-->
         <scene sceneID="2re-U2-6Gy">
             <objects>
@@ -1045,6 +1104,25 @@ smartsleep.ku.dk</string>
                                     <constraint firstAttribute="height" constant="50" id="a3h-UW-gIx"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuværende støjniveau: 0 dB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr2-ds-38h">
+                                <rect key="frame" x="16" y="282" width="288" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-E4-UFh">
+                                <rect key="frame" x="265" y="266" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="o2N-iJ-FDg"/>
+                                    <constraint firstAttribute="height" constant="50" id="qjn-IJ-lNS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <color key="tintColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="✕"/>
+                                <connections>
+                                    <action selector="toggleRecord:" destination="Ihb-Id-X68" eventType="touchUpInside" id="OX5-wB-0dD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1052,14 +1130,17 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="top" secondItem="c8x-SU-Mej" secondAttribute="bottom" constant="-5" id="2jo-0U-HcR"/>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="leading" secondItem="Yv2-Sw-gkp" secondAttribute="trailing" constant="-8" id="44f-NP-GxF"/>
                             <constraint firstItem="HBA-Fu-Tbj" firstAttribute="top" secondItem="DQW-1D-z1l" secondAttribute="bottom" constant="5" id="5jQ-jt-ftO"/>
+                            <constraint firstItem="HXA-E4-UFh" firstAttribute="centerY" secondItem="dr2-ds-38h" secondAttribute="centerY" id="5ru-Hy-01c"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="DQW-1D-z1l" secondAttribute="trailing" constant="20" id="9Fm-Xv-Bzv"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerX" secondItem="7zD-Oc-Kj3" secondAttribute="centerX" id="Bjo-fD-Ita"/>
                             <constraint firstItem="c8x-SU-Mej" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="Dsv-Og-exF"/>
+                            <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="dr2-ds-38h" secondAttribute="trailing" constant="16" id="ETt-4G-e4D"/>
                             <constraint firstItem="c8x-SU-Mej" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="EZ6-EH-aLs"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="top" secondItem="uaP-1L-oYk" secondAttribute="top" constant="10" id="FjO-3o-pHW"/>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="centerX" secondItem="c8x-SU-Mej" secondAttribute="centerX" id="GE4-2b-htW"/>
                             <constraint firstItem="9HB-uX-Kqy" firstAttribute="centerX" secondItem="MAg-AV-Xff" secondAttribute="centerX" id="KmG-V5-Z7l"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="bottom" secondItem="rUd-Nd-PsC" secondAttribute="bottom" constant="5" id="M9W-ci-pfv"/>
+                            <constraint firstItem="rUd-Nd-PsC" firstAttribute="top" secondItem="dr2-ds-38h" secondAttribute="bottom" constant="20" id="Mzn-vY-Mg6"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerY" secondItem="c8x-SU-Mej" secondAttribute="centerY" id="Pit-wm-mx4"/>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="leading" relation="lessThanOrEqual" secondItem="MAg-AV-Xff" secondAttribute="trailing" constant="10" id="RI8-Zs-W2C"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="HBA-Fu-Tbj" secondAttribute="trailing" constant="5" id="UKl-Yj-3XO"/>
@@ -1073,7 +1154,9 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="ny2-Dm-GQ2"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="pC7-GQ-PIJ"/>
                             <constraint firstItem="rUd-Nd-PsC" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" id="pfi-SY-ftD"/>
+                            <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="HXA-E4-UFh" secondAttribute="trailing" constant="5" id="q6x-Tv-1Ml"/>
                             <constraint firstItem="4mh-Kt-xbD" firstAttribute="centerX" secondItem="QDJ-QY-e1r" secondAttribute="centerX" id="rfM-LD-hAI"/>
+                            <constraint firstItem="dr2-ds-38h" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="16" id="vVf-Wc-rhy"/>
                             <constraint firstItem="9HB-uX-Kqy" firstAttribute="top" secondItem="MAg-AV-Xff" secondAttribute="bottom" constant="10" id="vwp-wf-aBu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uaP-1L-oYk"/>
@@ -1085,10 +1168,13 @@ smartsleep.ku.dk</string>
                         <outlet property="evening" destination="soT-EQ-Wq1" id="SAY-83-fBH"/>
                         <outlet property="longestSleepDuration" destination="MAg-AV-Xff" id="1EA-kF-oe3"/>
                         <outlet property="morning" destination="4mh-Kt-xbD" id="rRX-B0-Hy0"/>
+                        <outlet property="power" destination="dr2-ds-38h" id="ABP-96-d49"/>
                         <outlet property="tabBarDelegate" destination="zIo-Ck-JDa" id="79U-vc-Tnm"/>
+                        <outlet property="toggleButton" destination="HXA-E4-UFh" id="8XX-iX-YRL"/>
                         <outlet property="unrestDuration" destination="9HB-uX-Kqy" id="EF2-N9-ci5"/>
                         <segue destination="tJf-EV-xWc" kind="presentation" identifier="Questionnaire" id="vGx-Pf-IGP"/>
                         <segue destination="r18-Fj-tIG" kind="presentation" identifier="History" id="NFu-UR-7Jg"/>
+                        <segue destination="mZL-kd-dup" kind="presentation" identifier="Calls" id="o0E-cS-7U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeZ-1p-s7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1313,11 +1399,98 @@ uro</string>
             </objects>
             <point key="canvasLocation" x="690" y="3883"/>
         </scene>
+        <!--Password Controller-->
+        <scene sceneID="HJd-Hh-8gP">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="DdB-Sv-DXY" userLabel="Password Controller" customClass="RequestAccessController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLN-hI-a1R" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-u7-07B">
+                                <rect key="frame" x="20" y="60" width="280" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="749" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="77x-oV-k1M">
+                                <rect key="frame" x="135" y="111" width="50" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="bJk-Ma-zS6"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="260" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Fj-rbU">
+                                <rect key="frame" x="20" y="238" width="280" height="260"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
+                                </constraints>
+                                <mutableString key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau og aktivitetsdata bliver anonymiseret.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-oD-HMZ">
+                                <rect key="frame" x="20" y="518" width="280" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7RL-jw-yx2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" cyan="0.87622195479999998" magenta="0.26442696789999998" yellow="0.1120425835" black="0.1462204392" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Zdc-GO-Yz3" kind="showDetail" id="IpQ-s4-hrr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eZt-oD-HMZ" firstAttribute="leading" secondItem="JTX-fp-jjK" secondAttribute="leading" constant="20" id="0S9-2e-b1i"/>
+                            <constraint firstItem="JTX-fp-jjK" firstAttribute="trailing" secondItem="eZt-oD-HMZ" secondAttribute="trailing" constant="20" id="3uS-Lx-xWG"/>
+                            <constraint firstItem="eZt-oD-HMZ" firstAttribute="top" secondItem="1P7-Fj-rbU" secondAttribute="bottom" constant="20" id="5TP-C4-F8o"/>
+                            <constraint firstItem="1P7-Fj-rbU" firstAttribute="top" secondItem="77x-oV-k1M" secondAttribute="bottom" id="AKO-w7-QOJ"/>
+                            <constraint firstItem="1P7-Fj-rbU" firstAttribute="leading" secondItem="JTX-fp-jjK" secondAttribute="leading" constant="20" id="CDJ-e1-wcp"/>
+                            <constraint firstItem="77x-oV-k1M" firstAttribute="centerX" secondItem="hLN-hI-a1R" secondAttribute="centerX" id="POX-iX-1D2"/>
+                            <constraint firstItem="JTX-fp-jjK" firstAttribute="trailing" secondItem="Yck-u7-07B" secondAttribute="trailing" constant="20" id="Vnl-3H-Tzp"/>
+                            <constraint firstItem="JTX-fp-jjK" firstAttribute="trailing" secondItem="1P7-Fj-rbU" secondAttribute="trailing" constant="20" id="XxT-Or-r99"/>
+                            <constraint firstItem="77x-oV-k1M" firstAttribute="top" secondItem="Yck-u7-07B" secondAttribute="bottom" constant="10" id="cu6-WX-4n6"/>
+                            <constraint firstItem="Yck-u7-07B" firstAttribute="leading" secondItem="JTX-fp-jjK" secondAttribute="leading" constant="20" id="dL8-b4-RzG"/>
+                            <constraint firstItem="Yck-u7-07B" firstAttribute="top" secondItem="JTX-fp-jjK" secondAttribute="top" constant="40" id="jOo-YC-Tdq"/>
+                            <constraint firstItem="JTX-fp-jjK" firstAttribute="bottom" secondItem="eZt-oD-HMZ" secondAttribute="bottom" constant="10" id="yD8-eM-vaT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JTX-fp-jjK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugg-5M-L9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="PUB-df-mHC" customClass="PasswordDelegate" customModule="SmartSleep" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="segueName" value="Done"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="controller" destination="DdB-Sv-DXY" id="YNi-CG-uoH"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="5360.625" y="902.11267605633805"/>
+        </scene>
     </scenes>
     <resources>
         <image name="advice" width="26" height="26"/>
         <image name="bedtime" width="25" height="25"/>
         <image name="calendar" width="20.5" height="21"/>
+        <image name="lock" width="123" height="150"/>
         <image name="morning" width="25" height="25"/>
         <image name="questionnaire" width="21" height="21"/>
         <image name="splash" width="1798" height="1089"/>
@@ -1325,6 +1498,6 @@ uro</string>
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="pXC-BK-k6a"/>
-        <segue reference="REA-Gn-A0s"/>
+        <segue reference="IpQ-s4-hrr"/>
     </inferredMetricsTieBreakers>
 </document>

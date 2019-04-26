@@ -25,7 +25,7 @@ class HistoryCell: UITableViewCell {
             date.text = formatter.string(from: night?.from ?? Date())
             disruptionCount.text = "\(night?.disruptionCount ?? 0)"
             longestSleepDuration.text = String(format: "%.0f:%02.0f",
-                                               (night?.longestSleepDuration ?? 0) / 360.0,
+                                               ((night?.longestSleepDuration ?? 0) / 3600.0).rounded(.down),
                                                ((night?.longestSleepDuration ?? 0) / 60.0).truncatingRemainder(dividingBy: 60.0)
             )
             unrestDuration.text = String(format: "%.0f",

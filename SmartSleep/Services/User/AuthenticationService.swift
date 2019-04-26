@@ -10,8 +10,6 @@ import Foundation
 import RxSwift
 import KeychainAccess
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 fileprivate struct Token: Codable {
     var jwt: String
 }

@@ -23,9 +23,34 @@ class TonightController: UIViewController {
     @IBOutlet weak var disruptionCount: UILabel!
     @IBOutlet weak var longestSleepDuration: UILabel!
     @IBOutlet weak var unrestDuration: UILabel!
+    @IBOutlet weak var power: UILabel!
+    @IBOutlet weak var toggleButton: UIButton!
+    private var timer: Timer?
 
     private var bag = DisposeBag()
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        timer?.invalidate()
+        timer = Timer(timeInterval: 0.1, repeats: true) { [weak self] _ in
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            // NOTE: seems to be the approx correction to get real decibels
+            let correction: Float = 90
+            let power = delegate.audioService.delegate.powerLevel + correction
+            let format = NSLocalizedString("CurrentPower",
+                                           tableName: "Tonight",
+                                           bundle: .main,
+                                           value: "Nuværende støjniveau: %d dB",
+                                           comment: "")
+            self?.power.text = String(format: format, Int(power))
+        }
+        RunLoop.current.add(timer!, forMode: .default)
+    }
+    
+    deinit {
+        timer?.invalidate()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarDelegate!.controller = self
@@ -54,6 +79,15 @@ class TonightController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.updateLastNight()
             }).disposed(by: bag)
+        
+        delegate.audioService
+            .observer
+            .running
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                self?.updateToggleLabel()
+            }).disposed(by: bag)
+
     }
     
     private func updateLastNight() {
@@ -72,7 +106,7 @@ class TonightController: UIViewController {
                                                                      bundle: .main,
                                                                      value: "%.0f:%02.0f længste søvn",
                                                                      comment: ""),
-                                           (night?.longestSleepDuration ?? 0) / 360.0,
+                                           ((night?.longestSleepDuration ?? 0) / 3600.0).rounded(.down),
                                            ((night?.longestSleepDuration ?? 0) / 60.0).truncatingRemainder(dividingBy: 60.0)
         )
         unrestDuration.text = String(format: NSLocalizedString("UnrestDuration",
@@ -82,5 +116,56 @@ class TonightController: UIViewController {
                                                                comment: ""),
                                      (night?.unrestDuration ?? 0) / 60.0
         )
+    }
+    
+    @IBAction func disclaimer() {
+        let alert = UIAlertController(title: NSLocalizedString("DisclaimerTitle",
+                                                               tableName: "Main",
+                                                               bundle: .main,
+                                                               value: "Overrasket over tallene?",
+                                                               comment: ""),
+                                      message: NSLocalizedString("DisclaimerText",
+                                                                 tableName: "Main",
+                                                                 bundle: .main,
+                                                                 value: "Søvneksperimentet er et forskningsprojekt og vi arbejer konstant " +
+                                        "på at forbedre vores resultater. I starten kan du nok forvente at tallene for din søvnrytme vil " +
+                                        "ændre sig en hel del. Bare rolig, efterhånden som vi lærer mere og mere vil tallene blive mere og mere præcise.",
+                                                                 comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok",
+                                                               tableName: "Main",
+                                                               bundle: .main,
+                                                               value: "Ok",
+                                                               comment: ""),
+                                      style: .default,
+                                      handler: { _ in
+                                        alert.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func updateToggleLabel() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let service = delegate.audioService
+        print("toggle, recording \(service.recording)")
+        if service.recording {
+            toggleButton.setTitle("✕", for: .normal)
+            toggleButton.tintColor = .red
+        } else {
+            toggleButton.setTitle("↺", for: .normal)
+            toggleButton.tintColor = .green
+        }
+    }
+    
+    @IBAction func toggleRecord(_ sender: UIButton) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let service = delegate.audioService
+        print("toggle, recording \(service.recording)")
+        if service.recording {
+            service.stopRecording()
+        } else {
+            service.startRecording()
+        }
+        updateToggleLabel()
     }
 }

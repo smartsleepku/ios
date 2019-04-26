@@ -31,6 +31,7 @@ class DatabaseService {
             self.initializeDatabase()
             Rest.initializeDatabase(with: self.db!)
             Night.initializeDatabase(with: self.db!)
+            Sleep.initializeDatabase(with: self.db!)
         }
     }
     
@@ -46,7 +47,7 @@ class DatabaseService {
         }
         sqlite3_finalize(createTableStatement)
         
-        let insertStatementString = "insert into or ignore into version (major, minor) values (?, ?)"
+        let insertStatementString = "insert or ignore into version (major, minor) values (?, ?)"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             sqlite3_bind_text(insertStatement, 1, "1".cString(using: .utf8), -1, SQLITE_TRANSIENT)

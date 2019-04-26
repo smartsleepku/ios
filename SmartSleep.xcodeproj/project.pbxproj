@@ -36,6 +36,10 @@
 		F21C99242205B2B2003D5243 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C99232205B2B2003D5243 /* ActivityService.swift */; };
 		F2534959222AF4DA00A2DA26 /* QuestionnaireDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2534958222AF4DA00A2DA26 /* QuestionnaireDelegate.swift */; };
 		F264C474222C3DD300860767 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F264C473222C3DD300860767 /* RestService.swift */; };
+		F26DF8862267334300D7E23F /* RequestAccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DF8852267334300D7E23F /* RequestAccessController.swift */; };
+		F26DF88E226765A200D7E23F /* SleepStatusHelperCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = F26DF88D226765A200D7E23F /* SleepStatusHelperCallback.m */; };
+		F26DF8902267669C00D7E23F /* Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DF88F2267669C00D7E23F /* Sleep.swift */; };
+		F26DF892226766E300D7E23F /* SleepTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DF891226766E300D7E23F /* SleepTable.swift */; };
 		F270774E2221BEE200CAE2D5 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270774D2221BEE200CAE2D5 /* WelcomeController.swift */; };
 		F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27077532221CC3200CAE2D5 /* UserDefaults+Keys.swift */; };
 		F27077572221CEBB00CAE2D5 /* CredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27077562221CEBB00CAE2D5 /* CredentialsService.swift */; };
@@ -47,6 +51,8 @@
 		F28E13BB225A8D1C001075A8 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13BA225A8D1C001075A8 /* HistoryCell.swift */; };
 		F28E13BD225A9000001075A8 /* HistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13BC225A9000001075A8 /* HistoryDelegate.swift */; };
 		F28E13BF225B3C89001075A8 /* DashedArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13BE225B3C89001075A8 /* DashedArcView.swift */; };
+		F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13C022636790001075A8 /* SleepStatusService.swift */; };
+		F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E13C4226367C5001075A8 /* SleepStatusHelper.m */; };
 		F2950B6C222A91BA00BE391C /* TonightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2950B6B222A91BA00BE391C /* TonightController.swift */; };
 		F2950B6E222A9DD200BE391C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2950B6D222A9DD200BE391C /* Assets.xcassets */; };
 		F2950B70222A9F2B00BE391C /* MainTabDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2950B6F222A9F2B00BE391C /* MainTabDelegate.swift */; };
@@ -55,12 +61,14 @@
 		F2950B76222AB9D700BE391C /* SurveyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2950B75222AB9D700BE391C /* SurveyService.swift */; };
 		F2AC8236222DCA0C00AA3FBE /* AttendeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC8235222DCA0C00AA3FBE /* AttendeeService.swift */; };
 		F2AC823B223A814A00AA3FBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2AC823A223A814A00AA3FBE /* GoogleService-Info.plist */; };
-		F2AC823D223ED08900AA3FBE /* ActivityProgressUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC823C223ED08900AA3FBE /* ActivityProgressUpdate.swift */; };
-		F2AC823F223ED0A500AA3FBE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC823E223ED0A500AA3FBE /* Activity.swift */; };
 		F2AC8246224677B300AA3FBE /* NightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC8245224677B300AA3FBE /* NightService.swift */; };
 		F2AC8249224677E900AA3FBE /* RestProgressUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC8248224677E900AA3FBE /* RestProgressUpdate.swift */; };
 		F2AC824B2246787500AA3FBE /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC824A2246787500AA3FBE /* Night.swift */; };
 		F2AC824D22467C0D00AA3FBE /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC824C22467C0D00AA3FBE /* Rest.swift */; };
+		F2C7602E226F3FFC00FC71FE /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7602D226F3FFC00FC71FE /* AudioService.swift */; };
+		F2C760322271A82200FC71FE /* SampleBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760312271A82200FC71FE /* SampleBufferDelegate.swift */; };
+		F2C760342271AE0700FC71FE /* AudioObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760332271AE0700FC71FE /* AudioObserver.swift */; };
+		F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760382272200400FC71FE /* SleepStatusUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +117,11 @@
 		F21C99232205B2B2003D5243 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		F2534958222AF4DA00A2DA26 /* QuestionnaireDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireDelegate.swift; sourceTree = "<group>"; };
 		F264C473222C3DD300860767 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		F26DF8852267334300D7E23F /* RequestAccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAccessController.swift; sourceTree = "<group>"; };
+		F26DF88C226765A200D7E23F /* SleepStatusHelperCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SleepStatusHelperCallback.h; sourceTree = "<group>"; };
+		F26DF88D226765A200D7E23F /* SleepStatusHelperCallback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepStatusHelperCallback.m; sourceTree = "<group>"; };
+		F26DF88F2267669C00D7E23F /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
+		F26DF891226766E300D7E23F /* SleepTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTable.swift; sourceTree = "<group>"; };
 		F270774D2221BEE200CAE2D5 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		F27077532221CC3200CAE2D5 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		F27077562221CEBB00CAE2D5 /* CredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsService.swift; sourceTree = "<group>"; };
@@ -120,6 +133,10 @@
 		F28E13BA225A8D1C001075A8 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		F28E13BC225A9000001075A8 /* HistoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDelegate.swift; sourceTree = "<group>"; };
 		F28E13BE225B3C89001075A8 /* DashedArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedArcView.swift; sourceTree = "<group>"; };
+		F28E13C022636790001075A8 /* SleepStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatusService.swift; sourceTree = "<group>"; };
+		F28E13C2226367C5001075A8 /* SmartSleep-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartSleep-Bridging-Header.h"; sourceTree = "<group>"; };
+		F28E13C3226367C5001075A8 /* SleepStatusHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SleepStatusHelper.h; path = ../Activity/SleepStatusHelper.h; sourceTree = "<group>"; };
+		F28E13C4226367C5001075A8 /* SleepStatusHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SleepStatusHelper.m; path = ../Activity/SleepStatusHelper.m; sourceTree = "<group>"; };
 		F2950B6B222A91BA00BE391C /* TonightController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonightController.swift; sourceTree = "<group>"; };
 		F2950B6D222A9DD200BE391C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2950B6F222A9F2B00BE391C /* MainTabDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabDelegate.swift; sourceTree = "<group>"; };
@@ -129,12 +146,14 @@
 		F2AC8235222DCA0C00AA3FBE /* AttendeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeService.swift; sourceTree = "<group>"; };
 		F2AC8237222DCCC500AA3FBE /* SmartSleep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartSleep.entitlements; sourceTree = "<group>"; };
 		F2AC823A223A814A00AA3FBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F2AC823C223ED08900AA3FBE /* ActivityProgressUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressUpdate.swift; sourceTree = "<group>"; };
-		F2AC823E223ED0A500AA3FBE /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		F2AC8245224677B300AA3FBE /* NightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightService.swift; sourceTree = "<group>"; };
 		F2AC8248224677E900AA3FBE /* RestProgressUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestProgressUpdate.swift; sourceTree = "<group>"; };
 		F2AC824A2246787500AA3FBE /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
 		F2AC824C22467C0D00AA3FBE /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		F2C7602D226F3FFC00FC71FE /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		F2C760312271A82200FC71FE /* SampleBufferDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferDelegate.swift; sourceTree = "<group>"; };
+		F2C760332271AE0700FC71FE /* AudioObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObserver.swift; sourceTree = "<group>"; };
+		F2C760382272200400FC71FE /* SleepStatusUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatusUpdate.swift; sourceTree = "<group>"; };
 		F3DFFEFF131AE5FE0593E76B /* Pods-SmartSleep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartSleep.debug.xcconfig"; path = "Target Support Files/Pods-SmartSleep/Pods-SmartSleep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +213,7 @@
 				F20AD0392222B6F5007C63C5 /* EmailDelegate.swift */,
 				F20AD03B2222B8C8007C63C5 /* PasswordController.swift */,
 				F20AD03D2222B9B4007C63C5 /* PasswordDelegate.swift */,
+				F26DF8852267334300D7E23F /* RequestAccessController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -259,6 +279,7 @@
 				F21C99082205A504003D5243 /* AppDelegate.swift */,
 				F21C990C2205A504003D5243 /* Main.storyboard */,
 				F2950B6D222A9DD200BE391C /* Assets.xcassets */,
+				F28E13C2226367C5001075A8 /* SmartSleep-Bridging-Header.h */,
 				F21C99142205A505003D5243 /* LaunchScreen.storyboard */,
 				F2AC8237222DCCC500AA3FBE /* SmartSleep.entitlements */,
 				F21C99172205A505003D5243 /* Info.plist */,
@@ -270,9 +291,11 @@
 		F21C99212205B27B003D5243 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F2C7602F2271A7B900FC71FE /* Audio */,
 				F28E13B022592A17001075A8 /* Database */,
 				F20AD03222229DEC007C63C5 /* User */,
 				F27077552221CEAD00CAE2D5 /* Credentials */,
+				F2C760302271A7C700FC71FE /* Sleep */,
 				F21C99222205B285003D5243 /* Activity */,
 				F2AC8247224677CF00AA3FBE /* Night */,
 				F20AD03F2222BD72007C63C5 /* ClientSecret.swift */,
@@ -285,8 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				F21C99232205B2B2003D5243 /* ActivityService.swift */,
-				F2AC823E223ED0A500AA3FBE /* Activity.swift */,
-				F2AC823C223ED08900AA3FBE /* ActivityProgressUpdate.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -316,6 +337,7 @@
 				F28E13AE22592852001075A8 /* DatabaseService.swift */,
 				F28E13B122592A34001075A8 /* RestTable.swift */,
 				F28E13B322594F58001075A8 /* NightTable.swift */,
+				F26DF891226766E300D7E23F /* SleepTable.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -341,6 +363,30 @@
 				F2AC824C22467C0D00AA3FBE /* Rest.swift */,
 			);
 			path = Night;
+			sourceTree = "<group>";
+		};
+		F2C7602F2271A7B900FC71FE /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				F2C7602D226F3FFC00FC71FE /* AudioService.swift */,
+				F2C760312271A82200FC71FE /* SampleBufferDelegate.swift */,
+				F2C760332271AE0700FC71FE /* AudioObserver.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		F2C760302271A7C700FC71FE /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				F28E13C022636790001075A8 /* SleepStatusService.swift */,
+				F28E13C3226367C5001075A8 /* SleepStatusHelper.h */,
+				F28E13C4226367C5001075A8 /* SleepStatusHelper.m */,
+				F26DF88C226765A200D7E23F /* SleepStatusHelperCallback.h */,
+				F26DF88D226765A200D7E23F /* SleepStatusHelperCallback.m */,
+				F26DF88F2267669C00D7E23F /* Sleep.swift */,
+				F2C760382272200400FC71FE /* SleepStatusUpdate.swift */,
+			);
+			path = Sleep;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,22 +535,25 @@
 				F2AC8236222DCA0C00AA3FBE /* AttendeeService.swift in Sources */,
 				F2950B70222A9F2B00BE391C /* MainTabDelegate.swift in Sources */,
 				F28E13BB225A8D1C001075A8 /* HistoryCell.swift in Sources */,
+				F2C760322271A82200FC71FE /* SampleBufferDelegate.swift in Sources */,
 				F20AD0422222F460007C63C5 /* MainController.swift in Sources */,
 				F21C99242205B2B2003D5243 /* ActivityService.swift in Sources */,
 				F20AD0362222A46B007C63C5 /* AttendeeNumberDelegate.swift in Sources */,
 				F20AD0512229D729007C63C5 /* PickerSegue.swift in Sources */,
 				F20AD0292221DAB9007C63C5 /* GradientView.swift in Sources */,
 				F20AD04F2229D3C5007C63C5 /* PickerController.swift in Sources */,
+				F26DF8862267334300D7E23F /* RequestAccessController.swift in Sources */,
 				F2950B76222AB9D700BE391C /* SurveyService.swift in Sources */,
 				F20AD04B222734C7007C63C5 /* ConfigurationService.swift in Sources */,
 				F2534959222AF4DA00A2DA26 /* QuestionnaireDelegate.swift in Sources */,
-				F2AC823D223ED08900AA3FBE /* ActivityProgressUpdate.swift in Sources */,
 				F2AC8249224677E900AA3FBE /* RestProgressUpdate.swift in Sources */,
 				F21C990B2205A504003D5243 /* SplashController.swift in Sources */,
 				F2AC824B2246787500AA3FBE /* Night.swift in Sources */,
 				F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */,
+				F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */,
 				F20AD03A2222B6F5007C63C5 /* EmailDelegate.swift in Sources */,
 				F20AD04D2229C5AC007C63C5 /* DashedLineView.swift in Sources */,
+				F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */,
 				F27077572221CEBB00CAE2D5 /* CredentialsService.swift in Sources */,
 				F20AD03422229DFF007C63C5 /* AuthenticationService.swift in Sources */,
 				F20AD0402222BD72007C63C5 /* ClientSecret.swift in Sources */,
@@ -514,9 +563,12 @@
 				F20AD02B2221EAB7007C63C5 /* OnboardingTextDelegate.swift in Sources */,
 				F21C99092205A504003D5243 /* AppDelegate.swift in Sources */,
 				F28E13BD225A9000001075A8 /* HistoryDelegate.swift in Sources */,
+				F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */,
 				F20AD0382222B10D007C63C5 /* EmailValidator.swift in Sources */,
-				F2AC823F223ED0A500AA3FBE /* Activity.swift in Sources */,
+				F26DF88E226765A200D7E23F /* SleepStatusHelperCallback.m in Sources */,
 				F2AC824D22467C0D00AA3FBE /* Rest.swift in Sources */,
+				F2C760342271AE0700FC71FE /* AudioObserver.swift in Sources */,
+				F2C7602E226F3FFC00FC71FE /* AudioService.swift in Sources */,
 				F2950B74222AB8BF00BE391C /* TokenService.swift in Sources */,
 				F20AD0532229D792007C63C5 /* PickerConfiguration.swift in Sources */,
 				F2AC8246224677B300AA3FBE /* NightService.swift in Sources */,
@@ -528,11 +580,13 @@
 				F28E13B9225A8AE9001075A8 /* HistoryDataSource.swift in Sources */,
 				F270774E2221BEE200CAE2D5 /* WelcomeController.swift in Sources */,
 				F28E13B7225A88E2001075A8 /* HistoryController.swift in Sources */,
+				F26DF892226766E300D7E23F /* SleepTable.swift in Sources */,
 				F20AD0312221F522007C63C5 /* EmailController.swift in Sources */,
 				F28E13B422594F58001075A8 /* NightTable.swift in Sources */,
 				F20AD047222722FF007C63C5 /* ConfigureSegue.swift in Sources */,
 				F28E13BF225B3C89001075A8 /* DashedArcView.swift in Sources */,
 				F20AD03C2222B8C8007C63C5 /* PasswordController.swift in Sources */,
+				F26DF8902267669C00D7E23F /* Sleep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +733,7 @@
 			baseConfigurationReference = F3DFFEFF131AE5FE0593E76B /* Pods-SmartSleep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SmartSleep/SmartSleep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8GF25SAZN;
@@ -690,8 +745,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -700,6 +757,7 @@
 			baseConfigurationReference = BDD98197203214F3BD91DDCA /* Pods-SmartSleep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SmartSleep/SmartSleep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8GF25SAZN;
@@ -711,8 +769,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

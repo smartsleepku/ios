@@ -9,8 +9,6 @@
 import UIKit
 import WebKit
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 class QuestionnaireDelegate: NSObject, WKNavigationDelegate {
     
     private let manager = TokenService()

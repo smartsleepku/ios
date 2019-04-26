@@ -12,13 +12,36 @@ import RxSwift
 class MainController: UIViewController {
     
     @IBOutlet weak var openConfig: UIButton!
-    
+    @IBOutlet weak var tabBar: UITabBar!
+
     private var once = false
     private var bag = DisposeBag()
     private var total = 0
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.sleepStatusService.fetchStatus { hasLocation in
+            SleepStatusHelper().registerAppforSleepStatus()
+        }
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(willEnterForeground),
+                       name: UIApplication.willEnterForegroundNotification,
+                       object: nil)
+    }
+
+    deinit {
+        let nc = NotificationCenter.default
+        nc.removeObserver(self)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @objc func willEnterForeground() {
+        viewWillAppear(true)
+        viewDidAppear(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,10 +49,9 @@ class MainController: UIViewController {
         bag = DisposeBag()
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let mainView = self.view as! MainView
-        delegate.synchronizeActivities()
-        delegate.activityUpdates
+        delegate.sleepUpdates
             .timeout(5, scheduler: MainScheduler.instance)
-            .catchErrorJustReturn(ActivityProgressUpdate(activity: nil, remaining: 0))
+            .catchErrorJustReturn(SleepProgressUpdate(sleep: nil, remaining: 0))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] update in
             if update.remaining == 0 {
@@ -43,6 +65,7 @@ class MainController: UIViewController {
             print("\(update.remaining) remaining of \(self!.total): \(progress)")
             mainView.progress.progress = progress
         }).disposed(by: bag)
+        delegate.synchronizeSleep()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,11 +76,15 @@ class MainController: UIViewController {
             toggle()
             performSegue(withIdentifier: "Onboard", sender: nil)
         } else {
-            AttendeeService.registerForPushNotifications()
+            AttendeeService.registerForPushNotifications(controller: self)
         }
         guard once == false else { return }
         once = true
         (view as! MainView).appearAnimation()
+
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.audioService.verifyAuthorization(controller: self)
+        delegate.audioService.startRecording()
     }
     
     @IBAction func toggle() {
@@ -77,7 +104,7 @@ class MainController: UIViewController {
             configuration?.willMove(toParent: nil)
             configuration?.view.removeFromSuperview()
             configuration?.removeFromParent()
+            AttendeeService.registerForPushNotifications(controller: self)
         }
     }
-
 }

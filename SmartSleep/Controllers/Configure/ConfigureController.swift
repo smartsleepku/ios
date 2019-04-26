@@ -26,7 +26,6 @@ class ConfigureController: UIViewController {
         if ConfigurationService.configuration == nil {
             ConfigurationService.configuration = ConfigurationService.defaultConfiguration
         }
-        AttendeeService.registerForPushNotifications()
         performSegue(withIdentifier: "UnwindConfigure", sender: nil)
     }
 

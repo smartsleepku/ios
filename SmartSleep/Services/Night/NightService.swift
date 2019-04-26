@@ -11,8 +11,18 @@ import RxSwift
 import SQLite3
 
 class NightService {
-    
-    private let restService = RestService()
+
+    private lazy var restService: RestService = {
+        var delegate: AppDelegate? = nil
+        if !Thread.isMainThread {
+            DispatchQueue.main.sync {
+                delegate = UIApplication.shared.delegate as? AppDelegate
+            }
+        } else {
+            delegate = UIApplication.shared.delegate as? AppDelegate
+        }
+        return delegate!.restService
+    }()
     private let queue = DispatchQueue(label: "dk.ku.nightservice.queue")
     
     private func nightThresholds(of date: Date, config: Configuration) -> (Date, Date) {
@@ -93,35 +103,20 @@ class NightService {
                 var now = Date(timeIntervalSinceNow: -24 * 60 * 60)
                 var from: Date
                 var to: Date
-                
-                var periods: [Rest]?
+                let first = self.restService.fetchFirstRestTime()
                 repeat {
                     (from, to) = self.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
                     print("generating night from \(from) to \(to)...")
                     now = now.addingTimeInterval(-24 * 60 * 60)
-
-                    periods = self.restService.fetch(from: from, to: to)
-                    print("found \(periods?.count ?? 0) rests")
-                    var rests = [Rest]()
-                    var unrests = [Rest]()
-                    periods?.forEach {
-                        if $0.resting! { rests.append($0) }
-                        else { unrests.append($0) }
-                        print("appending \($0) to \($0.resting! ? "rests" : "unrests")")
-                    }
                     let night = Night(
                         from: from,
                         to: to,
-                        disruptionCount: unrests.count,
-                        longestSleepDuration: rests.reduce(0.0, {
-                            max($0, $1.endTime!.timeIntervalSince($1.startTime!))
-                        }),
-                        unrestDuration: unrests.reduce(0.0, {
-                            $0 + max($1.endTime!.timeIntervalSince($1.startTime!) - 4 * 60, 60)
-                        })
+                        disruptionCount: self.restService.fetchUnrestCount(from: from, to: to),
+                        longestSleepDuration: self.restService.fetchLongestRest(from: from, to: to),
+                        unrestDuration: self.restService.fetchTotalUnrest(from: from, to: to)
                     )
                     night.save()
-                } while periods?.count != 0
+                } while from > first
                 completable(.completed)
             }
             return Disposables.create()

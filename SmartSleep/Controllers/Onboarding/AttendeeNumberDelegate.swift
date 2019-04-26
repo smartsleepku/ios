@@ -27,7 +27,7 @@ class AttendeeNumberDelegate: OnboardingTextDelegate {
         let newString = nsString.replacingCharacters(in: range, with: string)
         bag = DisposeBag()
         manager.validAttendee(code: newString)
-            .subscribeOn(MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] valid in
                 self?.valid = valid
             }, onError: { error in

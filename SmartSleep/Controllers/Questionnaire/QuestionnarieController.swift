@@ -10,8 +10,6 @@ import UIKit
 import WebKit
 import RxSwift
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 class QuestionnarieController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!

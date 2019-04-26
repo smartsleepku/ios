@@ -14,14 +14,16 @@ import RxSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let sleepStatusService = SleepStatusService()
     let attendeeService = AttendeeService()
     private let activityService = ActivityService()
-    private let restService = RestService()
+    let restService = RestService()
     let nightService = NightService()
+    let audioService = AudioService()
     private let credentialsService = CredentialsService()
     private let bag = DisposeBag()
 
-    let activityUpdates = PublishSubject<ActivityProgressUpdate>()
+    let sleepUpdates = PublishSubject<SleepProgressUpdate>()
     let restUpdates = PublishSubject<RestProgressUpdate>()
     let tonight = PublishSubject<Night>()
     
@@ -29,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         attendeeService.configure()
+
+        sleepStatusService.fetchStatus { hasLocation in
+            if hasLocation == true {
+                SleepStatusHelper().registerAppforSleepStatus()
+            }
+        }
         return true
     }
 
@@ -52,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        synchronizeActivities()
+        synchronizeSleep()
         completionHandler(.newData)
     }
     
@@ -61,11 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler()
     }
     
-    func synchronizeActivities() {
+    func synchronizeSleep() {
         activityService.sync()
+        sleepStatusService.sync()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] update in
-                self?.activityUpdates.on(.next(update))
+                self?.sleepUpdates.on(.next(update))
                 }, onCompleted: { [weak self] in
                     self?.synchronizeRest()
             }).disposed(by: bag)
@@ -97,8 +106,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard tonight != nil else { return Disposables.create() }
             self.tonight.on(.next(tonight!))
             return Disposables.create()
-        }).subscribe().disposed(by: bag)
+        }).observeOn(MainScheduler.instance).subscribe().disposed(by: bag)
     }
     
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        audioService.observer.ended()
+    }
 }
 

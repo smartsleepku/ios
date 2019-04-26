@@ -10,8 +10,6 @@ import Foundation
 import RxSwift
 import SQLite3
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 fileprivate let formatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -56,6 +54,103 @@ class RestService {
             sqlite3_finalize(queryStatement)
         }
         return result
+    }
+    
+    func fetchTotalUnrest(from: Date, to: Date) -> TimeInterval {
+        let service = DatabaseService.instance
+        var result: Int64 = 0
+        service.queue.sync {
+            var queryStatement: OpaquePointer? = nil
+            let queryStatementString = """
+                select sum(cast((endTime - startTime) as integer)) as duration
+                from rests
+                where endTime > ? and startTime < ?
+                and resting = 0
+            """
+            if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 2, to.timeIntervalSince1970)
+                if sqlite3_step(queryStatement) == SQLITE_ROW {
+                    result = sqlite3_column_int64(queryStatement, 0)
+                }
+            } else {
+                print("SELECT statement could not be prepared")
+            }
+            sqlite3_finalize(queryStatement)
+        }
+        return TimeInterval(result)
+    }
+    
+    func fetchUnrestCount(from: Date, to: Date) -> Int {
+        let service = DatabaseService.instance
+        var result: Int64 = 0
+        service.queue.sync {
+            var queryStatement: OpaquePointer? = nil
+            let queryStatementString = """
+                select count(1)
+                from rests
+                where endTime > ? and startTime < ?
+                and resting = 0
+            """
+            if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 2, to.timeIntervalSince1970)
+                if sqlite3_step(queryStatement) == SQLITE_ROW {
+                    result = sqlite3_column_int64(queryStatement, 0)
+                }
+            } else {
+                print("SELECT statement could not be prepared")
+            }
+            sqlite3_finalize(queryStatement)
+        }
+        return Int(result)
+    }
+    
+    func fetchLongestRest(from: Date, to: Date) -> TimeInterval {
+        let service = DatabaseService.instance
+        var result: Int64 = 0
+        service.queue.sync {
+            var queryStatement: OpaquePointer? = nil
+            let queryStatementString = """
+                select cast(max(endTime - startTime) as integer)
+                from rests
+                where endTime > ? and startTime < ?
+                and resting = 1
+            """
+            if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 2, to.timeIntervalSince1970)
+                if sqlite3_step(queryStatement) == SQLITE_ROW {
+                    result = sqlite3_column_int64(queryStatement, 0)
+                }
+            } else {
+                print("SELECT statement could not be prepared")
+            }
+            sqlite3_finalize(queryStatement)
+        }
+        return TimeInterval(result)
+    }
+    
+    func fetchFirstRestTime() -> Date {
+        let service = DatabaseService.instance
+        var result: Int64 = 0
+        service.queue.sync {
+            var queryStatement: OpaquePointer? = nil
+            let queryStatementString = """
+                select min(startTime)
+                from rests
+            """
+            if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                if sqlite3_step(queryStatement) == SQLITE_ROW {
+                    result = sqlite3_column_int64(queryStatement, 0)
+                }
+            } else {
+                print("SELECT statement could not be prepared")
+            }
+            sqlite3_finalize(queryStatement)
+        }
+        guard result > 0 else { return Date() }
+        return Date(timeIntervalSince1970: TimeInterval(result))
     }
     
     func sync(from: Date, to: Date) -> Observable<Rest> {

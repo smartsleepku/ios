@@ -10,8 +10,6 @@ import UIKit
 import UserNotifications
 import Firebase
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 struct Device: Codable {
     var deviceId: String?
     var deviceType: String?
@@ -27,7 +25,7 @@ struct Attendee: Codable {
     var devices = [Device]()
 }
 
-class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate, MessagingDelegate {
+fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     weak var service: AttendeeService?
     
@@ -35,11 +33,16 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate, Messagin
         print("willPresent: \(notification.request.content)")
         let userInfo = notification.request.content.userInfo
         Messaging.messaging().appDidReceiveMessage(userInfo)
-        completionHandler([])
+        completionHandler([.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("didReceive: \(response.actionIdentifier)")
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.sleepStatusService.fetchStatus { hasLocation in
+            SleepStatusHelper().registerAppforSleepStatus()
+        }
+        delegate.audioService.startRecording()
         completionHandler()
     }
     
@@ -67,16 +70,40 @@ class AttendeeService {
         }
     }
     
-    static func registerForPushNotifications() {
-        var options: UNAuthorizationOptions = [.alert, .badge]
-        if #available(iOS 12.0, *) {
-            options.formUnion(UNAuthorizationOptions.provisional)
+    private static func permissionDenied(controller: UIViewController) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: NSLocalizedString("Title",
+                                                                   tableName: "AudioService",
+                                                                   bundle: .main,
+                                                                   value: "Notifikationer",
+                                                                   comment: ""),
+                                          message: NSLocalizedString("Body",
+                                                                     tableName: "AudioService",
+                                                                     bundle: .main,
+                                                                     value: "Notifikationer er nødvendige for at kunne repportere søvnrytmer. " +
+                                                                            "Giv tilladelse til at bruge notifikationer i Indstillinger.",
+                                                                     comment: ""),
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+                                          style: .default,
+                                          handler: { action in
+                                            alert.dismiss(animated: true, completion: nil)
+                                            
+            }))
+            controller.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    static func registerForPushNotifications(controller: UIViewController) {
+        let options: UNAuthorizationOptions = [.alert, .badge]
         UNUserNotificationCenter.current()
             .requestAuthorization(options: options) {
                 granted, error in
                 print("Permission granted: \(granted)")
-                guard granted else { return }
+                guard granted else {
+                    AttendeeService.permissionDenied(controller: controller)
+                    return
+                }
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }

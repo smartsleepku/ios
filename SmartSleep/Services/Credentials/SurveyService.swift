@@ -9,8 +9,6 @@
 import Foundation
 import RxSwift
 
-fileprivate let baseUrl = "https://smartsleep.cyborch.com"
-
 struct Survey: Codable {
     var sid: String
     var surveyls_title: String

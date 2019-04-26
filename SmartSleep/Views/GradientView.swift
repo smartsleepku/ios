@@ -20,10 +20,10 @@ class GradientView: UIView {
                     green: 0x30 / 255.0,
                     blue: 0x61 / 255.0,
                     alpha: 1).cgColor,
-            // 00a4ff
-            UIColor(displayP3Red: 0,
-                    green: 0xa4 / 255.0,
-                    blue: 1,
+            // 33658A
+            UIColor(displayP3Red: 0x33 / 255.0,
+                    green: 0x65 / 255.0,
+                    blue: 0x8a / 255.0,
                     alpha: 1).cgColor
         ]
         layer.insertSublayer(gradient, at: 0)
