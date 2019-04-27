@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let credentialsService = CredentialsService()
     private let bag = DisposeBag()
 
+    let activityUpdates = PublishSubject<ActivityProgressUpdate>()
     let sleepUpdates = PublishSubject<SleepProgressUpdate>()
     let restUpdates = PublishSubject<RestProgressUpdate>()
     let tonight = PublishSubject<Night>()
@@ -70,14 +71,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func synchronizeSleep() {
-        activityService.sync()
-        sleepStatusService.sync()
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] update in
-                self?.sleepUpdates.on(.next(update))
-                }, onCompleted: { [weak self] in
-                    self?.synchronizeRest()
-            }).disposed(by: bag)
+        sleepStatusService.fetchStatus { hasLocation in
+            if hasLocation == true {
+                self.sleepStatusService.sync()
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] update in
+                        self?.sleepUpdates.on(.next(update))
+                        }, onCompleted: { [weak self] in
+                            self?.synchronizeRest()
+                    }).disposed(by: self.bag)
+            } else {
+                self.activityService.sync()
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] update in
+                        self?.activityUpdates.on(.next(update))
+                        }, onCompleted: { [weak self] in
+                            self?.synchronizeRest()
+                    }).disposed(by: self.bag)
+
+            }
+        }
     }
     
     func synchronizeRest() {
