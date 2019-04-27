@@ -62,14 +62,16 @@ class RestService {
         service.queue.sync {
             var queryStatement: OpaquePointer? = nil
             let queryStatementString = """
-                select sum(cast((endTime - startTime) as integer)) as duration
+                select sum(cast((min(endTime,?) - max(startTime,?)) as integer))
                 from rests
                 where endTime > ? and startTime < ?
                 and resting = 0
             """
             if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
-                sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
-                sqlite3_bind_double(queryStatement, 2, to.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 1, to.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 2, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 3, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 4, to.timeIntervalSince1970)
                 if sqlite3_step(queryStatement) == SQLITE_ROW {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
@@ -112,14 +114,16 @@ class RestService {
         service.queue.sync {
             var queryStatement: OpaquePointer? = nil
             let queryStatementString = """
-                select cast(max(endTime - startTime) as integer)
+                select max(cast((min(endTime,?) - max(startTime,?)) as integer))
                 from rests
                 where endTime > ? and startTime < ?
                 and resting = 1
             """
             if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
-                sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
-                sqlite3_bind_double(queryStatement, 2, to.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 1, to.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 2, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 3, from.timeIntervalSince1970)
+                sqlite3_bind_double(queryStatement, 4, to.timeIntervalSince1970)
                 if sqlite3_step(queryStatement) == SQLITE_ROW {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
