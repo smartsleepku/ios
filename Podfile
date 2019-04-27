@@ -10,7 +10,8 @@ target 'SmartSleep' do
   # Pods for SmartSleep
   pod 'KeychainAccess', '~> 3.1.2'
   pod 'RxSwift', '~> 4.4.1'
-  pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
+  pod 'Firebase/Core', '~> 5.17.0'
+  pod 'Firebase/Messaging', '~> 5.17.0'
+  pod 'ReachabilitySwift', '~> 4.3.0'
 
 end
