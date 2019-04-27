@@ -71,7 +71,9 @@ class AudioService {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
                                               style: .default,
                                               handler: { action in
-                                                alert.dismiss(animated: true, completion: nil)
+                                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                          options: [:],
+                                                                          completionHandler: nil)
                 }))
                 controller.present(alert, animated: true, completion: nil)
             }
