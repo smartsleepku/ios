@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Reachability
 
 class MainController: UIViewController {
     
@@ -18,6 +19,30 @@ class MainController: UIViewController {
     private var bag = DisposeBag()
     private var total = 0
 
+    private let reachability = Reachability()!
+    private lazy var alert: UIAlertController = {
+        let alert = UIAlertController(title: NSLocalizedString("Title",
+                                                               tableName: "Main",
+                                                               bundle: .main,
+                                                               value: "Ingen Forbindelse",
+                                                               comment: ""),
+                                      message: NSLocalizedString("Text",
+                                                                 tableName: "Welcome",
+                                                                 bundle: .main,
+                                                                 value: "Der er ingen forbindelse til server. " +
+                                        "Check din internetforbindelse og prøv igen.",
+                                                                 comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
+                                      style: .default,
+                                      handler: { _ in
+                                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
+                                                                  options: [:],
+                                                                  completionHandler: nil)
+        }))
+        return alert
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -78,13 +103,35 @@ class MainController: UIViewController {
         } else {
             AttendeeService.registerForPushNotifications(controller: self)
         }
-        guard once == false else { return }
-        once = true
-        (view as! MainView).appearAnimation()
 
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.audioService.verifyAuthorization(controller: self)
         delegate.audioService.startRecording()
+
+        reachability.whenUnreachable = { [weak self] _ in
+            guard let this = self else { return }
+            this.present(this.alert, animated: true, completion: nil)
+        }
+        
+        reachability.whenReachable = { [weak self] _ in
+            guard self?.alert.presentingViewController != nil else { return }
+            self?.alert.dismiss(animated: true, completion: nil)
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+        guard once == false else { return }
+        once = true
+        (view as! MainView).appearAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        reachability.stopNotifier()
     }
     
     @IBAction func toggle() {
