@@ -34,9 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         attendeeService.configure()
 
         sleepStatusService.fetchStatus { hasLocation in
-            if hasLocation == true {
-                SleepStatusHelper().registerAppforSleepStatus()
-            }
+            guard hasLocation else { return }
+            SleepStatusHelper().registerAppforSleepStatus()
         }
         return true
     }

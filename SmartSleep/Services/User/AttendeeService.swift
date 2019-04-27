@@ -40,6 +40,7 @@ fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelega
         print("didReceive: \(response.actionIdentifier)")
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.sleepStatusService.fetchStatus { hasLocation in
+            guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
         }
         delegate.audioService.startRecording()

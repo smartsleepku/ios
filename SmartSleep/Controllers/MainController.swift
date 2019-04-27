@@ -47,6 +47,7 @@ class MainController: UIViewController {
         super.awakeFromNib()
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.sleepStatusService.fetchStatus { hasLocation in
+            guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
         }
         let nc = NotificationCenter.default
