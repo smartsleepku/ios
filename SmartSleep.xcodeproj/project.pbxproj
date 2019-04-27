@@ -69,6 +69,8 @@
 		F2C760322271A82200FC71FE /* SampleBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760312271A82200FC71FE /* SampleBufferDelegate.swift */; };
 		F2C760342271AE0700FC71FE /* AudioObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760332271AE0700FC71FE /* AudioObserver.swift */; };
 		F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760382272200400FC71FE /* SleepStatusUpdate.swift */; };
+		F2C7603C22740C1000FC71FE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7603A22740C0F00FC71FE /* Activity.swift */; };
+		F2C7603D22740C1000FC71FE /* ActivityProgressUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7603B22740C0F00FC71FE /* ActivityProgressUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,6 +156,8 @@
 		F2C760312271A82200FC71FE /* SampleBufferDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferDelegate.swift; sourceTree = "<group>"; };
 		F2C760332271AE0700FC71FE /* AudioObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObserver.swift; sourceTree = "<group>"; };
 		F2C760382272200400FC71FE /* SleepStatusUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatusUpdate.swift; sourceTree = "<group>"; };
+		F2C7603A22740C0F00FC71FE /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		F2C7603B22740C0F00FC71FE /* ActivityProgressUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProgressUpdate.swift; sourceTree = "<group>"; };
 		F3DFFEFF131AE5FE0593E76B /* Pods-SmartSleep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartSleep.debug.xcconfig"; path = "Target Support Files/Pods-SmartSleep/Pods-SmartSleep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +311,8 @@
 		F21C99222205B285003D5243 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				F2C7603A22740C0F00FC71FE /* Activity.swift */,
+				F2C7603B22740C0F00FC71FE /* ActivityProgressUpdate.swift */,
 				F21C99232205B2B2003D5243 /* ActivityService.swift */,
 			);
 			path = Activity;
@@ -481,6 +487,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -492,6 +499,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -584,7 +592,9 @@
 				F20AD0312221F522007C63C5 /* EmailController.swift in Sources */,
 				F28E13B422594F58001075A8 /* NightTable.swift in Sources */,
 				F20AD047222722FF007C63C5 /* ConfigureSegue.swift in Sources */,
+				F2C7603C22740C1000FC71FE /* Activity.swift in Sources */,
 				F28E13BF225B3C89001075A8 /* DashedArcView.swift in Sources */,
+				F2C7603D22740C1000FC71FE /* ActivityProgressUpdate.swift in Sources */,
 				F20AD03C2222B8C8007C63C5 /* PasswordController.swift in Sources */,
 				F26DF8902267669C00D7E23F /* Sleep.swift in Sources */,
 			);
