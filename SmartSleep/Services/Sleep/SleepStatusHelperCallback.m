@@ -15,5 +15,6 @@ void sleepStatusChanged(CFNotificationCenterRef center, void *observer, CFNotifi
     sleeping = !sleeping;
     NSLog(@"sleep status changed to %@", sleeping ? @"sleeping" : @"awake");
     [SleepStatusService storeSleepUpdate: sleeping];
+    [SleepStatusService backgroundSync];
 }
 

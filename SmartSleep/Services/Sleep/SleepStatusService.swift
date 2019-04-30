@@ -105,6 +105,7 @@ fileprivate var current: CompletionHandler? = nil
 
 class SleepStatusService: NSObject {
     
+    private let bag = DisposeBag()
     private let queue = OperationQueue()
     private let delegate = Delegate()
     private lazy var backgroundSession: URLSession = {
@@ -134,7 +135,7 @@ class SleepStatusService: NSObject {
     
     @objc static func storeSleepUpdate(_ sleeping: Bool) {
         let db = DatabaseService.instance
-        db.queue.async {
+        db.queue.sync {
             Sleep(id: nil, time: Date(), sleeping: sleeping).save()
         }
     }
@@ -174,14 +175,19 @@ class SleepStatusService: NSObject {
         let lastSync = ud.valueFor(.lastSleepSync) ?? Date(timeIntervalSinceNow: -24 * 60 * 60)
         let sleeps = fetch(from: lastSync, to: Date())
         completionHandler.subject = observable
-        completionHandler.count = sleeps.count
-        
-        sleeps.forEach({ sleep in
-            self.postSleep(sleep, completion: completionHandler)
-            print("\(sleep.time!) - sleeping: \(sleep.sleeping!)")
-        })
-        
+        completionHandler.count = 1
+
+        self.bulkPostSleep(sleeps, completion: completionHandler)
+
         return observable
+    }
+    
+    @objc static func backgroundSync() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let service = delegate.sleepStatusService
+        service.sync()
+            .subscribe()
+            .disposed(by: service.bag)
     }
     
     private func postSleep(_ sleep: Sleep, completion: CompletionHandler) {
@@ -213,4 +219,36 @@ class SleepStatusService: NSObject {
             }
         }
     }
+
+    private func bulkPostSleep(_ sleeps: [Sleep], completion: CompletionHandler) {
+        guard sleeps.count > 0 else { return }
+        let url = URL(string: baseUrl + "/sleep/bulk")!
+        var request = URLRequest(url: url,
+                                 cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                 timeoutInterval: 500)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer " + (TokenService().token ?? ""), forHTTPHeaderField: "Authorization")
+        
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        do {
+            let json = try encoder.encode(sleeps)
+            let tmp = try FileManager.default.url(for: .cachesDirectory,
+                                                  in: .userDomainMask,
+                                                  appropriateFor: nil,
+                                                  create: true)
+                .appendingPathComponent("\(sleeps.first!.time!.timeIntervalSinceReferenceDate).json")
+            try json.write(to: tmp)
+            let task = backgroundSession.uploadTask(with: request, fromFile: tmp)
+            task.sleep = sleeps.last!
+            task.resume()
+        } catch let error {
+            print(error)
+            queue.addOperation {
+                completion.count -= 1
+            }
+        }
+    }
+
 }
