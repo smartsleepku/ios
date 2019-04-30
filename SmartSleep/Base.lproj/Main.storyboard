@@ -63,7 +63,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPERIMENTET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1K-r6-gkJ">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EKSPERIMENTET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1K-r6-gkJ">
                                 <rect key="frame" x="20" y="100" width="280" height="27"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1425,9 +1425,9 @@ uro</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
                                 </constraints>
-                                <mutableString key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+                                <string key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
 
-Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau og aktivitetsdata bliver anonymiseret.</mutableString>
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau og aktivitetsdata bliver anonymiseret.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1498,6 +1498,6 @@ Alle personlige informationer bliver gemt seperat fra alle data som måtte blive
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="pXC-BK-k6a"/>
-        <segue reference="IpQ-s4-hrr"/>
+        <segue reference="REA-Gn-A0s"/>
     </inferredMetricsTieBreakers>
 </document>
