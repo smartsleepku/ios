@@ -20,29 +20,29 @@ class AttendeeNumberDelegate: OnboardingTextDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         errorMessage.isHidden = true
+        textField.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let nsString = textField.text as NSString? else { return true }
-        let newString = nsString.replacingCharacters(in: range, with: string)
+    @objc func textChanged(_ textField: UITextField) {
         bag = DisposeBag()
-        manager.validAttendee(code: newString)
+        manager.validAttendee(code: textField.text ?? "")
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] valid in
                 self?.valid = valid
-            }, onError: { error in
-                print(error)
+                }, onError: { error in
+                    print(error)
             })
             .disposed(by: bag)
-        return true
-    }
 
+    }
+    
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard valid else {
             errorMessage.isHidden = false
             textField.resignFirstResponder()
             return false
         }
+        textField.removeTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
         controller.performSegue(withIdentifier: segueName, sender: nil)
         return false
     }
