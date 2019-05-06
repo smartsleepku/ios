@@ -33,7 +33,7 @@ extension Sleep {
     
     func save() {
         let service = DatabaseService.instance
-        service.queue.async {
+        service.queue.sync {
             var statement: OpaquePointer? = nil
             if self.id == nil {
                 let insertStatementString = "insert or replace into sleeps (\"time\", sleeping) " +

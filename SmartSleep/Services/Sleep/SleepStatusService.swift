@@ -134,10 +134,7 @@ class SleepStatusService: NSObject {
     }
     
     @objc static func storeSleepUpdate(_ sleeping: Bool) {
-        let db = DatabaseService.instance
-        db.queue.sync {
-            Sleep(id: nil, time: Date(), sleeping: sleeping).save()
-        }
+        Sleep(id: nil, time: Date(), sleeping: sleeping).save()
     }
     
     func fetch(from: Date, to: Date) -> [Sleep] {
@@ -221,7 +218,12 @@ class SleepStatusService: NSObject {
     }
 
     private func bulkPostSleep(_ sleeps: [Sleep], completion: CompletionHandler) {
-        guard sleeps.count > 0 else { return }
+        guard sleeps.count > 0 else {
+            queue.addOperation {
+                completion.count = 0
+            }
+            return
+        }
         let url = URL(string: baseUrl + "/sleep/bulk")!
         var request = URLRequest(url: url,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
@@ -246,7 +248,7 @@ class SleepStatusService: NSObject {
         } catch let error {
             print(error)
             queue.addOperation {
-                completion.count -= 1
+                completion.count = 0
             }
         }
     }
