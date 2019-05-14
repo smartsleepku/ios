@@ -33,6 +33,13 @@ struct SurveyRequest: Codable {
     var params: Array<String>
 }
 
+fileprivate let dateDecoder: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    formatter.calendar = Calendar(identifier: .iso8601)
+    return formatter
+}()
+
 class SurveyService {
     
     private let session = URLSession(configuration: .ephemeral)
@@ -96,6 +103,8 @@ class SurveyService {
                 guard statusCode == 200 else { observable.on(.error(AuthenticationError.httpStatus(code: statusCode))) ; return }
                 guard data != nil else { observable.on(.error(AuthenticationError.missingData)) ;  return }
                 let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                decoder.dateDecodingStrategy = .formatted(dateDecoder)
                 do {
                     let response = try decoder.decode(SurveyResult.self, from: data!)
                     response.result.forEach({ survey in
