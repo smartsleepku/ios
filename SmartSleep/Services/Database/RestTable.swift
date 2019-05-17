@@ -32,7 +32,7 @@ extension Rest {
         endTime = Date(timeIntervalSince1970: sqlite3_column_double(queryStatement, 3))
     }
     
-    func insert() {
+    func save() {
         let service = DatabaseService.instance
         service.queue.async {
             let insertStatementString = "insert or replace into rests (id, resting, startTime, endTime) values (?, ?, ?, ?)"
@@ -50,5 +50,4 @@ extension Rest {
             sqlite3_finalize(insertStatement)
         }
     }
-    
 }

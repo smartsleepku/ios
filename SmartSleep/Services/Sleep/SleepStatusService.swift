@@ -109,7 +109,7 @@ class SleepStatusService: NSObject {
     private let queue = OperationQueue()
     private let delegate = Delegate()
     private lazy var backgroundSession: URLSession = {
-        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.SmartSleep")
+        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.sleep")
         configuration.httpMaximumConnectionsPerHost = 1
         configuration.isDiscretionary = false
         configuration.shouldUseExtendedBackgroundIdleMode = true
@@ -134,7 +134,10 @@ class SleepStatusService: NSObject {
     }
     
     @objc static func storeSleepUpdate(_ sleeping: Bool) {
-        Sleep(id: nil, time: Date(), sleeping: sleeping).save()
+        let sleep = Sleep(id: nil, time: Date(), sleeping: sleeping)
+        sleep.save()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.restService.updateLatestRest(with: sleep)
     }
     
     func fetch(from: Date, to: Date) -> [Sleep] {

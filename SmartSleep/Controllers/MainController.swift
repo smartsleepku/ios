@@ -75,9 +75,9 @@ class MainController: UIViewController {
         bag = DisposeBag()
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let mainView = self.view as! MainView
-        delegate.sleepUpdates
+        delegate.activityUpdates
             .timeout(5, scheduler: MainScheduler.instance)
-            .catchErrorJustReturn(SleepProgressUpdate(sleep: nil, remaining: 0))
+            .catchErrorJustReturn(ActivityProgressUpdate(activity: nil, remaining: 0))
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] update in
             if update.remaining == 0 {
@@ -106,8 +106,9 @@ class MainController: UIViewController {
         }
 
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.audioService.verifyAuthorization(controller: self)
-        delegate.audioService.startRecording()
+        delegate.locationService.verifyAuthorization(controller: self)
+        delegate.locationService.start()
+        //delegate.audioService.startRecording()
 
         reachability.whenUnreachable = { [weak self] _ in
             guard let this = self else { return }

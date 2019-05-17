@@ -17,13 +17,21 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>14</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>SmartSleep needs to record volume levels to monitor your sleep patterrns</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>SmartSleep needs location information to monitor your sleep patterrns</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>SmartSleep needs location information to monitor your sleep patterrns</string>
+	<key>NSLocationUsageDescription</key>
+	<string>SmartSleep needs location information to monitor your sleep patterrns</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SmartSleep needs location information to monitor your sleep patterrns</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>SmartSleep needs to record volume levels to monitor your sleep patterrns</string>
 	<key>NSMotionUsageDescription</key>
@@ -32,6 +40,7 @@
 	<array>
 		<string>audio</string>
 		<string>fetch</string>
+		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

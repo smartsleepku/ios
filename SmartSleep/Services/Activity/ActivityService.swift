@@ -104,7 +104,7 @@ class ActivityService {
     private let queue = OperationQueue()
     private let manager = CMMotionActivityManager()
     private lazy var session: URLSession = {
-        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.SmartSleep")
+        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.activity")
         configuration.httpMaximumConnectionsPerHost = 1
         configuration.isDiscretionary = false
         configuration.shouldUseExtendedBackgroundIdleMode = true

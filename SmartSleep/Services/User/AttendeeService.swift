@@ -22,6 +22,7 @@ struct Attendee: Codable {
     var weekdayEvening: Date?
     var weekendMorning: Date?
     var weekendEvening: Date?
+    var nextPush: Date?
     var devices = [Device]()
 }
 
@@ -43,7 +44,8 @@ fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelega
             guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
         }
-        delegate.audioService.startRecording()
+        delegate.locationService.start()
+        //delegate.audioService.startRecording()
         completionHandler()
     }
     
@@ -128,6 +130,7 @@ class AttendeeService {
             weekdayEvening: config.weekdayEvening,
             weekendMorning: config.weekendMorning,
             weekendEvening: config.weekendEvening,
+            nextPush: Date(),
             devices: [Device(
                 deviceId: deviceToken,
                 deviceType: "ios"

@@ -1104,25 +1104,6 @@ smartsleep.ku.dk</string>
                                     <constraint firstAttribute="height" constant="50" id="a3h-UW-gIx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuværende støjniveau: 0 dB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr2-ds-38h">
-                                <rect key="frame" x="16" y="282" width="288" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-E4-UFh">
-                                <rect key="frame" x="265" y="266" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="o2N-iJ-FDg"/>
-                                    <constraint firstAttribute="height" constant="50" id="qjn-IJ-lNS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
-                                <color key="tintColor" red="1" green="0.028078071959999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="✕"/>
-                                <connections>
-                                    <action selector="toggleRecord:" destination="Ihb-Id-X68" eventType="touchUpInside" id="OX5-wB-0dD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1130,17 +1111,14 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="top" secondItem="c8x-SU-Mej" secondAttribute="bottom" constant="-5" id="2jo-0U-HcR"/>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="leading" secondItem="Yv2-Sw-gkp" secondAttribute="trailing" constant="-8" id="44f-NP-GxF"/>
                             <constraint firstItem="HBA-Fu-Tbj" firstAttribute="top" secondItem="DQW-1D-z1l" secondAttribute="bottom" constant="5" id="5jQ-jt-ftO"/>
-                            <constraint firstItem="HXA-E4-UFh" firstAttribute="centerY" secondItem="dr2-ds-38h" secondAttribute="centerY" id="5ru-Hy-01c"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="DQW-1D-z1l" secondAttribute="trailing" constant="20" id="9Fm-Xv-Bzv"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerX" secondItem="7zD-Oc-Kj3" secondAttribute="centerX" id="Bjo-fD-Ita"/>
                             <constraint firstItem="c8x-SU-Mej" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="Dsv-Og-exF"/>
-                            <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="dr2-ds-38h" secondAttribute="trailing" constant="16" id="ETt-4G-e4D"/>
                             <constraint firstItem="c8x-SU-Mej" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="EZ6-EH-aLs"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="top" secondItem="uaP-1L-oYk" secondAttribute="top" constant="10" id="FjO-3o-pHW"/>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="centerX" secondItem="c8x-SU-Mej" secondAttribute="centerX" id="GE4-2b-htW"/>
                             <constraint firstItem="9HB-uX-Kqy" firstAttribute="centerX" secondItem="MAg-AV-Xff" secondAttribute="centerX" id="KmG-V5-Z7l"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="bottom" secondItem="rUd-Nd-PsC" secondAttribute="bottom" constant="5" id="M9W-ci-pfv"/>
-                            <constraint firstItem="rUd-Nd-PsC" firstAttribute="top" secondItem="dr2-ds-38h" secondAttribute="bottom" constant="20" id="Mzn-vY-Mg6"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerY" secondItem="c8x-SU-Mej" secondAttribute="centerY" id="Pit-wm-mx4"/>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="leading" relation="lessThanOrEqual" secondItem="MAg-AV-Xff" secondAttribute="trailing" constant="10" id="RI8-Zs-W2C"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="HBA-Fu-Tbj" secondAttribute="trailing" constant="5" id="UKl-Yj-3XO"/>
@@ -1154,9 +1132,7 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="ny2-Dm-GQ2"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="pC7-GQ-PIJ"/>
                             <constraint firstItem="rUd-Nd-PsC" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" id="pfi-SY-ftD"/>
-                            <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="HXA-E4-UFh" secondAttribute="trailing" constant="5" id="q6x-Tv-1Ml"/>
                             <constraint firstItem="4mh-Kt-xbD" firstAttribute="centerX" secondItem="QDJ-QY-e1r" secondAttribute="centerX" id="rfM-LD-hAI"/>
-                            <constraint firstItem="dr2-ds-38h" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="16" id="vVf-Wc-rhy"/>
                             <constraint firstItem="9HB-uX-Kqy" firstAttribute="top" secondItem="MAg-AV-Xff" secondAttribute="bottom" constant="10" id="vwp-wf-aBu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uaP-1L-oYk"/>
@@ -1168,9 +1144,7 @@ smartsleep.ku.dk</string>
                         <outlet property="evening" destination="soT-EQ-Wq1" id="SAY-83-fBH"/>
                         <outlet property="longestSleepDuration" destination="MAg-AV-Xff" id="1EA-kF-oe3"/>
                         <outlet property="morning" destination="4mh-Kt-xbD" id="rRX-B0-Hy0"/>
-                        <outlet property="power" destination="dr2-ds-38h" id="ABP-96-d49"/>
                         <outlet property="tabBarDelegate" destination="zIo-Ck-JDa" id="79U-vc-Tnm"/>
-                        <outlet property="toggleButton" destination="HXA-E4-UFh" id="8XX-iX-YRL"/>
                         <outlet property="unrestDuration" destination="9HB-uX-Kqy" id="EF2-N9-ci5"/>
                         <segue destination="tJf-EV-xWc" kind="presentation" identifier="Questionnaire" id="vGx-Pf-IGP"/>
                         <segue destination="r18-Fj-tIG" kind="presentation" identifier="History" id="NFu-UR-7Jg"/>
@@ -1425,9 +1399,9 @@ uro</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
                                 </constraints>
-                                <string key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+                                <mutableString key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata og lokation, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
 
-Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau og aktivitetsdata bliver anonymiseret.</string>
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Lokation og aktivitetsdata bliver anonymiseret.</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1498,6 +1472,6 @@ Alle personlige informationer bliver gemt seperat fra alle data som måtte blive
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="pXC-BK-k6a"/>
-        <segue reference="REA-Gn-A0s"/>
+        <segue reference="IpQ-s4-hrr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,21 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sleepStatusService = SleepStatusService()
     let attendeeService = AttendeeService()
     private let activityService = ActivityService()
+    private let authService = AuthenticationService()
+    let audioService = AudioService()
     let restService = RestService()
     let nightService = NightService()
-    let audioService = AudioService()
+    let locationService = LocationService()
     private let credentialsService = CredentialsService()
     private let bag = DisposeBag()
 
     let activityUpdates = PublishSubject<ActivityProgressUpdate>()
     let sleepUpdates = PublishSubject<SleepProgressUpdate>()
-    let restUpdates = PublishSubject<RestProgressUpdate>()
     let tonight = PublishSubject<Night>()
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        started()
         attendeeService.configure()
+        synchronizeToken()
 
         sleepStatusService.fetchStatus { hasLocation in
             guard hasLocation else { return }
@@ -60,7 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        synchronizeToken()
         synchronizeSleep()
+        locationService.start()
         completionHandler(.newData)
     }
     
@@ -77,36 +82,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     .subscribe(onNext: { [weak self] update in
                         self?.sleepUpdates.on(.next(update))
                         }, onCompleted: { [weak self] in
-                            self?.synchronizeRest()
+                            self?.generateNights()
                     }).disposed(by: self.bag)
-            } else {
-                self.activityService.sync()
-                    .observeOn(MainScheduler.instance)
-                    .subscribe(onNext: { [weak self] update in
-                        self?.activityUpdates.on(.next(update))
-                        }, onCompleted: { [weak self] in
-                            self?.synchronizeRest()
-                    }).disposed(by: self.bag)
-
             }
         }
-    }
-    
-    func synchronizeRest() {
-        restService.sync()
+        activityService.sync()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] rest in
-                self?.restUpdates.on(.next(RestProgressUpdate(
-                    rest: rest,
-                    done: false
-                )))
-            }, onCompleted: { [weak self] in
-                self?.restUpdates.on(.next(RestProgressUpdate(
-                    rest: nil,
-                    done: true
-                )))
-                self?.generateNights()
-        }).disposed(by: bag)
+            .subscribe(onNext: { [weak self] update in
+                self?.activityUpdates.on(.next(update))
+            }).disposed(by: self.bag)
     }
     
     func generateNights() {
@@ -123,7 +107,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func applicationWillTerminate(_ application: UIApplication) {
-        audioService.observer.ended()
+        ended()
+    }
+    
+    func ended() {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = NSLocalizedString("Title",
+                                                      tableName: "AppDelegate",
+                                                      bundle: .main,
+                                                      value: "SmartSleep afbrudt",
+                                                      comment: "")
+        notificationContent.body = NSLocalizedString("Body",
+                                                     tableName: "AppDelegate",
+                                                     bundle: .main,
+                                                     value: "SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. " +
+                                                        "Start SmartSleep inden du går i seng.",
+                                                     comment: "")
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        let notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.app.interrupted",
+                                                        content: notificationContent,
+                                                        trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
+    }
+    
+    func started() {
+        let nc = UNUserNotificationCenter.current()
+        nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
+        nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
+    }
+    
+    func synchronizeToken() {
+        let ud = UserDefaults()
+        let credentialsManager = CredentialsService()
+        guard credentialsManager.credentials != nil else { return }
+        guard let code: String = ud.valueFor(.attendeeCode) else { return }
+        authService.postCredentials(toAttendee: code)
     }
 }
 
