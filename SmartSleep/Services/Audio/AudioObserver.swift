@@ -18,7 +18,7 @@ class AudioObserver: NSObject {
     let running = PublishSubject<Bool>()
     
     @objc func ended() {
-        let notificationContent = UNMutableNotificationContent()
+        var notificationContent = UNMutableNotificationContent()
         notificationContent.title = NSLocalizedString("Title",
                                                       tableName: "AudioNotification",
                                                       bundle: .main,
@@ -27,11 +27,12 @@ class AudioObserver: NSObject {
         notificationContent.body = NSLocalizedString("Body",
                                                      tableName: "AudioNotification",
                                                      bundle: .main,
-                                                     value: "Støjmåleren er nødvendig for at kunne måle søvnrytmer. " +
+                                                     value: "Vi kan måle din aktivitet, men ikke hvor rolig du er uden støjmåleren. " +
                                                             "Start støjmåleren i SmartSleep inden du går i seng.",
                                                      comment: "")
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.audio.interrupted",
+        notificationContent.badge = 1
+        var notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        var notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.audio.interrupted",
                                                         content: notificationContent,
                                                         trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
@@ -39,6 +40,34 @@ class AudioObserver: NSObject {
                 print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
             }
         }
+
+        notificationContent = UNMutableNotificationContent()
+        notificationContent.title = NSLocalizedString("SleepTitle",
+                                                      tableName: "AudioNotification",
+                                                      bundle: .main,
+                                                      value: "Sov godt",
+                                                      comment: "")
+        notificationContent.body = NSLocalizedString("SleepBody",
+                                                     tableName: "AudioNotification",
+                                                     bundle: .main,
+                                                     value: "Åbn SmartSleep for at starte støjmåleren nu.",
+                                                     comment: "")
+        notificationContent.sound = .default
+        notificationContent.badge = 1
+        let configuration = ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration
+        let (start, _) = NightService.nightThresholds(of: Date(), config: configuration)
+        var time = start.timeIntervalSinceNow
+        while time < 0 { time += 24 * 60 * 60 }
+        notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.audio.gotosleep",
+                                                        content: notificationContent,
+                                                        trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
+
         running.on(.next(false))
     }
     
@@ -46,6 +75,8 @@ class AudioObserver: NSObject {
         let nc = UNUserNotificationCenter.current()
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
+        nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
+        nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
         running.on(.next(true))
     }
     

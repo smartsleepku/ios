@@ -27,6 +27,9 @@ class AudioService {
     }
     
     func startRecording() {
+        try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [
+            .mixWithOthers, .duckOthers
+        ])
         let output = AVCaptureAudioDataOutput()
         output.setSampleBufferDelegate(delegate, queue: queue)
         let session = AVCaptureSession()
@@ -38,6 +41,7 @@ class AudioService {
                 session.addInput(input)
                 session.addOutput(output)
                 output.connection(with: .audio)?.isEnabled = true
+                session.usesApplicationAudioSession = true
                 session.commitConfiguration()
                 session.startRunning()
             } catch let error {

@@ -72,6 +72,9 @@ class MainController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         bag = DisposeBag()
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let mainView = self.view as! MainView
@@ -108,7 +111,7 @@ class MainController: UIViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.locationService.verifyAuthorization(controller: self)
         delegate.locationService.start()
-        //delegate.audioService.startRecording()
+        delegate.audioService.startRecording()
 
         reachability.whenUnreachable = { [weak self] _ in
             guard let this = self else { return }

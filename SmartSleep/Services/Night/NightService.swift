@@ -25,7 +25,7 @@ class NightService {
     }()
     private let queue = DispatchQueue(label: "dk.ku.nightservice.queue")
     
-    private func nightThresholds(of date: Date, config: Configuration) -> (Date, Date) {
+    static func nightThresholds(of date: Date, config: Configuration) -> (Date, Date) {
         let calendar = Calendar.current
         var morning: DateComponents!
         var evening: DateComponents!
@@ -84,7 +84,7 @@ class NightService {
             var queryStatement: OpaquePointer? = nil
             let queryStatementString = "select * from nights where \"from\" = ?"
             if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
-                let (from, _) = self.nightThresholds(of: date, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
+                let (from, _) = NightService.nightThresholds(of: date, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
                 sqlite3_bind_double(queryStatement, 1, from.timeIntervalSince1970)
                 if sqlite3_step(queryStatement) == SQLITE_ROW {
                     result = Night(queryStatement: queryStatement!)
@@ -100,12 +100,12 @@ class NightService {
     func generateNights() -> Completable {
         return Completable.create { completable in
             self.queue.async {
-                var now = Date(timeIntervalSinceNow: -24 * 60 * 60)
+                var now = Date()
                 var from: Date
                 var to: Date
                 let first = self.restService.fetchFirstRestTime()
                 repeat {
-                    (from, to) = self.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
+                    (from, to) = NightService.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
                     print("generating night from \(from) to \(to)...")
                     now = now.addingTimeInterval(-24 * 60 * 60)
                     let night = Night(

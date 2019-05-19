@@ -56,10 +56,15 @@ fileprivate class Delegate: NSObject, URLSessionTaskDelegate {
         guard let activity = task.activity else { return }
 
         queue?.addOperation { [weak self] in
-            self?.completion?.subject?.on(.next(ActivityProgressUpdate(
+            let update = ActivityProgressUpdate(
                 activity: activity,
                 remaining: (self?.completion?.count ?? 1) - 1
-            )))
+            )
+            DispatchQueue.main.sync {
+                self?.completion?
+                    .subject?
+                    .on(.next(update))
+            }
         }
 
         guard activity.time > lastSync else { return }
@@ -72,7 +77,10 @@ fileprivate class CompletionHandler {
     var count = -1 {
         didSet {
             if count == 0 {
-                subject?.on(.completed)
+                let subject = self.subject
+                DispatchQueue.main.async {
+                    subject?.on(.completed)
+                }
                 endBackgroundTask()
             }
         }
@@ -82,7 +90,7 @@ fileprivate class CompletionHandler {
     var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     
     func beginBackgroundTask() {
-        UIApplication.shared.beginBackgroundTask { [weak self] in
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             guard let task = self?.backgroundTask else { return }
             guard task != .invalid else { return }
             UIApplication.shared.endBackgroundTask(task)

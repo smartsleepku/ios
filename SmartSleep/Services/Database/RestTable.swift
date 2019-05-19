@@ -32,9 +32,10 @@ extension Rest {
         endTime = Date(timeIntervalSince1970: sqlite3_column_double(queryStatement, 3))
     }
     
-    func save() {
+    mutating func save() {
         let service = DatabaseService.instance
-        service.queue.async {
+        if id == nil { id = UUID().uuidString.lowercased() }
+        service.queue.sync {
             let insertStatementString = "insert or replace into rests (id, resting, startTime, endTime) values (?, ?, ?, ?)"
             print("inserting \(self)")
             var insertStatement: OpaquePointer? = nil
@@ -42,8 +43,10 @@ extension Rest {
                 sqlite3_bind_text(insertStatement, 1, self.id, -1, SQLITE_TRANSIENT)
                 sqlite3_bind_int(insertStatement, 2, self.resting! ? 1 : 0)
                 sqlite3_bind_double(insertStatement, 3, self.startTime!.timeIntervalSince1970)
-                sqlite3_bind_double(insertStatement, 4, self.endTime!.timeIntervalSince1970)
+                if self.endTime != nil { sqlite3_bind_double(insertStatement, 4, self.endTime!.timeIntervalSince1970) }
+                else { sqlite3_bind_null(insertStatement, 4) }
                 sqlite3_step(insertStatement)
+                print("\(String(cString: sqlite3_errmsg(service.db)))")
             } else {
                 print("INSERT statement could not be prepared.")
             }

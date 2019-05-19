@@ -23,9 +23,34 @@ class TonightController: UIViewController {
     @IBOutlet weak var disruptionCount: UILabel!
     @IBOutlet weak var longestSleepDuration: UILabel!
     @IBOutlet weak var unrestDuration: UILabel!
+    @IBOutlet weak var power: UILabel!
+    @IBOutlet weak var toggleButton: UIButton!
+    private var timer: Timer?
 
     private var bag = DisposeBag()
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        timer?.invalidate()
+        timer = Timer(timeInterval: 0.1, repeats: true) { [weak self] _ in
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            // NOTE: seems to be the approx correction to get real decibels
+            let correction: Float = 90
+            let power = delegate.audioService.delegate.powerLevel + correction
+            let format = NSLocalizedString("CurrentPower",
+                                           tableName: "Tonight",
+                                           bundle: .main,
+                                           value: "Nuværende støjniveau: %d dB",
+                                           comment: "")
+            self?.power.text = String(format: format, Int(power))
+        }
+        RunLoop.current.add(timer!, forMode: .default)
+    }
+    
+    deinit {
+        timer?.invalidate()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarDelegate!.controller = self
@@ -54,11 +79,20 @@ class TonightController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.updateLastNight()
             }).disposed(by: bag)
+        
+        delegate.audioService
+            .observer
+            .running
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                self?.updateToggleLabel()
+            }).disposed(by: bag)
+
     }
     
     private func updateLastNight() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let night = delegate.nightService.fetchOne(at: Date(timeIntervalSinceNow: -24 * 60 * 60))
+        let night = delegate.nightService.fetchOne(at: Date())
         
         disruptionCount.text = String(format: NSLocalizedString("DisruptionCount",
                                                                 tableName: "Main",
@@ -108,5 +142,30 @@ class TonightController: UIViewController {
                                         alert.dismiss(animated: true, completion: nil)
         }))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func updateToggleLabel() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let service = delegate.audioService
+        print("toggle, recording \(service.recording)")
+        if service.recording {
+            toggleButton.setTitle("✕", for: .normal)
+            toggleButton.tintColor = .red
+        } else {
+            toggleButton.setTitle("↺", for: .normal)
+            toggleButton.tintColor = .green
+        }
+    }
+    
+    @IBAction func toggleRecord(_ sender: UIButton) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let service = delegate.audioService
+        print("toggle, recording \(service.recording)")
+        if service.recording {
+            service.stopRecording()
+        } else {
+            service.startRecording()
+        }
+        updateToggleLabel()
     }
 }

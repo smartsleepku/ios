@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
     func application(_ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         synchronizeToken()
         synchronizeSleep()
         locationService.start()
+        audioService.startRecording()
         completionHandler(.newData)
     }
     
@@ -98,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defer {
                 completable(.completed)
             }
-            let tonight = self.nightService.fetchOne(at: Date(timeIntervalSinceNow: -24 * 60 * 60))
+            let tonight = self.nightService.fetchOne(at: Date())
             guard tonight != nil else { return Disposables.create() }
             self.tonight.on(.next(tonight!))
             return Disposables.create()

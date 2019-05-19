@@ -160,11 +160,13 @@ class RestService {
             sqlite3_finalize(queryStatement)
         }
         if result == nil {
-            Rest(id: nil, resting: sleep.sleeping, startTime: sleep.time, endTime: nil).save()
+            var rest = Rest(id: nil, resting: sleep.sleeping, startTime: sleep.time, endTime: nil)
+            rest.save()
         } else if result?.resting! != sleep.sleeping! {
             result?.endTime = sleep.time
             result?.save()
-            Rest(id: nil, resting: sleep.sleeping, startTime: sleep.time, endTime: nil).save()
+            var rest = Rest(id: nil, resting: sleep.sleeping, startTime: sleep.time, endTime: nil)
+            rest.save()
         }
     }
 }

@@ -45,7 +45,7 @@ fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelega
             SleepStatusHelper().registerAppforSleepStatus()
         }
         delegate.locationService.start()
-        //delegate.audioService.startRecording()
+        delegate.audioService.startRecording()
         completionHandler()
     }
     
@@ -98,7 +98,7 @@ class AttendeeService {
     }
     
     static func registerForPushNotifications(controller: UIViewController) {
-        let options: UNAuthorizationOptions = [.alert, .badge]
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current()
             .requestAuthorization(options: options) {
                 granted, error in
