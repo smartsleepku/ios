@@ -34,12 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         started()
         attendeeService.configure()
-        synchronizeToken()
-
-        sleepStatusService.fetchStatus { hasLocation in
-            guard hasLocation else { return }
-            SleepStatusHelper().registerAppforSleepStatus()
-        }
+        startOperations()
         return true
     }
     
@@ -63,15 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        synchronizeToken()
-        synchronizeSleep()
-        locationService.start()
-        audioService.startRecording()
+        startOperations()
         completionHandler(.newData)
     }
     
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
         NSLog("handleEventsForBackgroundURLSession: \(identifier)")
+        startOperations()
         completionHandler()
     }
     
@@ -147,6 +140,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard credentialsManager.credentials != nil else { return }
         guard let code: String = ud.valueFor(.attendeeCode) else { return }
         authService.postCredentials(toAttendee: code)
+    }
+    
+    func startOperations() {
+        synchronizeToken()
+        synchronizeSleep()
+        let ud = UserDefaults()
+        if (ud.valueFor(.paused) ?? false) == false {
+            locationService.start()
+            audioService.startRecording()
+        }
+        sleepStatusService.fetchStatus { hasLocation in
+            guard hasLocation else { return }
+            SleepStatusHelper().registerAppforSleepStatus()
+        }
     }
 }
 
