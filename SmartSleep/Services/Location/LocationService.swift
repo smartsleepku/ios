@@ -24,6 +24,10 @@ class LocationService {
     func start() {
         locationManager.startUpdatingLocation()
     }
+    
+    func stop() {
+        locationManager.stopUpdatingLocation()
+    }
 
     func verifyAuthorization(controller: UIViewController) {
         delegate.callback = { granted in

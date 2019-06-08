@@ -109,7 +109,7 @@ class SleepStatusService: NSObject {
     private let queue = OperationQueue()
     private let delegate = Delegate()
     private lazy var backgroundSession: URLSession = {
-        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.sleep")
+        var configuration = URLSessionConfiguration.background(withIdentifier: "com.cyborch.dk.ku.smartsleep.SmartSleep")
         configuration.httpMaximumConnectionsPerHost = 1
         configuration.isDiscretionary = false
         configuration.shouldUseExtendedBackgroundIdleMode = true

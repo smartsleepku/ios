@@ -27,9 +27,11 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("updating location at \(Date())")
-        if !audioService.recording {
-            updatePendingNotification()
+        NSLog("updating location at \(Date())")
+        if audioService.recording {
+            LocationDelegate.removeNotifications()
+        } else {
+            LocationDelegate.updatePendingNotification()
         }
         endBackgroundTask()
         beginBackgroundTask()
@@ -49,12 +51,16 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
         UIApplication.shared.endBackgroundTask(backgroundTask)
     }
     
-    func updatePendingNotification() {
-        let notificationContent = UNMutableNotificationContent()
+    static func removeNotifications() {
         let nc = UNUserNotificationCenter.current()
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.location.interrupted"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.location.interrupted"])
-
+    }
+    
+    static func updatePendingNotification() {
+        removeNotifications()
+        let notificationContent = UNMutableNotificationContent()
+        let nc = UNUserNotificationCenter.current()
         notificationContent.title = NSLocalizedString("Title",
                                                       tableName: "LocationService",
                                                       bundle: .main,

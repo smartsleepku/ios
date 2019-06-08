@@ -36,6 +36,8 @@
 		F21C990E2205A504003D5243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21C990C2205A504003D5243 /* Main.storyboard */; };
 		F21C99162205A505003D5243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21C99142205A505003D5243 /* LaunchScreen.storyboard */; };
 		F21C99242205B2B2003D5243 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C99232205B2B2003D5243 /* ActivityService.swift */; };
+		F243258222AC1732005F64D1 /* ExplanationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243258122AC1732005F64D1 /* ExplanationController.swift */; };
+		F243258422AC20DA005F64D1 /* CALayer+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F243258322AC20DA005F64D1 /* CALayer+UIColor.swift */; };
 		F2534959222AF4DA00A2DA26 /* QuestionnaireDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2534958222AF4DA00A2DA26 /* QuestionnaireDelegate.swift */; };
 		F264C474222C3DD300860767 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F264C473222C3DD300860767 /* RestService.swift */; };
 		F26DF8862267334300D7E23F /* RequestAccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26DF8852267334300D7E23F /* RequestAccessController.swift */; };
@@ -121,6 +123,8 @@
 		F21C99152205A505003D5243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F21C99172205A505003D5243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F21C99232205B2B2003D5243 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		F243258122AC1732005F64D1 /* ExplanationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationController.swift; sourceTree = "<group>"; };
+		F243258322AC20DA005F64D1 /* CALayer+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+UIColor.swift"; sourceTree = "<group>"; };
 		F2534958222AF4DA00A2DA26 /* QuestionnaireDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireDelegate.swift; sourceTree = "<group>"; };
 		F264C473222C3DD300860767 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		F26DF8852267334300D7E23F /* RequestAccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAccessController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				F20AD0412222F460007C63C5 /* MainController.swift */,
 				F2950B6F222A9F2B00BE391C /* MainTabDelegate.swift */,
 				F2950B6B222A91BA00BE391C /* TonightController.swift */,
+				F243258122AC1732005F64D1 /* ExplanationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				F20AD0432222F4E6007C63C5 /* MainView.swift */,
 				F20AD04C2229C5AC007C63C5 /* DashedLineView.swift */,
 				F28E13BE225B3C89001075A8 /* DashedArcView.swift */,
+				F243258322AC20DA005F64D1 /* CALayer+UIColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 				F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */,
 				F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */,
 				F20AD03A2222B6F5007C63C5 /* EmailDelegate.swift in Sources */,
+				F243258422AC20DA005F64D1 /* CALayer+UIColor.swift in Sources */,
 				F21684DB228AE6580094CBEA /* LocationService.swift in Sources */,
 				F20AD04D2229C5AC007C63C5 /* DashedLineView.swift in Sources */,
 				F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */,
@@ -613,6 +620,7 @@
 				F2C7603D22740C1000FC71FE /* ActivityProgressUpdate.swift in Sources */,
 				F20AD03C2222B8C8007C63C5 /* PasswordController.swift in Sources */,
 				F26DF8902267669C00D7E23F /* Sleep.swift in Sources */,
+				F243258222AC1732005F64D1 /* ExplanationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,10 @@ class NightService {
             morning = calendar.dateComponents([.hour, .minute], from: config.weekdayMorning)
             evening = calendar.dateComponents([.hour, .minute], from: config.weekdayEvening)
         }
-        let start = calendar.date(bySettingHour: evening.hour!, minute: evening.minute!, second: 0, of: date)
+        var start = calendar.date(bySettingHour: evening.hour!, minute: evening.minute!, second: 0, of: date)
+        if start! > date {
+            start = calendar.date(bySettingHour: evening.hour!, minute: evening.minute!, second: 0, of: date.addingTimeInterval(-24 * 60 * 60))
+        }
         let end = calendar.nextDate(after: start!, matching: morning, matchingPolicy: .nextTime)
         return (start!, end!)
     }
@@ -97,8 +100,22 @@ class NightService {
         return result
     }
     
+    private func purgeNights() {
+        let service = DatabaseService.instance
+        service.queue.sync {
+            var queryStatement: OpaquePointer? = nil
+            let queryStatementString = "delete from nights"
+            if sqlite3_prepare_v2(service.db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                sqlite3_step(queryStatement)
+            } else {
+                NSLog("delete statement could not be prepared")
+            }
+        }
+    }
+    
     func generateNights() -> Completable {
         return Completable.create { completable in
+            self.purgeNights()
             self.queue.async {
                 var now = Date()
                 var from: Date

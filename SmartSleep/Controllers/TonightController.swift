@@ -56,12 +56,7 @@ class TonightController: UIViewController {
         tabBarDelegate!.controller = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        bag = DisposeBag()
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-
+    func updateLabels() {
         let userConfig = ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration
         
         let weekday = Calendar.current.component(.weekday, from: Date())
@@ -72,7 +67,15 @@ class TonightController: UIViewController {
             morning.text = timeFormatter.string(from: userConfig.weekendMorning)
             evening.text = timeFormatter.string(from: userConfig.weekendEvening)
         }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        bag = DisposeBag()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+
+        updateLabels()
         updateLastNight()
         delegate.tonight
             .observeOn(MainScheduler.instance)
@@ -87,12 +90,13 @@ class TonightController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.updateToggleLabel()
             }).disposed(by: bag)
-
+        updateToggleLabel()
     }
     
-    private func updateLastNight() {
+    func updateLastNight() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let night = delegate.nightService.fetchOne(at: Date())
+        var night = delegate.nightService.fetchOne(at: Date())
+        if night?.longestSleepDuration ?? 0 == 0 { night = delegate.nightService.fetchOne(at: Date(timeIntervalSinceNow: -24 * 60 * 60)) }
         
         disruptionCount.text = String(format: NSLocalizedString("DisruptionCount",
                                                                 tableName: "Main",
@@ -118,32 +122,6 @@ class TonightController: UIViewController {
         )
     }
     
-    @IBAction func disclaimer() {
-        let alert = UIAlertController(title: NSLocalizedString("DisclaimerTitle",
-                                                               tableName: "Main",
-                                                               bundle: .main,
-                                                               value: "Overrasket over tallene?",
-                                                               comment: ""),
-                                      message: NSLocalizedString("DisclaimerText",
-                                                                 tableName: "Main",
-                                                                 bundle: .main,
-                                                                 value: "Søvneksperimentet er et forskningsprojekt og vi arbejer konstant " +
-                                        "på at forbedre vores resultater. I starten kan du nok forvente at tallene for din søvnrytme vil " +
-                                        "ændre sig en hel del. Bare rolig, efterhånden som vi lærer mere og mere vil tallene blive mere og mere præcise.",
-                                                                 comment: ""),
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok",
-                                                               tableName: "Main",
-                                                               bundle: .main,
-                                                               value: "Ok",
-                                                               comment: ""),
-                                      style: .default,
-                                      handler: { _ in
-                                        alert.dismiss(animated: true, completion: nil)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
     func updateToggleLabel() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let service = delegate.audioService
@@ -159,13 +137,58 @@ class TonightController: UIViewController {
     
     @IBAction func toggleRecord(_ sender: UIButton) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let service = delegate.audioService
-        print("toggle, recording \(service.recording)")
-        if service.recording {
-            service.stopRecording()
+        let audio = delegate.audioService
+        let location = delegate.locationService
+        NSLog("toggle, recording \(audio.recording)")
+        if audio.recording {
+            audio.stopRecording()
         } else {
-            service.startRecording()
+            audio.startRecording()
+            location.start()
+            let ud = UserDefaults()
+            ud.setValueFor(.paused, to: false)
+            ud.synchronize()
         }
         updateToggleLabel()
+    }
+    
+    @IBAction func pause() {
+        let alert = UIAlertController(title: NSLocalizedString("PauseTitle",
+                                                               tableName: "Tonight",
+                                                               bundle: .main,
+                                                               value: "Pause",
+                                                               comment: ""),
+                                      message: NSLocalizedString("PauseText",
+                                                                 tableName: "Tonight",
+                                                                 bundle: .main,
+                                                                 value: "Stop al monitorering af søvnrytmer",
+                                                                 comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("PauseAction",
+                                                               tableName: "Tonight",
+                                                               bundle: .main,
+                                                               value: "Stop",
+                                                               comment: ""),
+                                      style: .destructive,
+                                      handler: { action in
+                                        let ud = UserDefaults()
+                                        ud.setValueFor(.paused, to: true)
+                                        ud.synchronize()
+                                        let delegate = UIApplication.shared.delegate as! AppDelegate
+                                        delegate.audioService.stopRecording()
+                                        delegate.locationService.stop()
+                                        AudioObserver.removeNotifications()
+                                        self.updateToggleLabel()
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Continue",
+                                                               tableName: "Tonight",
+                                                               bundle: .main,
+                                                               value: "Fortsæt",
+                                                               comment: ""),
+                                      style: .default,
+                                      handler: { action in
+                                        alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }

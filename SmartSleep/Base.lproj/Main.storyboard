@@ -573,7 +573,6 @@ smartsleep.ku.dk</string>
                                 <rect key="frame" x="278" y="40" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="toggle" destination="Zdc-GO-Yz3" eventType="touchUpInside" id="mpz-Xj-wMS"/>
                                     <segue destination="q4A-1O-3yB" kind="custom" identifier="Configure" customClass="ConfigurationSegue" customModule="SmartSleep" customModuleProvider="target" id="pXC-BK-k6a"/>
                                 </connections>
                             </button>
@@ -601,10 +600,36 @@ smartsleep.ku.dk</string>
                                     <constraint firstItem="sHM-lx-Q5T" firstAttribute="leading" secondItem="iKM-Gc-5ck" secondAttribute="leading" constant="8" id="svm-Wq-Bu9"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzX-kq-idn">
+                                <rect key="frame" x="279" y="41" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="4UB-gB-D2w"/>
+                                    <constraint firstAttribute="height" constant="20" id="O8c-lI-m0c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="?"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeConfigurationWithSegue:" destination="Zdc-GO-Yz3" eventType="touchUpInside" id="q3g-QC-Dqb"/>
+                                    <segue destination="oq8-P6-TUR" kind="presentation" id="AP4-WY-kkp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="bottom" secondItem="HF2-Lf-0Re" secondAttribute="bottom" id="3sj-GT-Mlw"/>
+                            <constraint firstItem="USh-HP-gKv" firstAttribute="centerX" secondItem="hzX-kq-idn" secondAttribute="centerX" id="CuQ-H9-u0H"/>
+                            <constraint firstItem="USh-HP-gKv" firstAttribute="centerY" secondItem="hzX-kq-idn" secondAttribute="centerY" id="DyW-Rr-0OP"/>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="top" secondItem="iKM-Gc-5ck" secondAttribute="bottom" id="Kfc-VN-89V"/>
                             <constraint firstItem="USh-HP-gKv" firstAttribute="top" secondItem="bb0-Pt-m4a" secondAttribute="top" constant="20" id="M9s-uZ-x30"/>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="trailing" secondItem="bb0-Pt-m4a" secondAttribute="trailing" id="Rfh-B0-S3U"/>
@@ -627,6 +652,7 @@ smartsleep.ku.dk</string>
                     </view>
                     <connections>
                         <outlet property="openConfig" destination="USh-HP-gKv" id="MCL-o6-hpJ"/>
+                        <outlet property="openHelp" destination="hzX-kq-idn" id="70u-BV-P35"/>
                         <segue destination="q4A-1O-3yB" kind="custom" identifier="Onboard" customClass="ConfigurationSegue" customModule="SmartSleep" customModuleProvider="target" animates="NO" id="aMX-Tt-NDO"/>
                         <segue destination="Ihb-Id-X68" kind="custom" identifier="Today" customClass="ConfigurationSegue" customModule="SmartSleep" customModuleProvider="target" animates="NO" id="BDu-MU-xUx"/>
                     </connections>
@@ -1034,27 +1060,27 @@ smartsleep.ku.dk</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedtime" translatesAutoresizingMaskIntoConstraints="NO" id="c8x-SU-Mej">
-                                <rect key="frame" x="20" y="162" width="50" height="50"/>
+                                <rect key="frame" x="20" y="142" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="ZRe-LN-t6s"/>
                                     <constraint firstAttribute="height" constant="50" id="t5c-O5-wyl"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="QDJ-QY-e1r">
-                                <rect key="frame" x="250" y="162" width="50" height="50"/>
+                                <rect key="frame" x="250" y="142" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RTW-x7-MO2"/>
                                     <constraint firstAttribute="width" constant="50" id="n4y-Hy-1WW"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soT-EQ-Wq1">
-                                <rect key="frame" x="29.5" y="207" width="31.5" height="19.5"/>
+                                <rect key="frame" x="29.5" y="187" width="31.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mh-Kt-xbD">
-                                <rect key="frame" x="254" y="207" width="42" height="19.5"/>
+                                <rect key="frame" x="254" y="187" width="42" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1080,25 +1106,25 @@ smartsleep.ku.dk</string>
                                 </connections>
                             </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00 længste søvn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MAg-AV-Xff">
-                                <rect key="frame" x="80" y="177" width="160" height="20"/>
+                                <rect key="frame" x="80" y="157" width="160" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 afbrydelser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zD-Oc-Kj3">
-                                <rect key="frame" x="110.5" y="147" width="99" height="20"/>
+                                <rect key="frame" x="110.5" y="127" width="99" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 minutters uro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HB-uX-Kqy">
-                                <rect key="frame" x="102.5" y="207" width="115" height="20"/>
+                                <rect key="frame" x="102.5" y="187" width="115" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yv2-Sw-gkp" customClass="DashedArcView" customModule="SmartSleep" customModuleProvider="target">
-                                <rect key="frame" x="62" y="119" width="196" height="50"/>
+                                <rect key="frame" x="62" y="99" width="196" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a3h-UW-gIx"/>
@@ -1112,6 +1138,7 @@ smartsleep.ku.dk</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-E4-UFh">
                                 <rect key="frame" x="265" y="266" width="50" height="50"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="o2N-iJ-FDg"/>
                                     <constraint firstAttribute="height" constant="50" id="qjn-IJ-lNS"/>
@@ -1121,6 +1148,7 @@ smartsleep.ku.dk</string>
                                 <state key="normal" title="✕"/>
                                 <connections>
                                     <action selector="toggleRecord:" destination="Ihb-Id-X68" eventType="touchUpInside" id="OX5-wB-0dD"/>
+                                    <outletCollection property="gestureRecognizers" destination="P4w-QC-TFs" appends="YES" id="H7W-XQ-ZW3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1133,7 +1161,7 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="HXA-E4-UFh" firstAttribute="centerY" secondItem="dr2-ds-38h" secondAttribute="centerY" id="5ru-Hy-01c"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="DQW-1D-z1l" secondAttribute="trailing" constant="20" id="9Fm-Xv-Bzv"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerX" secondItem="7zD-Oc-Kj3" secondAttribute="centerX" id="Bjo-fD-Ita"/>
-                            <constraint firstItem="c8x-SU-Mej" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="Dsv-Og-exF"/>
+                            <constraint firstItem="c8x-SU-Mej" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" constant="-20" id="Dsv-Og-exF"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="dr2-ds-38h" secondAttribute="trailing" constant="16" id="ETt-4G-e4D"/>
                             <constraint firstItem="c8x-SU-Mej" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="EZ6-EH-aLs"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="top" secondItem="uaP-1L-oYk" secondAttribute="top" constant="10" id="FjO-3o-pHW"/>
@@ -1151,7 +1179,7 @@ smartsleep.ku.dk</string>
                             <constraint firstItem="Yv2-Sw-gkp" firstAttribute="leading" secondItem="c8x-SU-Mej" secondAttribute="trailing" constant="-8" id="ioB-oI-Dio"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="top" secondItem="Yv2-Sw-gkp" secondAttribute="bottom" constant="8" id="jKc-p1-4Y3"/>
                             <constraint firstItem="4mh-Kt-xbD" firstAttribute="top" secondItem="QDJ-QY-e1r" secondAttribute="bottom" constant="-5" id="nFI-Fn-Qoy"/>
-                            <constraint firstItem="QDJ-QY-e1r" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" id="ny2-Dm-GQ2"/>
+                            <constraint firstItem="QDJ-QY-e1r" firstAttribute="centerY" secondItem="dyj-c5-hJh" secondAttribute="centerY" constant="-20" id="ny2-Dm-GQ2"/>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="20" id="pC7-GQ-PIJ"/>
                             <constraint firstItem="rUd-Nd-PsC" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" id="pfi-SY-ftD"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="HXA-E4-UFh" secondAttribute="trailing" constant="5" id="q6x-Tv-1Ml"/>
@@ -1179,8 +1207,13 @@ smartsleep.ku.dk</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeZ-1p-s7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="zIo-Ck-JDa" customClass="MainTabDelegate" customModule="SmartSleep" customModuleProvider="target"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="P4w-QC-TFs">
+                    <connections>
+                        <action selector="pause" destination="Ihb-Id-X68" id="5HF-ha-4SG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1449.375" y="2407.394366197183"/>
+            <point key="canvasLocation" x="1451" y="2406"/>
         </scene>
         <!--Historik-->
         <scene sceneID="uUM-bk-c8f">
@@ -1349,6 +1382,22 @@ uro</string>
             <point key="canvasLocation" x="2259" y="3111"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="gaC-YV-PSp">
+            <objects>
+                <navigationController id="oq8-P6-TUR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C0F-V4-tJS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sRF-g0-Ssi" kind="relationship" relationship="rootViewController" id="xSk-ft-sOI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jT-Aj-nEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="3111"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="618-NS-8xG">
             <objects>
                 <navigationController id="tJf-EV-xWc" sceneMemberID="viewController">
@@ -1363,6 +1412,570 @@ uro</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgL-hv-U3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="690" y="3111"/>
+        </scene>
+        <!--Hvordan måles søvnrytmer-->
+        <scene sceneID="qtK-fN-jt5">
+            <objects>
+                <viewController id="sRF-g0-Ssi" customClass="ExplanationController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vzY-ni-idD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiF-5t-92Y">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Søvnrytmer måles ved at SmartSleep app’en i baggrunden holder øje med din aktivitet.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Rapporterede søvndata">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser, uro og din længste søvn for en anden søvnperiode. Tallene angiver din aktivitet i din søvnperiode - ikke hvor meget du har brugt din telefon resten af dagen.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Antal afbrydelser:">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Dette er et tal for hvor mange gange du har brugt din telefon i den periode hvor du burde sove.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Længste søvn:">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Dette er den længste uafbrudte søvnperiode imellem sengetid og morgen.
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Minutters uro:">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Dette er det samlede antal minutter du har brugt telefonen i den periode hvor du burde sove. 
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Dataetik">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Måling af søvnrytmer involverer at holde øje med om du bevæger dig og hvor roligt dit miljø er. Derfor har vi brug for at opsamle både lokation og lyddata i baggrunden.
+
+Din aktuelle position bliver på intet tidspunkt gemt, hverken i telefonen eller til forskning.
+
+Der bliver på intet tidspunkt optaget samtaler, musik eller andre informationer imens SmartSleep kører - kun antal decibel (dvs. Støjniveau) bliver målt.
+
+Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IiF-5t-92Y" firstAttribute="top" secondItem="rIn-xF-ewH" secondAttribute="top" id="9r1-oC-iAd"/>
+                            <constraint firstItem="IiF-5t-92Y" firstAttribute="trailing" secondItem="rIn-xF-ewH" secondAttribute="trailing" id="EsV-hG-Rcq"/>
+                            <constraint firstItem="IiF-5t-92Y" firstAttribute="bottom" secondItem="rIn-xF-ewH" secondAttribute="bottom" id="rwV-OH-S4S"/>
+                            <constraint firstItem="IiF-5t-92Y" firstAttribute="leading" secondItem="rIn-xF-ewH" secondAttribute="leading" id="yCn-eM-wIM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rIn-xF-ewH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hvordan måles søvnrytmer" id="rEj-Tw-isV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfP-YN-d1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759.375" y="3882.0422535211269"/>
         </scene>
         <!--Experimentet-->
         <scene sceneID="gPt-qf-VZp">
@@ -1425,9 +2038,9 @@ uro</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
                                 </constraints>
-                                <mutableString key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata, lokation og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+                                <string key="text">Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata, lokation og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
 
-Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau, lokation og aktivitetsdata bliver anonymiseret.</mutableString>
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau, lokation og aktivitetsdata bliver anonymiseret.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1497,7 +2110,7 @@ Alle personlige informationer bliver gemt seperat fra alle data som måtte blive
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
-        <segue reference="pXC-BK-k6a"/>
+        <segue reference="aMX-Tt-NDO"/>
         <segue reference="IpQ-s4-hrr"/>
     </inferredMetricsTieBreakers>
 </document>

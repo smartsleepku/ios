@@ -71,12 +71,17 @@ class AudioObserver: NSObject {
         running.on(.next(false))
     }
     
-    @objc func started() {
+    static func removeNotifications() {
         let nc = UNUserNotificationCenter.current()
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
+        LocationDelegate.removeNotifications()
+    }
+    
+    @objc func started() {
+        AudioObserver.removeNotifications()
         running.on(.next(true))
     }
     

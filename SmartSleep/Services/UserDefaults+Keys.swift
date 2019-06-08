@@ -10,7 +10,7 @@ import Foundation
 
 extension UserDefaults {
     public enum Key: String {
-        case attendeeCode, username, configuration, lastActivitySync, lastSleepSync, lastRestSync
+        case attendeeCode, username, configuration, lastActivitySync, lastSleepSync, lastRestSync, paused
     }
     
     func valueFor<T>(_ key: Key) -> T? {

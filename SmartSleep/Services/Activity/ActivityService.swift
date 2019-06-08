@@ -201,6 +201,10 @@ class ActivityService {
                                                   create: true)
                 .appendingPathComponent("\(activity.time.timeIntervalSinceReferenceDate).json")
             try json.write(to: tmp)
+            guard FileManager.default.fileExists(atPath: tmp.absoluteString.replacingOccurrences(of: "file://", with: "")) else {
+                NSLog("missing file: \(tmp)")
+                return
+            }
             let task = session.uploadTask(with: request, fromFile: tmp)
             task.activity = activity
             task.resume()

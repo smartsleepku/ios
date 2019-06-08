@@ -13,11 +13,14 @@ import Reachability
 class MainController: UIViewController {
     
     @IBOutlet weak var openConfig: UIButton!
+    @IBOutlet weak var openHelp: UIButton!
     @IBOutlet weak var tabBar: UITabBar!
 
     private var once = false
     private var bag = DisposeBag()
     private var total = 0
+    private weak var tonight: TonightController?
+    private weak var config: ConfigureController?
 
     private let reachability = Reachability()!
     private lazy var alert: UIAlertController = {
@@ -61,6 +64,20 @@ class MainController: UIViewController {
         nc.removeObserver(self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ConfigureController {
+            config = segue.destination as? ConfigureController
+        }
+        if segue.identifier == "Today" {
+            openConfig.isHidden = false
+            openHelp.isHidden = true
+            tonight = segue.destination as? TonightController
+        } else {
+            openConfig.isHidden = true
+            openHelp.isHidden = false
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -102,7 +119,8 @@ class MainController: UIViewController {
         performSegue(withIdentifier: "Today", sender: nil)
 
         if ConfigurationService.configuration == nil {
-            toggle()
+            openConfig.isHidden = true
+            openHelp.isHidden = false
             performSegue(withIdentifier: "Onboard", sender: nil)
         } else {
             AttendeeService.registerForPushNotifications(controller: self)
@@ -110,8 +128,11 @@ class MainController: UIViewController {
 
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.locationService.verifyAuthorization(controller: self)
-        delegate.locationService.start()
-        delegate.audioService.startRecording()
+        let ud = UserDefaults()
+        if (ud.valueFor(.paused) ?? false) == false {
+            delegate.locationService.start()
+            delegate.audioService.startRecording()
+        }
 
         reachability.whenUnreachable = { [weak self] _ in
             guard let this = self else { return }
@@ -139,12 +160,11 @@ class MainController: UIViewController {
         reachability.stopNotifier()
     }
     
-    @IBAction func toggle() {
-        openConfig.isHidden = !openConfig.isHidden
-    }
-    
     @IBAction func closeConfiguration(segue: UIStoryboardSegue) {
-        toggle()
+        openConfig.isHidden = false
+        openHelp.isHidden = true
+        tonight?.updateLabels()
+        tonight?.updateLastNight()
         let configuration = children
             .filter { $0 is ConfigureController }
             .first
