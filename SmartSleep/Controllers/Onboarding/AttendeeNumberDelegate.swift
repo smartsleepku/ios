@@ -30,7 +30,7 @@ class AttendeeNumberDelegate: OnboardingTextDelegate {
             .subscribe(onSuccess: { [weak self] valid in
                 self?.valid = valid
                 }, onError: { error in
-                    print(error)
+                    NSLog("\(error)")
             })
             .disposed(by: bag)
 

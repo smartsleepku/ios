@@ -37,7 +37,7 @@ class AudioObserver: NSObject {
                                                         trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                NSLog("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
             }
         }
 
@@ -64,7 +64,7 @@ class AudioObserver: NSObject {
                                                         trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                NSLog("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
             }
         }
 

@@ -127,7 +127,7 @@ class SleepStatusService: NSObject {
                 let loc = try JSONDecoder().decode(HasLocation.self, from: data!)
                 completion(loc.has_location)
             } catch let error {
-                print(error)
+                NSLog("\(error)")
             }
         }
         task.resume()
@@ -153,7 +153,7 @@ class SleepStatusService: NSObject {
                     result.append(Sleep(queryStatement: queryStatement!))
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -213,7 +213,7 @@ class SleepStatusService: NSObject {
             task.sleep = sleep
             task.resume()
         } catch let error {
-            print(error)
+            NSLog("\(error)")
             queue.addOperation {
                 completion.count -= 1
             }
@@ -249,7 +249,7 @@ class SleepStatusService: NSObject {
             task.sleep = sleeps.last!
             task.resume()
         } catch let error {
-            print(error)
+            NSLog("\(error)")
             queue.addOperation {
                 completion.count = 0
             }

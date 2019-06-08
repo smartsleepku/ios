@@ -20,7 +20,7 @@ extension Sleep {
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
             sqlite3_step(createTableStatement)
         } else {
-            print("CREATE TABLE statement could not be prepared.")
+            NSLog("CREATE TABLE statement could not be prepared.")
         }
         sqlite3_finalize(createTableStatement)
     }

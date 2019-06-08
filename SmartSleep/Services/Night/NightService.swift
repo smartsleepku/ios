@@ -52,7 +52,7 @@ class NightService {
                     result.append(Night(queryStatement: queryStatement!))
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -70,7 +70,7 @@ class NightService {
                     result = Int(sqlite3_column_int64(queryStatement, 0))
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -90,7 +90,7 @@ class NightService {
                     result = Night(queryStatement: queryStatement!)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -106,7 +106,7 @@ class NightService {
                 let first = self.restService.fetchFirstRestTime()
                 repeat {
                     (from, to) = NightService.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
-                    print("generating night from \(from) to \(to)...")
+                    NSLog("generating night from \(from) to \(to)...")
                     now = now.addingTimeInterval(-24 * 60 * 60)
                     let night = Night(
                         from: from,

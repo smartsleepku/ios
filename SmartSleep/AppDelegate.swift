@@ -49,10 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {
-                print("Error fetching remote instance ID: \(error)")
+                NSLog("Error fetching remote instance ID: \(error)")
             } else if let result = result {
                 self.attendeeService.sync(deviceToken: result.token)
-                print("Remote instance ID token: \(result.token)")
+                NSLog("Remote instance ID token: \(result.token)")
             }
         }
     }
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        print("handleEventsForBackgroundURLSession: \(identifier)")
+        NSLog("handleEventsForBackgroundURLSession: \(identifier)")
         completionHandler()
     }
     
@@ -130,7 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                         trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                NSLog("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
             }
         }
     }

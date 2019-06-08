@@ -147,7 +147,7 @@ class TonightController: UIViewController {
     func updateToggleLabel() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let service = delegate.audioService
-        print("toggle, recording \(service.recording)")
+        NSLog("toggle, recording \(service.recording)")
         if service.recording {
             toggleButton.setTitle("✕", for: .normal)
             toggleButton.tintColor = .red

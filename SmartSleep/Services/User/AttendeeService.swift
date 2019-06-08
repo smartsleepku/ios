@@ -31,14 +31,14 @@ fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelega
     weak var service: AttendeeService?
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("willPresent: \(notification.request.content)")
+        NSLog("willPresent: \(notification.request.content)")
         let userInfo = notification.request.content.userInfo
         Messaging.messaging().appDidReceiveMessage(userInfo)
         completionHandler([.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("didReceive: \(response.actionIdentifier)")
+        NSLog("didReceive: \(response.actionIdentifier)")
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.sleepStatusService.fetchStatus { hasLocation in
             guard hasLocation else { return }
@@ -65,9 +65,9 @@ class AttendeeService {
         Messaging.messaging().delegate = delegate
         InstanceID.instanceID().instanceID { [weak self] (result, error) in
             if let error = error {
-                print("Error fetching remote instance ID: \(error)")
+                NSLog("Error fetching remote instance ID: \(error)")
             } else if let result = result {
-                print("Remote instance ID token: \(result.token)")
+                NSLog("Remote instance ID token: \(result.token)")
                 self?.sync(deviceToken: result.token)
             }
         }
@@ -102,7 +102,7 @@ class AttendeeService {
         UNUserNotificationCenter.current()
             .requestAuthorization(options: options) {
                 granted, error in
-                print("Permission granted: \(granted)")
+                NSLog("Permission granted: \(granted)")
                 guard granted else {
                     AttendeeService.permissionDenied(controller: controller)
                     return

@@ -59,7 +59,7 @@ class WelcomeController: UIViewController {
         do {
             try reachability.startNotifier()
         } catch {
-            print("Unable to start notifier")
+            NSLog("Unable to start notifier")
         }
     }
     

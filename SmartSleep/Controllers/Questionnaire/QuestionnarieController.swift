@@ -31,7 +31,7 @@ class QuestionnarieController: UIViewController {
             .subscribe(onNext: { [weak self] survey in
                 self?.load(survey: survey)
             }, onError: { error in
-                print(error)
+                NSLog("\(error)")
             })
             .disposed(by: bag)
     }

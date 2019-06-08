@@ -31,7 +31,7 @@ class RestService {
                     result.append(Rest(queryStatement: queryStatement!))
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -58,7 +58,7 @@ class RestService {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -83,7 +83,7 @@ class RestService {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -110,7 +110,7 @@ class RestService {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -131,7 +131,7 @@ class RestService {
                     result = sqlite3_column_int64(queryStatement, 0)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }
@@ -155,7 +155,7 @@ class RestService {
                     result = Rest(queryStatement: queryStatement!)
                 }
             } else {
-                print("SELECT statement could not be prepared")
+                NSLog("SELECT statement could not be prepared")
             }
             sqlite3_finalize(queryStatement)
         }

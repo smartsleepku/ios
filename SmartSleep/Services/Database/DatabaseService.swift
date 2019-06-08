@@ -43,7 +43,7 @@ class DatabaseService {
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
             sqlite3_step(createTableStatement)
         } else {
-            print("CREATE TABLE statement could not be prepared.")
+            NSLog("CREATE TABLE statement could not be prepared.")
         }
         sqlite3_finalize(createTableStatement)
         
@@ -54,7 +54,7 @@ class DatabaseService {
             sqlite3_bind_text(insertStatement, 2, "0".cString(using: .utf8), -1, SQLITE_TRANSIENT)
             sqlite3_step(insertStatement)
         } else {
-            print("INSERT statement could not be prepared.")
+            NSLog("INSERT statement could not be prepared.")
         }
         sqlite3_finalize(insertStatement)
     }

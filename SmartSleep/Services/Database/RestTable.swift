@@ -20,7 +20,7 @@ extension Rest {
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
             sqlite3_step(createTableStatement)
         } else {
-            print("CREATE TABLE statement could not be prepared.")
+            NSLog("CREATE TABLE statement could not be prepared.")
         }
         sqlite3_finalize(createTableStatement)
     }
@@ -37,7 +37,7 @@ extension Rest {
         if id == nil { id = UUID().uuidString.lowercased() }
         service.queue.sync {
             let insertStatementString = "insert or replace into rests (id, resting, startTime, endTime) values (?, ?, ?, ?)"
-            print("inserting \(self)")
+            NSLog("inserting \(self)")
             var insertStatement: OpaquePointer? = nil
             if sqlite3_prepare_v2(service.db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
                 sqlite3_bind_text(insertStatement, 1, self.id, -1, SQLITE_TRANSIENT)
@@ -46,9 +46,9 @@ extension Rest {
                 if self.endTime != nil { sqlite3_bind_double(insertStatement, 4, self.endTime!.timeIntervalSince1970) }
                 else { sqlite3_bind_null(insertStatement, 4) }
                 sqlite3_step(insertStatement)
-                print("\(String(cString: sqlite3_errmsg(service.db)))")
+                NSLog("\(String(cString: sqlite3_errmsg(service.db)))")
             } else {
-                print("INSERT statement could not be prepared.")
+                NSLog("INSERT statement could not be prepared.")
             }
             sqlite3_finalize(insertStatement)
         }

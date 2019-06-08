@@ -45,7 +45,7 @@ class AudioService {
                 session.commitConfiguration()
                 session.startRunning()
             } catch let error {
-                print(error)
+                NSLog("\(error)")
             }
         }
         self.session = session

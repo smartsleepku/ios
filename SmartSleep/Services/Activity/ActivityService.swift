@@ -135,7 +135,7 @@ class ActivityService {
         current = completionHandler
         
         let handler: CMMotionActivityQueryHandler = { activities, error in
-            guard error == nil else { print(error!) ; return }
+            guard error == nil else { NSLog("\(error!)") ; return }
             
             completionHandler.subject = observable
             completionHandler.count = activities?.count ?? 0
@@ -168,7 +168,7 @@ class ActivityService {
                 
                 self.postActivity(event, completion: completionHandler)
                 
-                print("\(activity.startDate) - stationary: \(activity.stationary), confidence: \(activity.confidence.rawValue)")
+                NSLog("\(activity.startDate) - stationary: \(activity.stationary), confidence: \(activity.confidence.rawValue)")
             })
         }
         
@@ -205,7 +205,7 @@ class ActivityService {
             task.activity = activity
             task.resume()
         } catch let error {
-            print(error)
+            NSLog("\(error)")
             queue.addOperation {
                 completion.count -= 1
             }
