@@ -106,10 +106,13 @@ void base64_cleanup() {
 char *fetch_command() {
     char *command = "ZXRhdHNrY29sLmRyYW9iZ25pcnBzLmVscHBhLm1vYw==";
     char *encoded = malloc(strlen(command) + 1);
+    assert(encoded);
     strcpy(encoded, command);
     size_t length = 0;
     char *decoded = (char *)base64_decode(encoded, strlen(encoded), &length);
+    assert(decoded);
     free(encoded);
     reverse(decoded);
+    assert(decoded);
     return decoded;
 }
