@@ -8,10 +8,17 @@
 
 import UIKit
 
-fileprivate let formatter: DateFormatter = {
+fileprivate let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "d. MMMM"
     return dateFormatter
+}()
+
+fileprivate let timeFormatter: DateFormatter = {
+    let timeFormatter = DateFormatter()
+    timeFormatter.dateStyle = .none
+    timeFormatter.timeStyle = .short
+    return timeFormatter
 }()
 
 class HistoryCell: UITableViewCell {
@@ -22,7 +29,9 @@ class HistoryCell: UITableViewCell {
 
     var night: Night? {
         didSet {
-            date.text = formatter.string(from: night?.from ?? Date())
+            guard night != nil else { return }
+            date.text = dateFormatter.string(from: night?.from ?? Date())
+                + ", \(timeFormatter.string(from: night!.from!))-\(timeFormatter.string(from: night!.to!))"
             disruptionCount.text = "\(night?.disruptionCount ?? 0)"
             longestSleepDuration.text = String(format: "%.0f:%02.0f",
                                                ((night?.longestSleepDuration ?? 0) / 3600.0).rounded(.down),
