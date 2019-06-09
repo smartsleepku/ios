@@ -37,27 +37,31 @@ extension Night {
         unrestDuration = sqlite3_column_double(queryStatement, 5)
     }
     
+    func saveInline(_ service: DatabaseService) {
+        var statement: OpaquePointer? = nil
+        if self.id == nil {
+            let insertStatementString = "insert or replace into nights (\"from\", \"to\", disruptionCount, longestSleepDuration, unrestDuration) " +
+            "values (?, ?, ?, ?, ?)"
+            sqlite3_prepare_v2(service.db, insertStatementString, -1, &statement, nil)
+        } else {
+            let updateStatementString = "update nights set (\"from\" = ?, \"to\" = ?, disruptionCount = ?, longestSleepDuration = ?, unrestDuration = ?) " +
+            "where id = ?"
+            sqlite3_prepare_v2(service.db, updateStatementString, -1, &statement, nil)
+            sqlite3_bind_int64(statement, 6, Int64(self.id!))
+        }
+        sqlite3_bind_double(statement, 1, self.from!.timeIntervalSince1970)
+        sqlite3_bind_double(statement, 2, self.to!.timeIntervalSince1970)
+        sqlite3_bind_int64(statement, 3, Int64(self.disruptionCount!))
+        sqlite3_bind_double(statement, 4, self.longestSleepDuration!)
+        sqlite3_bind_double(statement, 5, self.unrestDuration!)
+        sqlite3_step(statement)
+        sqlite3_finalize(statement)
+    }
+    
     func save() {
         let service = DatabaseService.instance
         service.queue.async {
-            var statement: OpaquePointer? = nil
-            if self.id == nil {
-                let insertStatementString = "insert or replace into nights (\"from\", \"to\", disruptionCount, longestSleepDuration, unrestDuration) " +
-                "values (?, ?, ?, ?, ?)"
-                sqlite3_prepare_v2(service.db, insertStatementString, -1, &statement, nil)
-            } else {
-                let updateStatementString = "update nights set (\"from\" = ?, \"to\" = ?, disruptionCount = ?, longestSleepDuration = ?, unrestDuration = ?) " +
-                "where id = ?"
-                sqlite3_prepare_v2(service.db, updateStatementString, -1, &statement, nil)
-                sqlite3_bind_int64(statement, 6, Int64(self.id!))
-            }
-            sqlite3_bind_double(statement, 1, self.from!.timeIntervalSince1970)
-            sqlite3_bind_double(statement, 2, self.to!.timeIntervalSince1970)
-            sqlite3_bind_int64(statement, 3, Int64(self.disruptionCount!))
-            sqlite3_bind_double(statement, 4, self.longestSleepDuration!)
-            sqlite3_bind_double(statement, 5, self.unrestDuration!)
-            sqlite3_step(statement)
-            sqlite3_finalize(statement)
+            self.saveInline(service)
         }
     }
 

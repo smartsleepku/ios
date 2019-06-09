@@ -61,9 +61,11 @@ class DatabaseService {
     
     private static func openDatabase(_ path: String) -> OpaquePointer? {
         var db: OpaquePointer? = nil
-        if sqlite3_open(path, &db) == SQLITE_OK {
+        let result = sqlite3_open_v2(path, &db, SQLITE_OPEN_READWRITE|SQLITE_OPEN_FULLMUTEX|SQLITE_OPEN_CREATE, nil)
+        if result == SQLITE_OK {
             return db
         } else {
+            NSLog("Error opening db!")
             return nil
         }
     }

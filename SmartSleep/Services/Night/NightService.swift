@@ -12,6 +12,7 @@ import SQLite3
 
 class NightService {
 
+    private let lock = NSLock()
     private lazy var restService: RestService = {
         var delegate: AppDelegate? = nil
         if !Thread.isMainThread {
@@ -100,7 +101,7 @@ class NightService {
         return result
     }
     
-    private func purgeNights() {
+    func purgeNights() {
         let service = DatabaseService.instance
         service.queue.sync {
             var queryStatement: OpaquePointer? = nil
@@ -115,26 +116,31 @@ class NightService {
     
     func generateNights() -> Completable {
         return Completable.create { completable in
-            self.purgeNights()
-            self.queue.async {
-                var now = Date()
-                var from: Date
-                var to: Date
-                let first = self.restService.fetchFirstRestTime()
-                repeat {
-                    (from, to) = NightService.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
-                    NSLog("generating night from \(from) to \(to)...")
-                    now = now.addingTimeInterval(-24 * 60 * 60)
-                    let night = Night(
-                        from: from,
-                        to: to,
-                        disruptionCount: self.restService.fetchUnrestCount(from: from, to: to),
-                        longestSleepDuration: self.restService.fetchLongestRest(from: from, to: to),
-                        unrestDuration: self.restService.fetchTotalUnrest(from: from, to: to)
-                    )
-                    night.save()
-                } while from > first
-                completable(.completed)
+            DispatchQueue.global().async {
+                self.lock.lock()
+                let service = DatabaseService.instance
+                self.purgeNights()
+                self.queue.async {
+                    var now = Date()
+                    var from: Date
+                    var to: Date
+                    let first = self.restService.fetchFirstRestTime()
+                    repeat {
+                        (from, to) = NightService.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
+                        NSLog("generating night from \(from) to \(to)...")
+                        now = now.addingTimeInterval(-24 * 60 * 60)
+                        let night = Night(
+                            from: from,
+                            to: to,
+                            disruptionCount: self.restService.fetchUnrestCount(from: from, to: to),
+                            longestSleepDuration: self.restService.fetchLongestRest(from: from, to: to),
+                            unrestDuration: self.restService.fetchTotalUnrest(from: from, to: to)
+                        )
+                        night.saveInline(service)
+                    } while from > first
+                    self.lock.unlock()
+                    completable(.completed)
+                }
             }
             return Disposables.create()
         }
