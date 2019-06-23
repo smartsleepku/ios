@@ -167,6 +167,8 @@ class SleepStatusService: NSObject {
         let observable = PublishSubject<SleepProgressUpdate>()
         
         let completionHandler = CompletionHandler()
+        completionHandler.subject = observable
+        completionHandler.count = 1
         completionHandler.beginBackgroundTask()
         (backgroundSession.delegate as! Delegate).completion = completionHandler
         current = completionHandler
@@ -174,8 +176,6 @@ class SleepStatusService: NSObject {
         let ud = UserDefaults()
         let lastSync = ud.valueFor(.lastSleepSync) ?? Date(timeIntervalSinceNow: -24 * 60 * 60)
         let sleeps = fetch(from: lastSync, to: Date())
-        completionHandler.subject = observable
-        completionHandler.count = 1
 
         self.bulkPostSleep(sleeps, completion: completionHandler)
 

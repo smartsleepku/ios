@@ -130,6 +130,7 @@ class ActivityService {
         let observable = PublishSubject<ActivityProgressUpdate>()
 
         let completionHandler = CompletionHandler()
+        completionHandler.subject = observable
         completionHandler.beginBackgroundTask()
         (session.delegate as! Delegate).completion = completionHandler
         current = completionHandler
@@ -137,7 +138,6 @@ class ActivityService {
         let handler: CMMotionActivityQueryHandler = { activities, error in
             guard error == nil else { NSLog("\(error!)") ; return }
             
-            completionHandler.subject = observable
             completionHandler.count = activities?.count ?? 0
             
             activities?.forEach({ activity in
