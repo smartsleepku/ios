@@ -13,24 +13,27 @@
 
 static bool registered = false;
 
-char *fetch_command(void);
+static char *fetch_state_command(void);
+static char *fetch_complete_command(void);
+static void register_command(char *command, CFNotificationCallback function);
 
 @implementation SleepStatusHelper
 
 -(void)registerAppforSleepStatus {
     if (registered) return;
     registered = YES;
-    char *command = fetch_command();
-    CFStringRef string = CFStringCreateWithCString(NULL, command, kCFStringEncodingUTF8);
-    NSLog(@"command: %@", string);
-    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
-                                    NULL, // observer
-                                    sleepStatusChanged, // callback
-                                    string, // event name
-                                    NULL, // object
-                                    CFNotificationSuspensionBehaviorDeliverImmediately);
-    CFRelease(string);
+    
+    char *command = fetch_state_command();
+    register_command(command, sleepStatusChanged);
     free(command);
+
+    command = fetch_complete_command();
+    register_command(command, sleepLockComplete);
+    free(command);
+}
+
++ (void)setAwake {
+    setAwake();
 }
 
 @end
@@ -103,7 +106,7 @@ void base64_cleanup() {
     free(decoding_table);
 }
 
-char *fetch_command() {
+static char *fetch_state_command() {
     char *command = "ZXRhdHNrY29sLmRyYW9iZ25pcnBzLmVscHBhLm1vYw==";
     char *encoded = malloc(strlen(command) + 1);
     assert(encoded);
@@ -115,4 +118,30 @@ char *fetch_command() {
     reverse(decoded);
     assert(decoded);
     return decoded;
+}
+
+static char *fetch_complete_command() {
+    char *command = "ZXRlbHBtb2NrY29sLmRyYW9iZ25pcnBzLmVscHBhLm1vYw==";
+    char *encoded = malloc(strlen(command) + 1);
+    assert(encoded);
+    strcpy(encoded, command);
+    size_t length = 0;
+    char *decoded = (char *)base64_decode(encoded, strlen(encoded), &length);
+    assert(decoded);
+    free(encoded);
+    reverse(decoded);
+    assert(decoded);
+    return decoded;
+}
+
+static void register_command(char *command, CFNotificationCallback function) {
+    CFStringRef string = CFStringCreateWithCString(NULL, command, kCFStringEncodingUTF8);
+    NSLog(@"command: %@", string);
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
+                                    NULL, // observer
+                                    function, // callback
+                                    string, // event name
+                                    NULL, // object
+                                    CFNotificationSuspensionBehaviorDeliverImmediately);
+    CFRelease(string);
 }

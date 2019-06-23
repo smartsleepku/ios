@@ -21,6 +21,8 @@ class MainController: UIViewController {
     private var total = 0
     private weak var tonight: TonightController?
     private weak var config: ConfigureController?
+    
+    private var hasLocation = false
 
     private let reachability = Reachability()!
     private lazy var alert: UIAlertController = {
@@ -49,6 +51,7 @@ class MainController: UIViewController {
         super.awakeFromNib()
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.sleepStatusService.fetchStatus { hasLocation in
+            self.hasLocation = hasLocation
             guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
         }
@@ -84,6 +87,9 @@ class MainController: UIViewController {
     @objc func willEnterForeground() {
         viewWillAppear(true)
         viewDidAppear(true)
+        if hasLocation {
+            SleepStatusHelper.setAwake()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

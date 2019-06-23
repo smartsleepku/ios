@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 void sleepStatusChanged(CFNotificationCenterRef center, void *observer, CFNotificationName name, const void *object, CFDictionaryRef userInfo);
-
+void sleepLockComplete(CFNotificationCenterRef center, void *observer, CFNotificationName name, const void *object, CFDictionaryRef userInfo);
+void setAwake(void);
+void setSleeping(void);
 
 NS_ASSUME_NONNULL_END

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SleepStatusHelper : NSObject
 
 -(void)registerAppforSleepStatus;
++(void)setAwake;
 
 @end
 

@@ -18,3 +18,23 @@ void sleepStatusChanged(CFNotificationCenterRef center, void *observer, CFNotifi
     [SleepStatusService backgroundSync];
 }
 
+void sleepLockComplete(CFNotificationCenterRef center, void *observer, CFNotificationName name, const void *object, CFDictionaryRef userInfo) {
+    NSLog(@"sleep lock complete");
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+        setSleeping();
+    });
+}
+
+void setAwake() {
+    if (sleeping == false) return;
+    sleeping = false;
+    [SleepStatusService storeSleepUpdate: sleeping];
+    [SleepStatusService backgroundSync];
+}
+
+void setSleeping() {
+    if (sleeping == true) return;
+    sleeping = true;
+    [SleepStatusService storeSleepUpdate: sleeping];
+    [SleepStatusService backgroundSync];
+}
