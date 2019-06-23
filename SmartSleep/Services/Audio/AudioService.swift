@@ -60,16 +60,15 @@ class AudioService {
         AVCaptureDevice.requestAccess(for: .audio) { granted in
             guard granted == false else { return }
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: NSLocalizedString("Title",
+                let alert = UIAlertController(title: NSLocalizedString("VerifyTitle",
                                                                        tableName: "AudioService",
                                                                        bundle: .main,
                                                                        value: "Mikrofon",
                                                                        comment: ""),
-                                              message: NSLocalizedString("Body",
+                                              message: NSLocalizedString("VerifyBody",
                                                                          tableName: "AudioService",
                                                                          bundle: .main,
-                                                                         value: "Støjmåleren er nødvendig for at kunne måle søvnrytmer. " +
-                                                                                "Giv tilladelse til at bruge mikrofonen i Indstillinger.",
+                                                                         value: "Støjmåleren er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til at bruge mikrofonen i Indstillinger.",
                                                                          comment: ""),
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),

@@ -21,8 +21,7 @@ class WelcomeController: UIViewController {
                                       message: NSLocalizedString("Text",
                                                                  tableName: "Welcome",
                                                                  bundle: .main,
-                                                                 value: "Der er ingen forbindelse til server. " +
-                                                                        "Check din internetforbindelse og prøv igen.",
+                                                                 value: "Der er ingen forbindelse til server. Check din internetforbindelse og prøv igen.",
                                                                  comment: ""),
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),

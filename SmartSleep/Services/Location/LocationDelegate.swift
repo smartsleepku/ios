@@ -61,16 +61,15 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
         removeNotifications()
         let notificationContent = UNMutableNotificationContent()
         let nc = UNUserNotificationCenter.current()
-        notificationContent.title = NSLocalizedString("Title",
+        notificationContent.title = NSLocalizedString("LocationInterruptTitle",
                                                       tableName: "LocationService",
                                                       bundle: .main,
                                                       value: "SmartSleep afbrudt",
                                                       comment: "")
-        notificationContent.body = NSLocalizedString("Body",
+        notificationContent.body = NSLocalizedString("LocationInterruptBody",
                                                      tableName: "LocationService",
                                                      bundle: .main,
-                                                     value: "SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. " +
-                                                        "Start SmartSleep inden du går i seng.",
+                                                     value: "SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.",
                                                      comment: "")
         notificationContent.sound = .default
         notificationContent.badge = 1

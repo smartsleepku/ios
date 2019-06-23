@@ -41,8 +41,7 @@ class LocationService {
                                               message: NSLocalizedString("Body",
                                                                          tableName: "LocationService",
                                                                          bundle: .main,
-                                                                         value: "Lokation er nødvendig for at kunne måle søvnrytmer. " +
-                                                                            "Giv tilladelse til altid at bruge lokation i Indstillinger.",
+                                                                         value: "Lokation er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til altid at bruge lokation i Indstillinger.",
                                                                          comment: ""),
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),

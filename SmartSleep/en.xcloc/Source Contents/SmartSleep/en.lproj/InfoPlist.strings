@@ -1,0 +1,16 @@
+/* Bundle name */
+"CFBundleName" = "SmartSleep";
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "SmartSleep needs to record volume levels to monitor your sleep patterrns";
+/* Privacy - Location Always and When In Use Usage Description */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "SmartSleep needs location information to monitor your sleep patterrns. Choose \"Always Allow\" to ensure that sleep patterns are correctly monitored.";
+/* Privacy - Location Always Usage Description */
+"NSLocationAlwaysUsageDescription" = "SmartSleep needs location information to monitor your sleep patterrns. Choose \"Always Allow\" to ensure that sleep patterns are correctly monitored.";
+/* Privacy - Location Usage Description */
+"NSLocationUsageDescription" = "SmartSleep needs location information to monitor your sleep patterrns";
+/* Privacy - Location When In Use Usage Description */
+"NSLocationWhenInUseUsageDescription" = "SmartSleep needs location information to monitor your sleep patterrns. Choose \"Always Allow\" to ensure that sleep patterns are correctly monitored.";
+/* Privacy - Microphone Usage Description */
+"NSMicrophoneUsageDescription" = "SmartSleep needs to record volume levels to monitor your sleep patterrns";
+/* Privacy - Motion Usage Description */
+"NSMotionUsageDescription" = "SmartSleep needs to access your motion data to monitor your sleep patterrns";

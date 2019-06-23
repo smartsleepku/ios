@@ -114,8 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationContent.body = NSLocalizedString("Body",
                                                      tableName: "AppDelegate",
                                                      bundle: .main,
-                                                     value: "SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. " +
-                                                        "Start SmartSleep inden du går i seng.",
+                                                     value: "SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.",
                                                      comment: "")
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
         let notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.app.interrupted",

@@ -19,16 +19,15 @@ class AudioObserver: NSObject {
     
     @objc func ended() {
         var notificationContent = UNMutableNotificationContent()
-        notificationContent.title = NSLocalizedString("Title",
+        notificationContent.title = NSLocalizedString("InterruptTitle",
                                                       tableName: "AudioNotification",
                                                       bundle: .main,
                                                       value: "Støjmåler afbrudt",
                                                       comment: "")
-        notificationContent.body = NSLocalizedString("Body",
+        notificationContent.body = NSLocalizedString("InterruptBody",
                                                      tableName: "AudioNotification",
                                                      bundle: .main,
-                                                     value: "Vi kan måle din aktivitet, men ikke hvor rolig du er uden støjmåleren. " +
-                                                            "Start støjmåleren i SmartSleep inden du går i seng.",
+                                                     value: "Vi kan måle din aktivitet, men ikke hvor rolig du er uden støjmåleren. Start støjmåleren i SmartSleep inden du går i seng.",
                                                      comment: "")
         notificationContent.badge = 1
         var notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
@@ -50,7 +49,7 @@ class AudioObserver: NSObject {
         notificationContent.body = NSLocalizedString("SleepBody",
                                                      tableName: "AudioNotification",
                                                      bundle: .main,
-                                                     value: "Åbn SmartSleep for at starte støjmåleren nu.",
+                                                     value: "Husk at aktivere din SmartSleep app, før du går i seng",
                                                      comment: "")
         notificationContent.sound = .default
         notificationContent.badge = 1

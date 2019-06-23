@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="SmartSleep/Base.lproj/Main.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="0Pi-FZ-TE6.text">
+        <source>Start</source>
+        <target>Start</target>
+        <note>Class = "UILabel"; text = "Start"; ObjectID = "0Pi-FZ-TE6";</note>
+      </trans-unit>
+      <trans-unit id="0kZ-0g-Ga6.text">
+        <source>DELTAGER NUMMER</source>
+        <target>DELTAGER NUMMER</target>
+        <note>Class = "UILabel"; text = "DELTAGER NUMMER"; ObjectID = "0kZ-0g-Ga6";</note>
+      </trans-unit>
+      <trans-unit id="1P7-Fj-rbU.text">
+        <source>Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata, lokation og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau, lokation og aktivitetsdata bliver anonymiseret.</source>
+        <target>Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata, lokation og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.
+
+Alle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau, lokation og aktivitetsdata bliver anonymiseret.</target>
+        <note>Class = "UITextView"; text = "Vi beskytter alle informationer om dit privatliv og anonymiserer al indsamlet data før den forlader din telefon.  Vi beder om adgang at sende notifikationer og adgang til dine aktivitetsdata, lokation og støjniveau, alle er vigtige for at kunne indsamle informationer om hvor meget du har bevæget dig og hvor meget du har sovet.\n\nAlle personlige informationer bliver gemt seperat fra alle data som måtte blive indsamlet. Støjniveau, lokation og aktivitetsdata bliver anonymiseret."; ObjectID = "1P7-Fj-rbU";</note>
+      </trans-unit>
+      <trans-unit id="2kA-dD-VZ5.text">
+        <source>7:00</source>
+        <target>7:00</target>
+        <note>Class = "UILabel"; text = "7:00"; ObjectID = "2kA-dD-VZ5";</note>
+      </trans-unit>
+      <trans-unit id="4PB-DW-wC2.text">
+        <source>minutters
+uro</source>
+        <target>minutters
+uro</target>
+        <note>Class = "UILabel"; text = "minutters\nuro"; ObjectID = "4PB-DW-wC2";</note>
+      </trans-unit>
+      <trans-unit id="4mh-Kt-xbD.text">
+        <source>23:00</source>
+        <target>23:00</target>
+        <note>Class = "UILabel"; text = "23:00"; ObjectID = "4mh-Kt-xbD";</note>
+      </trans-unit>
+      <trans-unit id="4zF-zA-ogZ.text">
+        <source>5</source>
+        <target>5</target>
+        <note>Class = "UILabel"; text = "5"; ObjectID = "4zF-zA-ogZ";</note>
+      </trans-unit>
+      <trans-unit id="5Wq-We-L1f.title">
+        <source>Experimentet</source>
+        <target>Experimentet</target>
+        <note>Class = "UINavigationItem"; title = "Experimentet"; ObjectID = "5Wq-We-L1f";</note>
+      </trans-unit>
+      <trans-unit id="6ei-Sc-4Cq.text">
+        <source>KODEORDET MÅ IKKE VÆRE TOMT</source>
+        <target>KODEORDET MÅ IKKE VÆRE TOMT</target>
+        <note>Class = "UILabel"; text = "KODEORDET MÅ IKKE VÆRE TOMT"; ObjectID = "6ei-Sc-4Cq";</note>
+      </trans-unit>
+      <trans-unit id="7zD-Oc-Kj3.text">
+        <source>0 afbrydelser</source>
+        <target>0 afbrydelser</target>
+        <note>Class = "UILabel"; text = "0 afbrydelser"; ObjectID = "7zD-Oc-Kj3";</note>
+      </trans-unit>
+      <trans-unit id="8at-cY-YqS.text">
+        <source>23:00</source>
+        <target>23:00</target>
+        <note>Class = "UILabel"; text = "23:00"; ObjectID = "8at-cY-YqS";</note>
+      </trans-unit>
+      <trans-unit id="9HB-uX-Kqy.text">
+        <source>0 minutters uro</source>
+        <target>0 minutters uro</target>
+        <note>Class = "UILabel"; text = "0 minutters uro"; ObjectID = "9HB-uX-Kqy";</note>
+      </trans-unit>
+      <trans-unit id="37l-r7-PxL.text">
+        <source>8. Juli</source>
+        <target>8. Juli</target>
+        <note>Class = "UILabel"; text = "8. Juli"; ObjectID = "37l-r7-PxL";</note>
+      </trans-unit>
+      <trans-unit id="AfK-IL-Phm.text">
+        <source>afbrydelser</source>
+        <target>afbrydelser</target>
+        <note>Class = "UILabel"; text = "afbrydelser"; ObjectID = "AfK-IL-Phm";</note>
+      </trans-unit>
+      <trans-unit id="CRW-Ef-IIo.text">
+        <source>4:25</source>
+        <target>4:25</target>
+        <note>Class = "UILabel"; text = "4:25"; ObjectID = "CRW-Ef-IIo";</note>
+      </trans-unit>
+      <trans-unit id="CZD-VP-rhL.text">
+        <source>Start</source>
+        <target>Start</target>
+        <note>Class = "UILabel"; text = "Start"; ObjectID = "CZD-VP-rhL";</note>
+      </trans-unit>
+      <trans-unit id="DQW-1D-z1l.text">
+        <source>Din søvn</source>
+        <target>Din søvn</target>
+        <note>Class = "UILabel"; text = "Din søvn"; ObjectID = "DQW-1D-z1l";</note>
+      </trans-unit>
+      <trans-unit id="GL1-fo-WG2.text">
+        <source>Angiv et sikkert kodeord, så ingen andre kan se dine søvnvaner</source>
+        <target>Angiv et sikkert kodeord, så ingen andre kan se dine søvnvaner</target>
+        <note>Class = "UILabel"; text = "Angiv et sikkert kodeord, så ingen andre kan se dine søvnvaner"; ObjectID = "GL1-fo-WG2";</note>
+      </trans-unit>
+      <trans-unit id="HBA-Fu-Tbj.text">
+        <source>I nat</source>
+        <target>I nat</target>
+        <note>Class = "UILabel"; text = "I nat"; ObjectID = "HBA-Fu-Tbj";</note>
+      </trans-unit>
+      <trans-unit id="HXA-E4-UFh.normalTitle">
+        <source>✕</source>
+        <target>✕</target>
+        <note>Class = "UIButton"; normalTitle = "✕"; ObjectID = "HXA-E4-UFh";</note>
+      </trans-unit>
+      <trans-unit id="IfB-6M-Uac.text">
+        <source>7:00</source>
+        <target>7:00</target>
+        <note>Class = "UILabel"; text = "7:00"; ObjectID = "IfB-6M-Uac";</note>
+      </trans-unit>
+      <trans-unit id="J7Q-nI-gWU.title">
+        <source>Experimentet</source>
+        <target>Experimentet</target>
+        <note>Class = "UITabBarItem"; title = "Experimentet"; ObjectID = "J7Q-nI-gWU";</note>
+      </trans-unit>
+      <trans-unit id="MAg-AV-Xff.text">
+        <source>0:00 længste søvn</source>
+        <target>0:00 længste søvn</target>
+        <note>Class = "UILabel"; text = "0:00 længste søvn"; ObjectID = "MAg-AV-Xff";</note>
+      </trans-unit>
+      <trans-unit id="Mdl-CO-gH8.text">
+        <source>Sover du godt nok?</source>
+        <target>Sover du godt nok?</target>
+        <note>Class = "UILabel"; text = "Sover du godt nok?"; ObjectID = "Mdl-CO-gH8";</note>
+      </trans-unit>
+      <trans-unit id="Nc7-3G-hLu.normalTitle">
+        <source>OK</source>
+        <target>OK</target>
+        <note>Class = "UIButton"; normalTitle = "OK"; ObjectID = "Nc7-3G-hLu";</note>
+      </trans-unit>
+      <trans-unit id="PoR-1j-uIZ.normalTitle">
+        <source>Start</source>
+        <target>Start</target>
+        <note>Class = "UIButton"; normalTitle = "Start"; ObjectID = "PoR-1j-uIZ";</note>
+      </trans-unit>
+      <trans-unit id="Rid-Y6-zyh.title">
+        <source>Opkald</source>
+        <target>Opkald</target>
+        <note>Class = "UINavigationItem"; title = "Opkald"; ObjectID = "Rid-Y6-zyh";</note>
+      </trans-unit>
+      <trans-unit id="SO1-kg-bCw.text">
+        <source>EMAIL ADRESSE</source>
+        <target>EMAIL ADRESSE</target>
+        <note>Class = "UILabel"; text = "EMAIL ADRESSE"; ObjectID = "SO1-kg-bCw";</note>
+      </trans-unit>
+      <trans-unit id="SnO-Ek-QMj.text">
+        <source>UGYLDIGT DETAGER NUMMER</source>
+        <target>UGYLDIGT DETAGER NUMMER</target>
+        <note>Class = "UILabel"; text = "UGYLDIGT DETAGER NUMMER"; ObjectID = "SnO-Ek-QMj";</note>
+      </trans-unit>
+      <trans-unit id="UWS-TM-PI3.title">
+        <source>Historik</source>
+        <target>Historik</target>
+        <note>Class = "UINavigationItem"; title = "Historik"; ObjectID = "UWS-TM-PI3";</note>
+      </trans-unit>
+      <trans-unit id="Ubh-uQ-Whv.text">
+        <source>hverdage</source>
+        <target>hverdage</target>
+        <note>Class = "UILabel"; text = "hverdage"; ObjectID = "Ubh-uQ-Whv";</note>
+      </trans-unit>
+      <trans-unit id="UnS-mH-tSr.text">
+        <source>23:00</source>
+        <target>23:00</target>
+        <note>Class = "UILabel"; text = "23:00"; ObjectID = "UnS-mH-tSr";</note>
+      </trans-unit>
+      <trans-unit id="Wp2-ic-Koc.text">
+        <source>UGYLDIG EMAIL ADRESSE</source>
+        <target>UGYLDIG EMAIL ADRESSE</target>
+        <note>Class = "UILabel"; text = "UGYLDIG EMAIL ADRESSE"; ObjectID = "Wp2-ic-Koc";</note>
+      </trans-unit>
+      <trans-unit id="XB4-Wy-pxN.text">
+        <source>længste
+søvn</source>
+        <target>længste
+søvn</target>
+        <note>Class = "UILabel"; text = "længste\nsøvn"; ObjectID = "XB4-Wy-pxN";</note>
+      </trans-unit>
+      <trans-unit id="XZ6-kA-tSo.text">
+        <source>Hvornår går du i seng?</source>
+        <target>Hvornår går du i seng?</target>
+        <note>Class = "UILabel"; text = "Hvornår går du i seng?"; ObjectID = "XZ6-kA-tSo";</note>
+      </trans-unit>
+      <trans-unit id="Yck-u7-07B.text">
+        <source>Start</source>
+        <target>Start</target>
+        <note>Class = "UILabel"; text = "Start"; ObjectID = "Yck-u7-07B";</note>
+      </trans-unit>
+      <trans-unit id="Zi3-ve-RWW.text">
+        <source>hverdage</source>
+        <target>hverdage</target>
+        <note>Class = "UILabel"; text = "hverdage"; ObjectID = "Zi3-ve-RWW";</note>
+      </trans-unit>
+      <trans-unit id="axV-Mp-kFH.text">
+        <source>Vi deler ikke din email adresse med andre og vi sender dig kun informationer der er relevante for dette søvn eksperiment</source>
+        <target>Vi deler ikke din email adresse med andre og vi sender dig kun informationer der er relevante for dette søvn eksperiment</target>
+        <note>Class = "UILabel"; text = "Vi deler ikke din email adresse med andre og vi sender dig kun informationer der er relevante for dette søvn eksperiment"; ObjectID = "axV-Mp-kFH";</note>
+      </trans-unit>
+      <trans-unit id="dMM-jM-XlJ.text">
+        <source>Hvornår sover du?</source>
+        <target>Hvornår sover du?</target>
+        <note>Class = "UILabel"; text = "Hvornår sover du?"; ObjectID = "dMM-jM-XlJ";</note>
+      </trans-unit>
+      <trans-unit id="dr2-ds-38h.text">
+        <source>Nuværende støjniveau: 0 dB</source>
+        <target>Nuværende støjniveau: 0 dB</target>
+        <note>Class = "UILabel"; text = "Nuværende støjniveau: 0 dB"; ObjectID = "dr2-ds-38h";</note>
+      </trans-unit>
+      <trans-unit id="eZt-oD-HMZ.normalTitle">
+        <source>OK</source>
+        <target>OK</target>
+        <note>Class = "UIButton"; normalTitle = "OK"; ObjectID = "eZt-oD-HMZ";</note>
+      </trans-unit>
+      <trans-unit id="ech-o3-CJb.text">
+        <source>22</source>
+        <target>22</target>
+        <note>Class = "UILabel"; text = "22"; ObjectID = "ech-o3-CJb";</note>
+      </trans-unit>
+      <trans-unit id="hzX-kq-idn.normalTitle">
+        <source>?</source>
+        <target>?</target>
+        <note>Class = "UIButton"; normalTitle = "?"; ObjectID = "hzX-kq-idn";</note>
+      </trans-unit>
+      <trans-unit id="l1K-r6-gkJ.text">
+        <source>EKSPERIMENTET</source>
+        <target>EKSPERIMENTET</target>
+        <note>Class = "UILabel"; text = "EKSPERIMENTET"; ObjectID = "l1K-r6-gkJ";</note>
+      </trans-unit>
+      <trans-unit id="oZo-Ri-ceC.text">
+        <source>Start</source>
+        <target>Start</target>
+        <note>Class = "UILabel"; text = "Start"; ObjectID = "oZo-Ri-ceC";</note>
+      </trans-unit>
+      <trans-unit id="pSV-gU-5El.text">
+        <source>Ingen upbesvarede opkald</source>
+        <target>Ingen upbesvarede opkald</target>
+        <note>Class = "UILabel"; text = "Ingen upbesvarede opkald"; ObjectID = "pSV-gU-5El";</note>
+      </trans-unit>
+      <trans-unit id="rEj-Tw-isV.title">
+        <source>Hvordan måles søvnrytmer</source>
+        <target>Hvordan måles søvnrytmer</target>
+        <note>Class = "UINavigationItem"; title = "Hvordan måles søvnrytmer"; ObjectID = "rEj-Tw-isV";</note>
+      </trans-unit>
+      <trans-unit id="ref-fa-G8k.title">
+        <source>Søvn råd</source>
+        <target>Søvn råd</target>
+        <note>Class = "UITabBarItem"; title = "Søvn råd"; ObjectID = "ref-fa-G8k";</note>
+      </trans-unit>
+      <trans-unit id="rkC-OK-y8G.text">
+        <source>KODEORD</source>
+        <target>KODEORD</target>
+        <note>Class = "UILabel"; text = "KODEORD"; ObjectID = "rkC-OK-y8G";</note>
+      </trans-unit>
+      <trans-unit id="sHM-lx-Q5T.text">
+        <source>Indlæser søvndata</source>
+        <target>Indlæser søvndata</target>
+        <note>Class = "UILabel"; text = "Indlæser søvndata"; ObjectID = "sHM-lx-Q5T";</note>
+      </trans-unit>
+      <trans-unit id="soT-EQ-Wq1.text">
+        <source>7:00</source>
+        <target>7:00</target>
+        <note>Class = "UILabel"; text = "7:00"; ObjectID = "soT-EQ-Wq1";</note>
+      </trans-unit>
+      <trans-unit id="uxf-5V-u33.text">
+        <source>weekender</source>
+        <target>weekender</target>
+        <note>Class = "UILabel"; text = "weekender"; ObjectID = "uxf-5V-u33";</note>
+      </trans-unit>
+      <trans-unit id="vAP-Ek-5s9.normalTitle">
+        <source>OK</source>
+        <target>OK</target>
+        <note>Class = "UIButton"; normalTitle = "OK"; ObjectID = "vAP-Ek-5s9";</note>
+      </trans-unit>
+      <trans-unit id="vY0-LM-GOH.text">
+        <source>Inden du starter skal du have
+deltaget i undersøgelsen på
+smartsleep.ku.dk</source>
+        <target>Inden du starter skal du have
+deltaget i undersøgelsen på
+smartsleep.ku.dk</target>
+        <note>Class = "UILabel"; text = "Inden du starter skal du have\ndeltaget i undersøgelsen på\nsmartsleep.ku.dk"; ObjectID = "vY0-LM-GOH";</note>
+      </trans-unit>
+      <trans-unit id="vdg-j7-faJ.text">
+        <source>Mangler du et deltager nummer?
+
+Inden du starter skal du have
+deltaget i undersøgelsen på
+smartsleep.ku.dk</source>
+        <target>Mangler du et deltager nummer?
+
+Inden du starter skal du have
+deltaget i undersøgelsen på
+smartsleep.ku.dk</target>
+        <note>Class = "UILabel"; text = "Mangler du et deltager nummer?\n\nInden du starter skal du have\ndeltaget i undersøgelsen på\nsmartsleep.ku.dk"; ObjectID = "vdg-j7-faJ";</note>
+      </trans-unit>
+      <trans-unit id="yF4-0O-TTU.text">
+        <source>SmartSleep</source>
+        <target>SmartSleep</target>
+        <note>Class = "UILabel"; text = "SmartSleep"; ObjectID = "yF4-0O-TTU";</note>
+      </trans-unit>
+      <trans-unit id="zYJ-0W-6EO.title">
+        <source>Historik</source>
+        <target>Historik</target>
+        <note>Class = "UITabBarItem"; title = "Historik"; ObjectID = "zYJ-0W-6EO";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/AppDelegate.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="Body">
+        <source>SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.</source>
+        <target>SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title">
+        <source>SmartSleep afbrudt</source>
+        <target>SmartSleep afbrudt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/AudioNotification.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="InterruptBody">
+        <source>Vi kan måle din aktivitet, men ikke hvor rolig du er uden støjmåleren. Start støjmåleren i SmartSleep inden du går i seng.</source>
+        <target>Vi kan måle din aktivitet, men ikke hvor rolig du er uden støjmåleren. Start støjmåleren i SmartSleep inden du går i seng.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="InterruptTitle">
+        <source>Støjmåler afbrudt</source>
+        <target>Støjmåler afbrudt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SleepBody">
+        <source>Husk at aktivere din SmartSleep app, før du går i seng</source>
+        <target>Husk at aktivere din SmartSleep app, før du går i seng</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="SleepTitle">
+        <source>Sov godt</source>
+        <target>Sov godt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/AudioService.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="Body">
+        <source>Notifikationer er nødvendige for at kunne repportere søvnrytmer. Giv tilladelse til at bruge notifikationer i Indstillinger.</source>
+        <target>Notifikationer er nødvendige for at kunne repportere søvnrytmer. Giv tilladelse til at bruge notifikationer i Indstillinger.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title">
+        <source>Notifikationer</source>
+        <target>Notifikationer</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="VerifyBody">
+        <source>Støjmåleren er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til at bruge mikrofonen i Indstillinger.</source>
+        <target>Støjmåleren er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til at bruge mikrofonen i Indstillinger.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="VerifyTitle">
+        <source>Mikrofon</source>
+        <target>Mikrofon</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>SmartSleep</source>
+        <target>SmartSleep</target>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSCameraUsageDescription">
+        <source>SmartSleep needs to record volume levels to monitor your sleep patterrns</source>
+        <target>SmartSleep needs to record volume levels to monitor your sleep patterrns</target>
+        <note>Privacy - Camera Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationAlwaysAndWhenInUseUsageDescription">
+        <source>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</source>
+        <target>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</target>
+        <note>Privacy - Location Always and When In Use Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationAlwaysUsageDescription">
+        <source>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</source>
+        <target>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</target>
+        <note>Privacy - Location Always Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationUsageDescription">
+        <source>SmartSleep needs location information to monitor your sleep patterrns</source>
+        <target>SmartSleep needs location information to monitor your sleep patterrns</target>
+        <note>Privacy - Location Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSLocationWhenInUseUsageDescription">
+        <source>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</source>
+        <target>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</target>
+        <note>Privacy - Location When In Use Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSMicrophoneUsageDescription">
+        <source>SmartSleep needs to record volume levels to monitor your sleep patterrns</source>
+        <target>SmartSleep needs to record volume levels to monitor your sleep patterrns</target>
+        <note>Privacy - Microphone Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSMotionUsageDescription">
+        <source>SmartSleep needs to access your motion data to monitor your sleep patterrns</source>
+        <target>SmartSleep needs to access your motion data to monitor your sleep patterrns</target>
+        <note>Privacy - Motion Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="OK">
+        <source>OK</source>
+        <target>OK</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/LocationService.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="Body">
+        <source>Lokation er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til altid at bruge lokation i Indstillinger.</source>
+        <target>Lokation er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til altid at bruge lokation i Indstillinger.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="LocationInterruptBody">
+        <source>SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.</source>
+        <target>SmartSleep skal køre i baggrunden for at kunne måle søvnrytmer. Start SmartSleep inden du går i seng.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="LocationInterruptTitle">
+        <source>SmartSleep afbrudt</source>
+        <target>SmartSleep afbrudt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title">
+        <source>Lokation</source>
+        <target>Lokation</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/Main.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="DisruptionCount">
+        <source>%d afbrydelser</source>
+        <target>%d afbrydelser</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="LongestSleepDuration">
+        <source>%1$.0f:%2$.0f længste søvn</source>
+        <target>%1$.0f:%2$.0f længste søvn</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title">
+        <source>Ingen Forbindelse</source>
+        <target>Ingen Forbindelse</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="UnrestDuration">
+        <source>%.0f minutters uro</source>
+        <target>%.0f minutters uro</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/Tonight.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="Continue">
+        <source>Fortsæt</source>
+        <target>Fortsæt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="CurrentPower">
+        <source>Nuværende støjniveau: %d dB</source>
+        <target>Nuværende støjniveau: %d dB</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="PauseAction">
+        <source>Stop</source>
+        <target>Stop</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="PauseText">
+        <source>Stop al monitorering af søvnrytmer</source>
+        <target>Stop al monitorering af søvnrytmer</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="PauseTitle">
+        <source>Pause</source>
+        <target>Pause</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SmartSleep/en.lproj/Welcome.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.2.1" build-num="10E1001"/>
+    </header>
+    <body>
+      <trans-unit id="Text">
+        <source>Der er ingen forbindelse til server. Check din internetforbindelse og prøv igen.</source>
+        <target>Der er ingen forbindelse til server. Check din internetforbindelse og prøv igen.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title">
+        <source>Ingen Forbindelse</source>
+        <target>Ingen Forbindelse</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
