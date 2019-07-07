@@ -75,6 +75,7 @@
 		F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C760382272200400FC71FE /* SleepStatusUpdate.swift */; };
 		F2C7603C22740C1000FC71FE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7603A22740C0F00FC71FE /* Activity.swift */; };
 		F2C7603D22740C1000FC71FE /* ActivityProgressUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C7603B22740C0F00FC71FE /* ActivityProgressUpdate.swift */; };
+		F2D004CB22D1FAE800993B1F /* TonightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D004CA22D1FAE800993B1F /* TonightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -166,6 +167,7 @@
 		F2C760382272200400FC71FE /* SleepStatusUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatusUpdate.swift; sourceTree = "<group>"; };
 		F2C7603A22740C0F00FC71FE /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		F2C7603B22740C0F00FC71FE /* ActivityProgressUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProgressUpdate.swift; sourceTree = "<group>"; };
+		F2D004CA22D1FAE800993B1F /* TonightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonightView.swift; sourceTree = "<group>"; };
 		F3DFFEFF131AE5FE0593E76B /* Pods-SmartSleep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartSleep.debug.xcconfig"; path = "Target Support Files/Pods-SmartSleep/Pods-SmartSleep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				F20AD04C2229C5AC007C63C5 /* DashedLineView.swift */,
 				F28E13BE225B3C89001075A8 /* DashedArcView.swift */,
 				F243258322AC20DA005F64D1 /* CALayer+UIColor.swift */,
+				F2D004CA22D1FAE800993B1F /* TonightView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				F21C99092205A504003D5243 /* AppDelegate.swift in Sources */,
 				F28E13BD225A9000001075A8 /* HistoryDelegate.swift in Sources */,
 				F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */,
+				F2D004CB22D1FAE800993B1F /* TonightView.swift in Sources */,
 				F20AD0382222B10D007C63C5 /* EmailValidator.swift in Sources */,
 				F26DF88E226765A200D7E23F /* SleepStatusHelperCallback.m in Sources */,
 				F2AC824D22467C0D00AA3FBE /* Rest.swift in Sources */,

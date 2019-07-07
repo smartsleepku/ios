@@ -83,7 +83,7 @@ class AttendeeService {
                                           message: NSLocalizedString("Body",
                                                                      tableName: "AudioService",
                                                                      bundle: .main,
-                                                                     value: "Notifikationer er nødvendige for at kunne repportere søvnrytmer. Giv tilladelse til at bruge notifikationer i Indstillinger.",
+                                                                     value: "Notifikationer er nødvendige for at kunne måle din natlige skærmaktivitet. Giv venligst tilladelse til at bruge notifikationer i indstillinger.",
                                                                      comment: ""),
                                           preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),

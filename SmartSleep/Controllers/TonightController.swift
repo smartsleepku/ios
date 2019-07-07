@@ -101,14 +101,14 @@ class TonightController: UIViewController {
         disruptionCount.text = String(format: NSLocalizedString("DisruptionCount",
                                                                 tableName: "Main",
                                                                 bundle: .main,
-                                                                value: "%d afbrydelser",
+                                                                value: "%d skærmaktiveringer",
                                                                 comment: ""),
                                       night?.disruptionCount ?? 0
         )
         longestSleepDuration.text = String(format: NSLocalizedString("LongestSleepDuration",
                                                                      tableName: "Main",
                                                                      bundle: .main,
-                                                                     value: "%.0f:%02.0f længste søvn",
+                                                                     value: "%.0f:%02.0f længste skærmfri",
                                                                      comment: ""),
                                            ((night?.longestSleepDuration ?? 0) / 3600.0).rounded(.down),
                                            ((night?.longestSleepDuration ?? 0) / 60.0).truncatingRemainder(dividingBy: 60.0)
@@ -116,7 +116,7 @@ class TonightController: UIViewController {
         unrestDuration.text = String(format: NSLocalizedString("UnrestDuration",
                                                                tableName: "Main",
                                                                bundle: .main,
-                                                               value: "%.0f minutters uro",
+                                                               value: "%.0f skærmtid",
                                                                comment: ""),
                                      (night?.unrestDuration ?? 0) / 60.0
         )

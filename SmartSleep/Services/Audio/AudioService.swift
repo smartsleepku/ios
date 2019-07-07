@@ -68,7 +68,7 @@ class AudioService {
                                               message: NSLocalizedString("VerifyBody",
                                                                          tableName: "AudioService",
                                                                          bundle: .main,
-                                                                         value: "Støjmåleren er nødvendig for at kunne måle søvnrytmer. Giv tilladelse til at bruge mikrofonen i Indstillinger.",
+                                                                         value: "Støjmåleren er nødvendig for at kunne måle din natlige skærmaktivitet. Giv venligst tilladelse til at bruge mikrofonen i Indstillinger.",
                                                                          comment: ""),
                                               preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
