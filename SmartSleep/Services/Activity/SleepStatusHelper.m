@@ -137,6 +137,7 @@ static char *fetch_complete_command() {
 static void register_command(char *command, CFNotificationCallback function) {
     CFStringRef string = CFStringCreateWithCString(NULL, command, kCFStringEncodingUTF8);
     NSLog(@"command: %@", string);
+    if (string == NULL) return;
     CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), //center
                                     NULL, // observer
                                     function, // callback
