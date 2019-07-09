@@ -1272,7 +1272,7 @@ af skærm</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-Wy-pxN">
                                                     <rect key="frame" x="0.0" y="32.5" width="106.5" height="33"/>
                                                     <string key="text">længste
-søvn</string>
+skærmfri</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1306,7 +1306,7 @@ søvn</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-DW-wC2">
                                                     <rect key="frame" x="0.0" y="32.5" width="106.5" height="33"/>
                                                     <string key="text">minutters
-uro</string>
+skærmtid</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1430,13 +1430,14 @@ uro</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Søvnrytmer måles ved at SmartSleep app’en i baggrunden holder øje med din aktivitet.
+                                        <string key="content">Din natlige skærmaktivitet måles ved at SmartSleep app’en kører i baggrunden og dermed holder øje med din aktivitet.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1478,11 +1479,62 @@ uro</string>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Rapporterede søvndata">
+                                    <fragment content="Rapporterede sengetider">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1526,14 +1578,14 @@ uro</string>
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-
-Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser, uro og din længste søvn for en anden søvnperiode. Tallene angiver din aktivitet i din søvnperiode - ikke hvor meget du har brugt din telefon resten af dagen.
+Tallene i historikken angiver din skærmaktivitet i den søvnperiode, som du selv har angivet - ikke hvor meget du har brugt din telefon resten af dagen.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1575,11 +1627,12 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Antal afbrydelser:">
+                                    <fragment content="Aktivering af skærm:">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1622,13 +1675,14 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Dette er et tal for hvor mange gange du har brugt din telefon i den periode hvor du burde sove.
+                                        <string key="content"> Antal gange du har aktiveret din skærm i din søvnperiode.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1670,11 +1724,12 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Længste søvn:">
+                                    <fragment content="Længste periode uden skærm:">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1717,13 +1772,14 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Dette er den længste uafbrudte søvnperiode imellem sengetid og morgen.
+                                        <string key="content"> Den længste periode uden skærmaktivitet i din søvnperiode.
 
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1765,11 +1821,12 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Minutters uro:">
+                                    <fragment content="Skærmtid:">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica-Oblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Italic"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1812,13 +1869,64 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Dette er det samlede antal minutter du har brugt telefonen i den periode hvor du burde sove. 
+                                        <string key="content"> Samlet antal minutter skærmen i din telefon har været aktiveret i din søvnperiode. 
 
+Du kan til enhver tid ændre dine sengetider ved at trykke på i-symbolet.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
 </string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1862,9 +1970,10 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                     </fragment>
                                     <fragment content="Dataetik">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1909,17 +2018,18 @@ Du kan til enhver tid ændre dine søvntidspunkter, og se hvor mange afbrydelser
                                     <fragment>
                                         <string key="content">
 
-Måling af søvnrytmer involverer at holde øje med om du bevæger dig og hvor roligt dit miljø er. Derfor har vi brug for at opsamle både lokation og lyddata i baggrunden.
+For at måle din natlige skærmaktivitet og søvn er det nødvendigt at holde øje med, om du bevæger dig og hvor roligt dit miljø er. Derfor har vi brug for at opsamle både fysisk position og lyddata i baggrunden.
 
-Din aktuelle position bliver på intet tidspunkt gemt, hverken i telefonen eller til forskning.
+Din aktuelle position eller lyddata bliver på intet tidspunkt gemt, hverken i telefonen eller til forskning.
 
-Der bliver på intet tidspunkt optaget samtaler, musik eller andre informationer imens SmartSleep kører - kun antal decibel (dvs. Støjniveau) bliver målt.
+Der bliver på intet tidspunkt optaget samtaler, musik eller anden information imens SmartSleep app’en er tændt. Det er kun selve støjniveauet, dvs. antal decibel, der bliver anvendt. 
 
-Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
+</string>
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops>
                                                     <textTab alignment="left" location="28.299999237060547">
                                                         <options/>
@@ -1961,6 +2071,16 @@ Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
+                                    <fragment content="Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1981,7 +2101,7 @@ Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
             </objects>
             <point key="canvasLocation" x="-759.375" y="3882.0422535211269"/>
         </scene>
-        <!--Experimentet-->
+        <!--Spørgeskema-->
         <scene sceneID="gPt-qf-VZp">
             <objects>
                 <viewController id="ZVq-v1-8he" customClass="QuestionnarieController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
@@ -2007,7 +2127,7 @@ Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xba-I5-c6Z"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Experimentet" id="5Wq-We-L1f"/>
+                    <navigationItem key="navigationItem" title="Spørgeskema" id="5Wq-We-L1f"/>
                     <connections>
                         <outlet property="webView" destination="ZWd-BG-0Va" id="fDV-7x-Wu5"/>
                     </connections>
@@ -2042,11 +2162,11 @@ Du kan læse mere om dataetik på https://smartsleep.ku.dk/dataetik</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
                                 </constraints>
-                                <mutableString key="text">Vi beskytter alle informationer om dit privatliv. 
+                                <string key="text">Vi beskytter alle informationer om dit privatliv. 
 
 Vi beder om adgang til at sende notifikationer og om adgang til dine skærmaktivitetsdata, lokation, støjniveau og afledte data om bevægelser. Disse data er vigtige for at kunne indsamle informationer om, hvor meget du har sovet og hvor meget du har bevæget dig.
 
-Alle personfølsomme informationer bliver gemt separat fra andet data indsamlet på din telefon.</mutableString>
+Alle personfølsomme informationer bliver gemt separat fra andet data indsamlet på din telefon.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
