@@ -132,10 +132,8 @@ class MainController: UIViewController {
         }
 
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.locationService.verifyAuthorization(controller: self)
         let ud = UserDefaults()
         if (ud.valueFor(.paused) ?? false) == false {
-            delegate.locationService.start()
             delegate.audioService.startRecording()
         }
 

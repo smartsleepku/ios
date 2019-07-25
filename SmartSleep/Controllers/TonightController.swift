@@ -138,13 +138,11 @@ class TonightController: UIViewController {
     @IBAction func toggleRecord(_ sender: UIButton) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let audio = delegate.audioService
-        let location = delegate.locationService
         NSLog("toggle, recording \(audio.recording)")
         if audio.recording {
             audio.stopRecording()
         } else {
             audio.startRecording()
-            location.start()
             let ud = UserDefaults()
             ud.setValueFor(.paused, to: false)
             ud.synchronize()
@@ -176,7 +174,6 @@ class TonightController: UIViewController {
                                         ud.synchronize()
                                         let delegate = UIApplication.shared.delegate as! AppDelegate
                                         delegate.audioService.stopRecording()
-                                        delegate.locationService.stop()
                                         AudioObserver.removeNotifications()
                                         self.updateToggleLabel()
         }))

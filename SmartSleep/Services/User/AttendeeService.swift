@@ -44,7 +44,6 @@ fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelega
             guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
         }
-        delegate.locationService.start()
         delegate.audioService.startRecording()
         completionHandler()
     }
@@ -73,39 +72,13 @@ class AttendeeService {
         }
     }
     
-    private static func permissionDenied(controller: UIViewController) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: NSLocalizedString("Title",
-                                                                   tableName: "AudioService",
-                                                                   bundle: .main,
-                                                                   value: "Notifikationer",
-                                                                   comment: ""),
-                                          message: NSLocalizedString("Body",
-                                                                     tableName: "AudioService",
-                                                                     bundle: .main,
-                                                                     value: "Notifikationer er nødvendige for at kunne måle din natlige skærmaktivitet. Giv venligst tilladelse til at bruge notifikationer i indstillinger.",
-                                                                     comment: ""),
-                                          preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""),
-                                          style: .default,
-                                          handler: { action in
-                                            alert.dismiss(animated: true, completion: nil)
-                                            
-            }))
-            controller.present(alert, animated: true, completion: nil)
-        }
-    }
-    
     static func registerForPushNotifications(controller: UIViewController) {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current()
             .requestAuthorization(options: options) {
                 granted, error in
                 NSLog("Permission granted: \(granted)")
-                guard granted else {
-                    AttendeeService.permissionDenied(controller: controller)
-                    return
-                }
+                guard granted else { return }
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }

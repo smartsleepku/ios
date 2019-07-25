@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let audioService = AudioService()
     let restService = RestService()
     let nightService = NightService()
-    let locationService = LocationService()
     private let credentialsService = CredentialsService()
     private let bag = DisposeBag()
 
@@ -146,7 +145,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         synchronizeSleep()
         let ud = UserDefaults()
         if (ud.valueFor(.paused) ?? false) == false {
-            locationService.start()
             audioService.startRecording()
         }
         sleepStatusService.fetchStatus { hasLocation in

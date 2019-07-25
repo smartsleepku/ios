@@ -29,8 +29,6 @@
 		F20AD04F2229D3C5007C63C5 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD04E2229D3C5007C63C5 /* PickerController.swift */; };
 		F20AD0512229D729007C63C5 /* PickerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0502229D729007C63C5 /* PickerSegue.swift */; };
 		F20AD0532229D792007C63C5 /* PickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0522229D792007C63C5 /* PickerConfiguration.swift */; };
-		F21684DB228AE6580094CBEA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21684DA228AE6580094CBEA /* LocationService.swift */; };
-		F21684DD228AE6E80094CBEA /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21684DC228AE6E80094CBEA /* LocationDelegate.swift */; };
 		F21C99092205A504003D5243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C99082205A504003D5243 /* AppDelegate.swift */; };
 		F21C990B2205A504003D5243 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C990A2205A504003D5243 /* SplashController.swift */; };
 		F21C990E2205A504003D5243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21C990C2205A504003D5243 /* Main.storyboard */; };
@@ -115,8 +113,6 @@
 		F20AD04E2229D3C5007C63C5 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		F20AD0502229D729007C63C5 /* PickerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSegue.swift; sourceTree = "<group>"; };
 		F20AD0522229D792007C63C5 /* PickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerConfiguration.swift; sourceTree = "<group>"; };
-		F21684DA228AE6580094CBEA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		F21684DC228AE6E80094CBEA /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		F21C99052205A504003D5243 /* SmartSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C99082205A504003D5243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21C990A2205A504003D5243 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -269,15 +265,6 @@
 			path = Configure;
 			sourceTree = "<group>";
 		};
-		F21684D9228AE5840094CBEA /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				F21684DA228AE6580094CBEA /* LocationService.swift */,
-				F21684DC228AE6E80094CBEA /* LocationDelegate.swift */,
-			);
-			path = Location;
-			sourceTree = "<group>";
-		};
 		F21C98FC2205A504003D5243 = {
 			isa = PBXGroup;
 			children = (
@@ -317,7 +304,6 @@
 		F21C99212205B27B003D5243 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F21684D9228AE5840094CBEA /* Location */,
 				F2C7602F2271A7B900FC71FE /* Audio */,
 				F28E13B022592A17001075A8 /* Database */,
 				F20AD03222229DEC007C63C5 /* User */,
@@ -584,7 +570,6 @@
 				F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */,
 				F20AD03A2222B6F5007C63C5 /* EmailDelegate.swift in Sources */,
 				F243258422AC20DA005F64D1 /* CALayer+UIColor.swift in Sources */,
-				F21684DB228AE6580094CBEA /* LocationService.swift in Sources */,
 				F20AD04D2229C5AC007C63C5 /* DashedLineView.swift in Sources */,
 				F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */,
 				F27077572221CEBB00CAE2D5 /* CredentialsService.swift in Sources */,
@@ -602,7 +587,6 @@
 				F26DF88E226765A200D7E23F /* SleepStatusHelperCallback.m in Sources */,
 				F2AC824D22467C0D00AA3FBE /* Rest.swift in Sources */,
 				F2C760342271AE0700FC71FE /* AudioObserver.swift in Sources */,
-				F21684DD228AE6E80094CBEA /* LocationDelegate.swift in Sources */,
 				F2C7602E226F3FFC00FC71FE /* AudioService.swift in Sources */,
 				F2950B74222AB8BF00BE391C /* TokenService.swift in Sources */,
 				F20AD0532229D792007C63C5 /* PickerConfiguration.swift in Sources */,
