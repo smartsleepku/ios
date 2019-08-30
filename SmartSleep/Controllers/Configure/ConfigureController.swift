@@ -21,6 +21,8 @@ class ConfigureController: UIViewController {
     @IBOutlet weak var weekdayEvening: UILabel!
     @IBOutlet weak var weekendMorning: UILabel!
     @IBOutlet weak var weekendEvening: UILabel!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var firstTimeText: UILabel!
     
     @IBAction func close() {
         if ConfigurationService.configuration == nil {
@@ -29,6 +31,20 @@ class ConfigureController: UIViewController {
         performSegue(withIdentifier: "UnwindConfigure", sender: nil)
     }
 
+    override func viewDidLoad() {
+        let ud = UserDefaults()
+        if ud.valueFor(.hasConfigured) == true {
+            firstTimeText.isHidden = true
+        } else {
+            button.isHidden = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) { [weak self] in
+            self?.button.isHidden = false
+            self?.firstTimeText.isHidden = true
+            ud.setValueFor(.hasConfigured, to: true)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let userConfig = ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration

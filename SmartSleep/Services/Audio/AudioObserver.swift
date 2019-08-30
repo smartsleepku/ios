@@ -22,7 +22,7 @@ class AudioObserver: NSObject {
         notificationContent.title = NSLocalizedString("InterruptTitle",
                                                       tableName: "AudioNotification",
                                                       bundle: .main,
-                                                      value: "Støjmåler afbrudt",
+                                                      value: "SmartSleep afbrudt",
                                                       comment: "")
         notificationContent.body = NSLocalizedString("InterruptBody",
                                                      tableName: "AudioNotification",

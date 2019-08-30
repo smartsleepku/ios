@@ -598,7 +598,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzX-kq-idn">
-                                <rect key="frame" x="279" y="41" width="20" height="20"/>
+                                <rect key="frame" x="280" y="41" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="4UB-gB-D2w"/>
                                     <constraint firstAttribute="height" constant="20" id="O8c-lI-m0c"/>
@@ -625,13 +625,14 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="bottom" secondItem="HF2-Lf-0Re" secondAttribute="bottom" id="3sj-GT-Mlw"/>
-                            <constraint firstItem="USh-HP-gKv" firstAttribute="centerX" secondItem="hzX-kq-idn" secondAttribute="centerX" id="CuQ-H9-u0H"/>
+                            <constraint firstItem="USh-HP-gKv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bb0-Pt-m4a" secondAttribute="leading" symbolic="YES" id="4vO-dP-SAP"/>
                             <constraint firstItem="USh-HP-gKv" firstAttribute="centerY" secondItem="hzX-kq-idn" secondAttribute="centerY" id="DyW-Rr-0OP"/>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="top" secondItem="iKM-Gc-5ck" secondAttribute="bottom" id="Kfc-VN-89V"/>
                             <constraint firstItem="USh-HP-gKv" firstAttribute="top" secondItem="bb0-Pt-m4a" secondAttribute="top" constant="20" id="M9s-uZ-x30"/>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="trailing" secondItem="bb0-Pt-m4a" secondAttribute="trailing" id="Rfh-B0-S3U"/>
                             <constraint firstItem="bb0-Pt-m4a" firstAttribute="trailing" secondItem="USh-HP-gKv" secondAttribute="trailing" constant="20" id="RvP-b7-mTU"/>
                             <constraint firstItem="IP1-88-h1c" firstAttribute="leading" secondItem="bb0-Pt-m4a" secondAttribute="leading" id="VBm-5T-NcV"/>
+                            <constraint firstItem="hzX-kq-idn" firstAttribute="trailing" secondItem="USh-HP-gKv" secondAttribute="trailing" id="ZON-IQ-zHb"/>
                             <constraint firstItem="bb0-Pt-m4a" firstAttribute="trailing" secondItem="P1u-JX-bMS" secondAttribute="trailing" constant="20" id="aDX-YM-qyj"/>
                             <constraint firstItem="iKM-Gc-5ck" firstAttribute="trailing" secondItem="bb0-Pt-m4a" secondAttribute="trailing" id="epm-sD-h2m"/>
                             <constraint firstItem="P1u-JX-bMS" firstAttribute="centerY" secondItem="HF2-Lf-0Re" secondAttribute="centerY" id="hAu-15-eNf"/>
@@ -662,7 +663,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
         <scene sceneID="1af-FE-6bX">
             <objects>
                 <viewController id="q4A-1O-3yB" customClass="ConfigureController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Eu-SF-Sj9">
+                    <view key="view" contentMode="scaleToFill" id="4Eu-SF-Sj9" customClass="ConfigureView" customModule="SmartSleep" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -680,6 +681,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedtime" translatesAutoresizingMaskIntoConstraints="NO" id="1W5-b1-U3d">
                                 <rect key="frame" x="20" y="88.5" width="50" height="50"/>
+                                <color key="tintColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="c2h-dK-26d"/>
                                     <constraint firstAttribute="height" constant="50" id="d1X-IN-F8Q"/>
@@ -687,6 +689,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="OlC-QM-H2x">
                                 <rect key="frame" x="250" y="88.5" width="50" height="50"/>
+                                <color key="tintColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fv1-ad-Eo2"/>
                                     <constraint firstAttribute="width" constant="50" id="pWN-Jb-ytp"/>
@@ -694,6 +697,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedtime" translatesAutoresizingMaskIntoConstraints="NO" id="p6F-Dx-83R">
                                 <rect key="frame" x="20" y="223.5" width="50" height="50"/>
+                                <color key="tintColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dzi-rC-OgL"/>
                                     <constraint firstAttribute="width" constant="50" id="jvF-hD-7Rn"/>
@@ -701,6 +705,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morning" translatesAutoresizingMaskIntoConstraints="NO" id="QOo-UO-992">
                                 <rect key="frame" x="250" y="223.5" width="50" height="50"/>
+                                <color key="tintColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5WG-cw-HKA"/>
                                     <constraint firstAttribute="width" constant="50" id="snd-pf-Y79"/>
@@ -745,7 +750,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc7-3G-hLu">
                                 <rect key="frame" x="20" y="324" width="280" height="40"/>
-                                <color key="backgroundColor" cyan="0.87622195479999998" magenta="0.26442696789999998" yellow="0.1120425835" black="0.1462204392" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Kif-Eg-iqA"/>
                                 </constraints>
@@ -802,6 +807,17 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                     <segue destination="yk5-6e-7Pw" kind="custom" identifier="weekendEvening" customClass="PickerSegue" customModule="SmartSleep" customModuleProvider="target" id="TTy-a7-5JW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT3-Yb-CkB">
+                                <rect key="frame" x="20" y="307" width="280" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="kVY-nu-1aq"/>
+                                </constraints>
+                                <string key="text">Rediger dine sengetider
+ved at trykke på ikonerne ovenfor</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.39215686274509803" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -813,6 +829,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             <constraint firstItem="xya-bP-pos" firstAttribute="leading" secondItem="p6F-Dx-83R" secondAttribute="leading" id="4gF-AW-qcY"/>
                             <constraint firstItem="8ju-fw-q3L" firstAttribute="trailing" secondItem="QOo-UO-992" secondAttribute="trailing" id="5VB-Cg-hEm"/>
                             <constraint firstItem="luL-6t-vHF" firstAttribute="top" secondItem="UnS-mH-tSr" secondAttribute="bottom" constant="20" id="7dn-Nt-GGY"/>
+                            <constraint firstItem="cT3-Yb-CkB" firstAttribute="leading" secondItem="ZP5-2g-b6B" secondAttribute="leading" constant="20" id="8Ry-5T-7eS"/>
                             <constraint firstItem="UnS-mH-tSr" firstAttribute="top" secondItem="1W5-b1-U3d" secondAttribute="bottom" constant="-5" id="8kO-Ju-Eo0"/>
                             <constraint firstItem="ZP5-2g-b6B" firstAttribute="trailing" secondItem="QOo-UO-992" secondAttribute="trailing" constant="20" id="8yl-tF-cS2"/>
                             <constraint firstItem="3hy-zj-k8U" firstAttribute="centerY" secondItem="p6F-Dx-83R" secondAttribute="centerY" id="9RW-le-0ku"/>
@@ -820,9 +837,11 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             <constraint firstItem="2kA-dD-VZ5" firstAttribute="top" secondItem="QOo-UO-992" secondAttribute="bottom" constant="-5" id="C2h-HM-tqZ"/>
                             <constraint firstItem="3hy-zj-k8U" firstAttribute="leading" secondItem="p6F-Dx-83R" secondAttribute="trailing" constant="5" id="CHP-An-S3L"/>
                             <constraint firstItem="UnS-mH-tSr" firstAttribute="bottom" secondItem="fKp-4U-Kno" secondAttribute="bottom" id="CoX-62-bcK"/>
+                            <constraint firstItem="ZP5-2g-b6B" firstAttribute="bottom" secondItem="cT3-Yb-CkB" secondAttribute="bottom" constant="10" id="Epc-24-mPA"/>
                             <constraint firstItem="8at-cY-YqS" firstAttribute="top" secondItem="p6F-Dx-83R" secondAttribute="bottom" constant="-5" id="F0L-WO-7qg"/>
                             <constraint firstItem="luL-6t-vHF" firstAttribute="leading" secondItem="ZP5-2g-b6B" secondAttribute="leading" id="FMb-oN-62j"/>
                             <constraint firstItem="QOo-UO-992" firstAttribute="leading" secondItem="3hy-zj-k8U" secondAttribute="trailing" constant="5" id="FTB-Bj-nPW"/>
+                            <constraint firstItem="ZP5-2g-b6B" firstAttribute="trailing" secondItem="cT3-Yb-CkB" secondAttribute="trailing" constant="20" id="FU3-wG-NdC"/>
                             <constraint firstItem="ZP5-2g-b6B" firstAttribute="trailing" secondItem="OlC-QM-H2x" secondAttribute="trailing" constant="20" id="Fvx-gp-PoJ"/>
                             <constraint firstItem="ZP5-2g-b6B" firstAttribute="trailing" secondItem="dMM-jM-XlJ" secondAttribute="trailing" constant="20" id="J1Z-Cj-GBd"/>
                             <constraint firstItem="ZP5-2g-b6B" firstAttribute="trailing" secondItem="Nc7-3G-hLu" secondAttribute="trailing" constant="20" id="K8D-d6-Dlw"/>
@@ -860,10 +879,18 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                             <constraint firstItem="2kA-dD-VZ5" firstAttribute="centerX" secondItem="QOo-UO-992" secondAttribute="centerX" id="zko-4R-OMY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZP5-2g-b6B"/>
+                        <connections>
+                            <outlet property="weekdayBedtime" destination="1W5-b1-U3d" id="Ufy-dP-aeA"/>
+                            <outlet property="weekdayMorning" destination="OlC-QM-H2x" id="Cj4-l5-sDo"/>
+                            <outlet property="weekendBedtime" destination="p6F-Dx-83R" id="2VB-zP-Sd1"/>
+                            <outlet property="weekendMorning" destination="QOo-UO-992" id="kMD-Q8-jQQ"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="374"/>
                     <connections>
+                        <outlet property="button" destination="Nc7-3G-hLu" id="0qB-Wq-H3d"/>
+                        <outlet property="firstTimeText" destination="cT3-Yb-CkB" id="0SF-4s-nAm"/>
                         <outlet property="weekdayEvening" destination="UnS-mH-tSr" id="QJq-IB-gKE"/>
                         <outlet property="weekdayMorning" destination="IfB-6M-Uac" id="XZY-vV-n4h"/>
                         <outlet property="weekendEvening" destination="8at-cY-YqS" id="TSO-oh-Rmn"/>
@@ -1050,8 +1077,8 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Din søvn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQW-1D-z1l">
-                                <rect key="frame" x="20" y="10" width="280" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dit mobilbrug" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQW-1D-z1l">
+                                <rect key="frame" x="20" y="10" width="280" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1083,7 +1110,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I nat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBA-Fu-Tbj">
-                                <rect key="frame" x="5" y="48.5" width="310" height="20"/>
+                                <rect key="frame" x="5" y="49" width="310" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1114,8 +1141,8 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 skærmtid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HB-uX-Kqy">
-                                <rect key="frame" x="117" y="187" width="86" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 minutters skærmtid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HB-uX-Kqy">
+                                <rect key="frame" x="79" y="187" width="162" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2156,20 +2183,302 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
                                     <constraint firstAttribute="width" constant="50" id="bJk-Ma-zS6"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="260" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Fj-rbU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="260" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Fj-rbU">
                                 <rect key="frame" x="20" y="238" width="280" height="260"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="z2b-Wx-y4l"/>
                                 </constraints>
-                                <string key="text">Vi beskytter alle informationer om dit privatliv. 
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Velkommen til SmartSleep app’en!
 
-Vi beder om adgang til at sende notifikationer og om adgang til dine skærmaktivitetsdata, lokation, støjniveau og afledte data om bevægelser. Disse data er vigtige for at kunne indsamle informationer om, hvor meget du har sovet og hvor meget du har bevæget dig.
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Formål">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Det overordnede formål med SmartSleep er at afdække natlig mobilbrug, søvn og helbred.
+Da der findes både nogle, der bruger mobilen om natten og andre, der ikke gør det, kan vi sammenligne helbredet i disse to grupper. Derfor har vi brug for din deltagelse uanset om du bruger din mobil om natten eller ej. 
 
-Alle personfølsomme informationer bliver gemt separat fra andet data indsamlet på din telefon.</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Mobiltracking">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+SmartSleep app’en registrerer skærmaktiveringer på din mobil samt afledte informationer om mobiltelefonens bevægelser, dvs. om du går, står, kører bil, cykler eller er passiv for eksempel sover. Ved at registrere denne information omkring din mobiltelefon kan forskerne på projektet få indsigt i din søvnperiode og hvor ofte du bruger din mobiltelefon, når du sover. App’en anvender GPS lokationer samt lydniveauet i det rum, hvor din mobil befinder sig for at holdes aktiveret, men denne data bliver ikke gemt. Der registreres kun den ovenstående information om skærmaktiveringer og mobilens bevægelser.
+
+</mutableString>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Spørgeskema">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+SmartSleep app’en indeholder et spørgeskema, hvori du vil blive spurgt om dine mobilvaner, din sygdoms- og familiehistorie, fysisk og psykisk samt sundhedsadfærd. Denne information bruges til at undersøge sammenhængen mellem mobilafbrudt søvn, sundhedsadfærd, og helbred.
+
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Behandling af data">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Databehandlingen er anmeldt og godkendt af Københavns Universitet indtil videre til år 2039. Dataindsamlingen og behandling af data bliver behandlet i overensstemmelse med persondataforordningen og databeskyttelsesloven. Dine data (personhenførbare) opbevares på Københavns Universitet så længe det er nødvendigt at hensyn til forskningsprojektet og på baggrund af godkendelse.
+
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Som deltager i et forskningsprojekt har du en række rettigheder efter persondataforordningen. Du kan læse om dine rettigheder i Københavns Universitets privatlivspolitik. </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" lineHeightMultiple="1.0791666666666666" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="https://informationssikkerhed.ku.dk/persondatabeskyttelse/privatlivspolitik/">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="https://informationssikkerhed.ku.dk/persondatabeskyttelse/privatlivspolitik/"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" lineHeightMultiple="1.0791666666666666" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Du kan også læse mere om vores om vores dataetik her: </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" lineHeightMultiple="1.0791666666666666" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="https://www.smartsleep.ku.dk/dataetik/">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="https://www.smartsleep.ku.dk/dataetik/"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" lineHeightMultiple="1.0791666666666666" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">.  
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" lineHeightMultiple="1.0791666666666666" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Nytte og risiko">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Med din deltagelse i forskningsprojektet bidrager du til forståelsen af sammenhængen mellem natlig mobilbrug, søvn og helbred. Denne forståelse er vigtig for at kunne tilrettelægge forebyggelsesinterventioner i fremtiden. Da app’en dagligt giver dig en tilbagemelding, kan du personligt få et bedre indblik i dine egne søvn- og mobilvaner. Brug af app’en er på eget ansvar. Du kan løbende holde dig orienteret om resultater fra undersøgelsen på hjemmesiden smartsleep.ku.dk.
+
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Frivilligt at deltage">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Det er frivilligt at deltage i undersøgelsen samt at downloade SmartSleep app’en. Du kan til enhver tid trække dit tilsagn om deltagelse tilbage uden begrundelse samt få dit data slettet ved at skrive til os. Hvis du har spørgsmål, er du også velkommen til at kontakte os  på e-mail: </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="smartsleep@ku.dk">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="mailto:smartsleep@ku.dk"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="TrebuchetMS"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="65.200000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-oD-HMZ">
                                 <rect key="frame" x="20" y="518" width="280" height="40"/>
@@ -2237,6 +2546,6 @@ Alle personfølsomme informationer bliver gemt separat fra andet data indsamlet 
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="aMX-Tt-NDO"/>
-        <segue reference="ko5-Dr-Vna"/>
+        <segue reference="IpQ-s4-hrr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,6 +29,7 @@
 		F20AD04F2229D3C5007C63C5 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD04E2229D3C5007C63C5 /* PickerController.swift */; };
 		F20AD0512229D729007C63C5 /* PickerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0502229D729007C63C5 /* PickerSegue.swift */; };
 		F20AD0532229D792007C63C5 /* PickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0522229D792007C63C5 /* PickerConfiguration.swift */; };
+		F214B48923192C2200C7D375 /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F214B48823192C2200C7D375 /* ConfigureView.swift */; };
 		F21C99092205A504003D5243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C99082205A504003D5243 /* AppDelegate.swift */; };
 		F21C990B2205A504003D5243 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C990A2205A504003D5243 /* SplashController.swift */; };
 		F21C990E2205A504003D5243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21C990C2205A504003D5243 /* Main.storyboard */; };
@@ -113,6 +114,7 @@
 		F20AD04E2229D3C5007C63C5 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		F20AD0502229D729007C63C5 /* PickerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSegue.swift; sourceTree = "<group>"; };
 		F20AD0522229D792007C63C5 /* PickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerConfiguration.swift; sourceTree = "<group>"; };
+		F214B48823192C2200C7D375 /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
 		F21C99052205A504003D5243 /* SmartSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C99082205A504003D5243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21C990A2205A504003D5243 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				F28E13BE225B3C89001075A8 /* DashedArcView.swift */,
 				F243258322AC20DA005F64D1 /* CALayer+UIColor.swift */,
 				F2D004CA22D1FAE800993B1F /* TonightView.swift */,
+				F214B48823192C2200C7D375 /* ConfigureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,7 +443,7 @@
 				TargetAttributes = {
 					F21C99042205A504003D5243 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1030;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -568,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F20AD0262221D6A0007C63C5 /* AttendeeNumberController.swift in Sources */,
+				F214B48923192C2200C7D375 /* ConfigureView.swift in Sources */,
 				F20AD0442222F4E6007C63C5 /* MainView.swift in Sources */,
 				F2AC8236222DCA0C00AA3FBE /* AttendeeService.swift in Sources */,
 				F2950B70222A9F2B00BE391C /* MainTabDelegate.swift in Sources */,
