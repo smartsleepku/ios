@@ -13,5 +13,7 @@ target 'SmartSleep' do
   pod 'Firebase/Core', '~> 5.17.0'
   pod 'Firebase/Messaging', '~> 5.17.0'
   pod 'ReachabilitySwift', '~> 4.3.0'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.13.4'
 
 end

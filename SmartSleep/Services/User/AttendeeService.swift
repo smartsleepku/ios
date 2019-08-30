@@ -59,7 +59,6 @@ class AttendeeService {
     private let delegate = NotificationDelegate()
     
     func configure() {
-        FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = delegate
         Messaging.messaging().delegate = delegate
         InstanceID.instanceID().instanceID { [weak self] (result, error) in

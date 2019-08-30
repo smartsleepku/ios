@@ -127,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func started() {
+        FirebaseApp.configure()
         let nc = UNUserNotificationCenter.current()
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
