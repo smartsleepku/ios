@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import KeychainAccess
+import Crashlytics
 
 fileprivate struct Token: Codable {
     var jwt: String
@@ -84,7 +85,14 @@ class AuthenticationService {
             clientSecret: ClientSecret,
             attendeeCode: code
         )
-        guard let json = try? encoder.encode(login) else { return }
+        let json: Data
+        do {
+            json = try encoder.encode(login)
+        } catch {
+            Crashlytics.sharedInstance().recordError(error)
+            Crashlytics.sharedInstance().crash()
+            return
+        }
         let task = session!.uploadTask(with: request, from: json) { (data, response, error) in
             // retain session until completion
             session = nil
