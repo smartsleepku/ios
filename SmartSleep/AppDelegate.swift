@@ -72,10 +72,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if hasLocation == true {
                 self.sleepStatusService.sync()
                     .observeOn(MainScheduler.instance)
-                    .subscribe(onNext: { [weak self] update in
-                        self?.sleepUpdates.on(.next(update))
-                        }, onCompleted: { [weak self] in
-                            self?.generateNights()
+                    .subscribe(onNext: { update in
+                        self.sleepUpdates.on(.next(update))
+                        }, onCompleted: {
+                            self.generateNights()
                     }).disposed(by: self.bag)
             }
         }
