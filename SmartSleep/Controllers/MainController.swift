@@ -50,11 +50,7 @@ class MainController: UIViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.sleepStatusService.fetchStatus { hasLocation in
-            self.hasLocation = hasLocation
-            guard hasLocation else { return }
-            SleepStatusHelper().registerAppforSleepStatus()
-        }
+        delegate.startOperations()
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(willEnterForeground),
                        name: UIApplication.willEnterForegroundNotification,

@@ -19,16 +19,19 @@ fileprivate let timeFormatter: DateFormatter = {
 class TonightController: UIViewController {
     @IBOutlet weak var morning: UILabel!
     @IBOutlet weak var evening: UILabel!
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var tabBarDelegate: MainTabDelegate!
     @IBOutlet weak var disruptionCount: UILabel!
     @IBOutlet weak var longestSleepDuration: UILabel!
     @IBOutlet weak var unrestDuration: UILabel!
     @IBOutlet weak var power: UILabel!
     @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var locationTime: UILabel!
     private var timer: Timer?
 
     private var bag = DisposeBag()
-
+    private let forcedDelegate = MainTabDelegate()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         timer?.invalidate()
@@ -37,12 +40,20 @@ class TonightController: UIViewController {
             // NOTE: seems to be the approx correction to get real decibels
             let correction: Float = 90
             let power = delegate.audioService.delegate.powerLevel + correction
-            let format = NSLocalizedString("CurrentPower",
+            var format = NSLocalizedString("CurrentPower",
                                            tableName: "Tonight",
                                            bundle: .main,
                                            value: "Nuværende støjniveau: %d dB",
                                            comment: "")
             self?.power.text = String(format: format, Int(power))
+            
+            format = NSLocalizedString("CurrentLocationTime",
+                                       tableName: "Tonight",
+                                       bundle: .main,
+                                       value: "Tid på nuværende lokation: %.0f minutter",
+                                       comment: "")
+            let startTime = delegate.locationService.delegate.locationStartTime
+            self?.locationTime.text = String(format: format, Date().timeIntervalSince(startTime) / 60.0)
         }
         RunLoop.current.add(timer!, forMode: .default)
     }
@@ -53,6 +64,8 @@ class TonightController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.delegate = forcedDelegate
+        tabBarDelegate = forcedDelegate
         tabBarDelegate!.controller = self
     }
     
@@ -91,6 +104,12 @@ class TonightController: UIViewController {
                 self?.updateToggleLabel()
             }).disposed(by: bag)
         updateToggleLabel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.locationService.verifyAuthorization(controller: self)
     }
     
     func updateLastNight() {

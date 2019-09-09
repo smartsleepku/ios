@@ -11,6 +11,17 @@ import RxSwift
 
 class AttendeeNumberController: OnboardingController {
 
+    private let forcedDelegate = AttendeeNumberDelegate()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if input.delegate == nil {
+            input.delegate = forcedDelegate
+            forcedDelegate.controller = self
+            forcedDelegate.segueName = "Next"
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ud = UserDefaults()
         ud.setValueFor(.attendeeCode, to: input.text!)

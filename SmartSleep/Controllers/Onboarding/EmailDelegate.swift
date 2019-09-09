@@ -28,11 +28,16 @@ class EmailDelegate: OnboardingTextDelegate {
     }
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard valid else {
-            errorMessage.isHidden = false
-            textField.resignFirstResponder()
-            return false
-        }
+        errorMessage.isHidden = false
+        textField.resignFirstResponder()
+        // EmailValidator seems to be broken in iOS 12.4, use naive email test for now
+        guard textField.text!.contains("@") else { return false }
+        let at = textField.text!.index(of: "@")!
+        guard at > textField.text!.startIndex else { return false }
+        guard let dot = textField.text!.lastIndex(of: ".") else { return false }
+        guard dot > at else { return false }
+        guard dot < textField.text!.endIndex else { return false }
+        errorMessage.isHidden = true
         controller.performSegue(withIdentifier: segueName, sender: nil)
         return false
     }

@@ -19,6 +19,7 @@ class AuthenticationService {
     
     enum AuthenticationError: Error {
         case invalidCode
+        case networkError(error: Error)
         case httpStatus(code: Int)
         case missingData
     }
@@ -49,7 +50,11 @@ class AuthenticationService {
             request.setValue(ClientSecret, forHTTPHeaderField: "x-client-secret")
             let session = URLSession(configuration: .ephemeral)
             let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-                guard error == nil else { event(.error(AuthenticationError.invalidCode)) ;  return }
+                guard error == nil else {
+                    NSLog("Failed validating attendee code: \(error!)")
+                    event(.error(AuthenticationError.networkError(error: error!)))
+                    return
+                }
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 guard statusCode == 200 else { event(.error(AuthenticationError.httpStatus(code: statusCode))) ; return }
                 guard data != nil else { event(.error(AuthenticationError.missingData)) ;  return }

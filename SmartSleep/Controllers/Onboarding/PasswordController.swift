@@ -11,9 +11,19 @@ import KeychainAccess
 
 class PasswordController: OnboardingController {
     
+    @IBOutlet weak var errorMessage: UIView!
     private let authManager = AuthenticationService()
     private let credentialsManager = CredentialsService()
+    private let forcedDelegate = PasswordDelegate()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        input.delegate = forcedDelegate
+        forcedDelegate.errorMessage = errorMessage
+        forcedDelegate.controller = self
+        forcedDelegate.segueName = "Next"
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ud = UserDefaults()
         var credentials = credentialsManager.credentials!

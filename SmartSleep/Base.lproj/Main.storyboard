@@ -401,6 +401,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="bTY-Q1-zbS" id="JA7-gk-Yrk"/>
+                        <outlet property="errorMessage" destination="kAc-u6-awK" id="iza-gw-x2V"/>
                         <outlet property="input" destination="4Fv-yz-4ay" id="m5V-GE-2Fy"/>
                         <segue destination="3Yj-rZ-q2t" kind="showDetail" identifier="Next" id="5cM-e0-iiU"/>
                     </connections>
@@ -529,6 +530,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="Ca0-SV-P6h" id="M9w-OM-Sdn"/>
+                        <outlet property="errorMessage" destination="mBB-sy-koD" id="tUf-ub-vJ4"/>
                         <outlet property="input" destination="LcU-4j-fsL" id="wyr-ow-S9u"/>
                         <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Done" modalTransitionStyle="coverVertical" id="ko5-Dr-Vna"/>
                         <segue destination="DdB-Sv-DXY" kind="showDetail" identifier="Next" id="fQt-tb-njy"/>
@@ -537,7 +539,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUv-uM-Lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="woL-hj-iNz" customClass="PasswordDelegate" customModule="SmartSleep" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="segueName" value="Done"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="segueName" value="Next"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="controller" destination="3Yj-rZ-q2t" id="Cks-f7-AdT"/>
@@ -1175,11 +1177,18 @@ ved at trykke på ikonerne ovenfor</string>
                                     <outletCollection property="gestureRecognizers" destination="P4w-QC-TFs" appends="YES" id="H7W-XQ-ZW3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tid på nuværende lokation: 0 minutter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-17-pTf">
+                                <rect key="frame" x="16" y="254" width="288" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="top" secondItem="7zD-Oc-Kj3" secondAttribute="bottom" constant="10" id="06S-Nf-kRf"/>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="top" secondItem="c8x-SU-Mej" secondAttribute="bottom" constant="-5" id="2jo-0U-HcR"/>
+                            <constraint firstItem="dr2-ds-38h" firstAttribute="top" secondItem="T2E-17-pTf" secondAttribute="bottom" constant="10" id="3vu-3U-tFv"/>
                             <constraint firstItem="QDJ-QY-e1r" firstAttribute="leading" secondItem="Yv2-Sw-gkp" secondAttribute="trailing" constant="-8" id="44f-NP-GxF"/>
                             <constraint firstItem="HBA-Fu-Tbj" firstAttribute="top" secondItem="DQW-1D-z1l" secondAttribute="bottom" constant="5" id="5jQ-jt-ftO"/>
                             <constraint firstItem="HXA-E4-UFh" firstAttribute="centerY" secondItem="dr2-ds-38h" secondAttribute="centerY" id="5ru-Hy-01c"/>
@@ -1191,6 +1200,7 @@ ved at trykke på ikonerne ovenfor</string>
                             <constraint firstItem="DQW-1D-z1l" firstAttribute="top" secondItem="uaP-1L-oYk" secondAttribute="top" constant="10" id="FjO-3o-pHW"/>
                             <constraint firstItem="soT-EQ-Wq1" firstAttribute="centerX" secondItem="c8x-SU-Mej" secondAttribute="centerX" id="GE4-2b-htW"/>
                             <constraint firstItem="9HB-uX-Kqy" firstAttribute="centerX" secondItem="MAg-AV-Xff" secondAttribute="centerX" id="KmG-V5-Z7l"/>
+                            <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="T2E-17-pTf" secondAttribute="trailing" constant="16" id="LTq-ue-MmK"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="bottom" secondItem="rUd-Nd-PsC" secondAttribute="bottom" constant="5" id="M9W-ci-pfv"/>
                             <constraint firstItem="rUd-Nd-PsC" firstAttribute="top" secondItem="dr2-ds-38h" secondAttribute="bottom" constant="20" id="Mzn-vY-Mg6"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="centerY" secondItem="c8x-SU-Mej" secondAttribute="centerY" id="Pit-wm-mx4"/>
@@ -1199,6 +1209,7 @@ ved at trykke på ikonerne ovenfor</string>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="leading" relation="lessThanOrEqual" secondItem="c8x-SU-Mej" secondAttribute="trailing" constant="10" id="Vhl-fI-1hf"/>
                             <constraint firstItem="HBA-Fu-Tbj" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="5" id="XCK-P0-xcO"/>
                             <constraint firstItem="uaP-1L-oYk" firstAttribute="trailing" secondItem="QDJ-QY-e1r" secondAttribute="trailing" constant="20" id="d9p-Ce-2ai"/>
+                            <constraint firstItem="T2E-17-pTf" firstAttribute="leading" secondItem="uaP-1L-oYk" secondAttribute="leading" constant="16" id="dtP-li-FpA"/>
                             <constraint firstItem="rUd-Nd-PsC" firstAttribute="trailing" secondItem="uaP-1L-oYk" secondAttribute="trailing" id="i4N-Xr-iVC"/>
                             <constraint firstItem="Yv2-Sw-gkp" firstAttribute="leading" secondItem="c8x-SU-Mej" secondAttribute="trailing" constant="-8" id="ioB-oI-Dio"/>
                             <constraint firstItem="MAg-AV-Xff" firstAttribute="top" secondItem="Yv2-Sw-gkp" secondAttribute="bottom" constant="8" id="jKc-p1-4Y3"/>
@@ -1221,11 +1232,13 @@ ved at trykke på ikonerne ovenfor</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="374"/>
                     <connections>
-                        <outlet property="disruptionCount" destination="7zD-Oc-Kj3" id="XBM-AH-WmY"/>
+                        <outlet property="disruptionCount" destination="7zD-Oc-Kj3" id="dq3-D6-M6k"/>
                         <outlet property="evening" destination="soT-EQ-Wq1" id="SAY-83-fBH"/>
+                        <outlet property="locationTime" destination="T2E-17-pTf" id="mXk-Ly-y04"/>
                         <outlet property="longestSleepDuration" destination="MAg-AV-Xff" id="1EA-kF-oe3"/>
                         <outlet property="morning" destination="4mh-Kt-xbD" id="rRX-B0-Hy0"/>
                         <outlet property="power" destination="dr2-ds-38h" id="ABP-96-d49"/>
+                        <outlet property="tabBar" destination="rUd-Nd-PsC" id="Pf0-IW-PBi"/>
                         <outlet property="tabBarDelegate" destination="zIo-Ck-JDa" id="79U-vc-Tnm"/>
                         <outlet property="toggleButton" destination="HXA-E4-UFh" id="8XX-iX-YRL"/>
                         <outlet property="unrestDuration" destination="9HB-uX-Kqy" id="EF2-N9-ci5"/>
@@ -1242,7 +1255,7 @@ ved at trykke på ikonerne ovenfor</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1451" y="2406"/>
+            <point key="canvasLocation" x="1449.375" y="2405.2816901408451"/>
         </scene>
         <!--Historik-->
         <scene sceneID="uUM-bk-c8f">
@@ -2244,10 +2257,10 @@ Da der findes både nogle, der bruger mobilen om natten og andre, der ikke gør 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 SmartSleep app’en registrerer skærmaktiveringer på din mobil samt afledte informationer om mobiltelefonens bevægelser, dvs. om du går, står, kører bil, cykler eller er passiv for eksempel sover. Ved at registrere denne information omkring din mobiltelefon kan forskerne på projektet få indsigt i din søvnperiode og hvor ofte du bruger din mobiltelefon, når du sover. App’en anvender GPS lokationer samt lydniveauet i det rum, hvor din mobil befinder sig for at holdes aktiveret, men denne data bliver ikke gemt. Der registreres kun den ovenstående information om skærmaktiveringer og mobilens bevægelser.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2546,6 +2559,6 @@ Cg
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="aMX-Tt-NDO"/>
-        <segue reference="IpQ-s4-hrr"/>
+        <segue reference="ko5-Dr-Vna"/>
     </inferredMetricsTieBreakers>
 </document>

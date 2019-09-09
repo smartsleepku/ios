@@ -46,6 +46,8 @@
 		F270774E2221BEE200CAE2D5 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270774D2221BEE200CAE2D5 /* WelcomeController.swift */; };
 		F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27077532221CC3200CAE2D5 /* UserDefaults+Keys.swift */; };
 		F27077572221CEBB00CAE2D5 /* CredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27077562221CEBB00CAE2D5 /* CredentialsService.swift */; };
+		F278FEF42325864400770C6F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278FEF22325864400770C6F /* LocationService.swift */; };
+		F278FEF52325864400770C6F /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278FEF32325864400770C6F /* LocationDelegate.swift */; };
 		F28E13AF22592852001075A8 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13AE22592852001075A8 /* DatabaseService.swift */; };
 		F28E13B222592A34001075A8 /* RestTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13B122592A34001075A8 /* RestTable.swift */; };
 		F28E13B422594F58001075A8 /* NightTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28E13B322594F58001075A8 /* NightTable.swift */; };
@@ -134,6 +136,8 @@
 		F270774D2221BEE200CAE2D5 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		F27077532221CC3200CAE2D5 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		F27077562221CEBB00CAE2D5 /* CredentialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsService.swift; sourceTree = "<group>"; };
+		F278FEF22325864400770C6F /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = Stash/Location/LocationService.swift; sourceTree = SOURCE_ROOT; };
+		F278FEF32325864400770C6F /* LocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDelegate.swift; path = Stash/Location/LocationDelegate.swift; sourceTree = SOURCE_ROOT; };
 		F28E13AE22592852001075A8 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F28E13B122592A34001075A8 /* RestTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTable.swift; sourceTree = "<group>"; };
 		F28E13B322594F58001075A8 /* NightTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightTable.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 		F21C99212205B27B003D5243 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F278FEF12325863800770C6F /* Location */,
 				F2C7602F2271A7B900FC71FE /* Audio */,
 				F28E13B022592A17001075A8 /* Database */,
 				F20AD03222229DEC007C63C5 /* User */,
@@ -347,6 +352,15 @@
 				F2950B75222AB9D700BE391C /* SurveyService.swift */,
 			);
 			path = Credentials;
+			sourceTree = "<group>";
+		};
+		F278FEF12325863800770C6F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				F278FEF32325864400770C6F /* LocationDelegate.swift */,
+				F278FEF22325864400770C6F /* LocationService.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		F28E13B022592A17001075A8 /* Database */ = {
@@ -589,6 +603,7 @@
 				F2534959222AF4DA00A2DA26 /* QuestionnaireDelegate.swift in Sources */,
 				F2AC8249224677E900AA3FBE /* RestProgressUpdate.swift in Sources */,
 				F21C990B2205A504003D5243 /* SplashController.swift in Sources */,
+				F278FEF52325864400770C6F /* LocationDelegate.swift in Sources */,
 				F2AC824B2246787500AA3FBE /* Night.swift in Sources */,
 				F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */,
 				F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */,
@@ -597,6 +612,7 @@
 				F20AD04D2229C5AC007C63C5 /* DashedLineView.swift in Sources */,
 				F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */,
 				F27077572221CEBB00CAE2D5 /* CredentialsService.swift in Sources */,
+				F278FEF42325864400770C6F /* LocationService.swift in Sources */,
 				F20AD03422229DFF007C63C5 /* AuthenticationService.swift in Sources */,
 				F20AD0402222BD72007C63C5 /* ClientSecret.swift in Sources */,
 				F20AD04922273040007C63C5 /* ConfigureController.swift in Sources */,
@@ -782,6 +798,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SmartSleep/SmartSleep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = T8GF25SAZN;
 				INFOPLIST_FILE = SmartSleep/Info.plist;
@@ -792,6 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -807,7 +825,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SmartSleep/SmartSleep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = T8GF25SAZN;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+					"$(inherited)",
+					"PB_FIELD_32BIT=1",
+					"PB_NO_PACKED_STRUCTS=1",
+					"PB_ENABLE_MALLOC=1",
+					"DEBUG=1",
+				);
 				INFOPLIST_FILE = SmartSleep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -816,7 +847,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

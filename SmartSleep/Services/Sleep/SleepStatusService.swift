@@ -86,7 +86,11 @@ fileprivate class CompletionHandler {
     var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     
     func beginBackgroundTask() {
-        UIApplication.shared.beginBackgroundTask { [weak self] in
+        if backgroundTask != .invalid {
+            UIApplication.shared.endBackgroundTask(backgroundTask)
+            backgroundTask = .invalid
+        }
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             guard let task = self?.backgroundTask else { return }
             guard task != .invalid else { return }
             UIApplication.shared.endBackgroundTask(task)
@@ -209,9 +213,12 @@ class SleepStatusService: NSObject {
                                                   create: true)
                 .appendingPathComponent("\(sleep.time!.timeIntervalSinceReferenceDate).json")
             try json.write(to: tmp)
-            let task = backgroundSession.uploadTask(with: request, fromFile: tmp)
-            task.sleep = sleep
-            task.resume()
+            let session = backgroundSession
+            queue.addOperation {
+                let task = session.uploadTask(with: request, fromFile: tmp)
+                task.sleep = sleep
+                task.resume()
+            }
         } catch let error {
             NSLog("\(error)")
             queue.addOperation {
@@ -245,9 +252,12 @@ class SleepStatusService: NSObject {
                                                   create: true)
                 .appendingPathComponent("\(sleeps.first!.time!.timeIntervalSinceReferenceDate).json")
             try json.write(to: tmp)
-            let task = backgroundSession.uploadTask(with: request, fromFile: tmp)
-            task.sleep = sleeps.last!
-            task.resume()
+            let session = backgroundSession
+            queue.addOperation {
+                let task = session.uploadTask(with: request, fromFile: tmp)
+                task.sleep = sleeps.last!
+                task.resume()
+            }
         } catch let error {
             NSLog("\(error)")
             queue.addOperation {

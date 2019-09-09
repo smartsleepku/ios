@@ -90,6 +90,10 @@ fileprivate class CompletionHandler {
     var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     
     func beginBackgroundTask() {
+        if backgroundTask != .invalid {
+            UIApplication.shared.endBackgroundTask(backgroundTask)
+            backgroundTask = .invalid
+        }
         backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             guard let task = self?.backgroundTask else { return }
             guard task != .invalid else { return }
@@ -205,9 +209,12 @@ class ActivityService {
                 NSLog("missing file: \(tmp)")
                 return
             }
-            let task = session.uploadTask(with: request, fromFile: tmp)
-            task.activity = activity
-            task.resume()
+            let session = self.session
+            queue.addOperation {
+                let task = session.uploadTask(with: request, fromFile: tmp)
+                task.activity = activity
+                task.resume()
+            }
         } catch let error {
             NSLog("\(error)")
             queue.addOperation {

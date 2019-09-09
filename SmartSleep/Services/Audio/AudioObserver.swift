@@ -30,7 +30,7 @@ class AudioObserver: NSObject {
                                                      value: "Husk at aktivere din SmartSleep app igen inden du går i seng.",
                                                      comment: "")
         notificationContent.badge = 1
-        var notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+        var notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
         var notificationRequest = UNNotificationRequest(identifier: "dk.ku.sund.SmartSleep.audio.interrupted",
                                                         content: notificationContent,
                                                         trigger: notificationTrigger)
@@ -76,6 +76,7 @@ class AudioObserver: NSObject {
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     @objc func started() {

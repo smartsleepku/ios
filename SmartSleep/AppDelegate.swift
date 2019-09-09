@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let activityService = ActivityService()
     private let authService = AuthenticationService()
     let audioService = AudioService()
+    let locationService = LocationService()
     let restService = RestService()
     let nightService = NightService()
     private let credentialsService = CredentialsService()
@@ -33,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         started()
         attendeeService.configure()
-        startOperations()
         return true
     }
     
@@ -148,6 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (ud.valueFor(.paused) ?? false) == false {
             audioService.startRecording()
         }
+        locationService.start()
         sleepStatusService.fetchStatus { hasLocation in
             guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()
