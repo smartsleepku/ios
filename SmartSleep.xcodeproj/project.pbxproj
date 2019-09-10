@@ -800,14 +800,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = T8GF25SAZN;
+				DEVELOPMENT_TEAM = Y9ED767H7S;
 				INFOPLIST_FILE = SmartSleep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.ku.sund-smartsleep.SmartSleep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
@@ -826,7 +826,7 @@
 				CODE_SIGN_ENTITLEMENTS = SmartSleep/SmartSleep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = T8GF25SAZN;
+				DEVELOPMENT_TEAM = Y9ED767H7S;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -845,7 +845,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cyborch.dk.ku.sund.SmartSleep;
+				PRODUCT_BUNDLE_IDENTIFIER = "dk.ku.sund-smartsleep.SmartSleep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartSleep/SmartSleep-Bridging-Header.h";
