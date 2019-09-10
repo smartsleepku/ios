@@ -135,7 +135,7 @@ class TonightController: UIViewController {
         unrestDuration.text = String(format: NSLocalizedString("UnrestDuration",
                                                                tableName: "Main",
                                                                bundle: .main,
-                                                               value: "%.0f skærmtid",
+                                                               value: "%.0f min. skærmtid",
                                                                comment: ""),
                                      (night?.unrestDuration ?? 0) / 60.0
         )
