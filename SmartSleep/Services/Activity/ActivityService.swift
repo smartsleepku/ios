@@ -139,6 +139,8 @@ class ActivityService {
         (session.delegate as! Delegate).completion = completionHandler
         current = completionHandler
         
+        let queue = self.queue
+        var sleepCount = 1
         let handler: CMMotionActivityQueryHandler = { activities, error in
             guard error == nil else { NSLog("\(error!)") ; return }
             
@@ -170,7 +172,12 @@ class ActivityService {
                     time: activity.startDate
                 )
                 
-                self.postActivity(event, completion: completionHandler)
+                DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(sleepCount * 100)) {
+                    queue.addOperation {
+                        self.postActivity(event, completion: completionHandler)
+                    }
+                }
+                sleepCount += 1
                 
                 NSLog("\(activity.startDate) - stationary: \(activity.stationary), confidence: \(activity.confidence.rawValue)")
             })
