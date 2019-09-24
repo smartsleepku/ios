@@ -32,8 +32,8 @@
                         <viewLayoutGuide key="safeArea" id="fY1-6X-4uE"/>
                     </view>
                     <connections>
-                        <segue destination="s9h-yE-2l0" kind="presentation" identifier="Welcome" modalTransitionStyle="crossDissolve" id="d8q-dx-J6p"/>
-                        <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Run" animates="NO" id="REA-Gn-A0s"/>
+                        <segue destination="s9h-yE-2l0" kind="presentation" identifier="Welcome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="d8q-dx-J6p"/>
+                        <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Run" animates="NO" modalPresentationStyle="fullScreen" id="REA-Gn-A0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXC-1u-hle" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,11 +45,11 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="s9h-yE-2l0" customClass="WelcomeController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5M-6Z-wtL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="uzf-68-FNB">
-                                <rect key="frame" x="-400" y="174" width="700" height="200"/>
+                                <rect key="frame" x="-400" y="184" width="700" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="D4n-ev-2Ok"/>
                                     <constraint firstAttribute="height" constant="200" id="flG-Jv-LWg"/>
@@ -68,13 +68,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sover du godt nok?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdl-CO-gH8">
-                                <rect key="frame" x="20" y="413.5" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="433.5" width="280" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoR-1j-uIZ">
-                                <rect key="frame" x="20" y="450" width="280" height="40"/>
+                                <rect key="frame" x="20" y="470" width="280" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zjg-U8-jGp"/>
@@ -92,11 +92,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="sUn-01-jPO" kind="presentation" modalTransitionStyle="coverVertical" id="Da3-DP-867"/>
+                                    <segue destination="sUn-01-jPO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Da3-DP-867"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY0-LM-GOH">
-                                <rect key="frame" x="20" y="510" width="280" height="33"/>
+                                <rect key="frame" x="20" y="530" width="280" height="33"/>
                                 <string key="text">Læs mere om smartsleep undersøgelsen på
 smartsleep.ku.dk</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -104,7 +104,7 @@ smartsleep.ku.dk</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-57-cES">
-                                <rect key="frame" x="0.0" y="488" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FNX-sb-ngy"/>
                                 </constraints>
@@ -149,7 +149,7 @@ smartsleep.ku.dk</string>
             <objects>
                 <viewController id="sUn-01-jPO" userLabel="Attendee Number Controller" customClass="AttendeeNumberController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBX-Ez-i5I" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZD-VP-rhL">
@@ -159,7 +159,7 @@ smartsleep.ku.dk</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43j-c5-thQ">
-                                <rect key="frame" x="20" y="232" width="280" height="90"/>
+                                <rect key="frame" x="20" y="252" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWZ-0V-bIW">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -207,7 +207,7 @@ smartsleep.ku.dk</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-j7-faJ">
-                                <rect key="frame" x="20" y="130" width="280" height="82"/>
+                                <rect key="frame" x="20" y="150" width="280" height="82"/>
                                 <string key="text">Du skal have et deltagernummer for at kunne bruge app’en.
 
 Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
@@ -216,7 +216,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKe-be-gYX">
-                                <rect key="frame" x="0.0" y="137" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="157" width="320" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="XtX-aH-PYc"/>
                                 </constraints>
@@ -226,7 +226,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-H8-aFD">
-                                <rect key="frame" x="20" y="332" width="280" height="40"/>
+                                <rect key="frame" x="20" y="352" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UGYLDIGT DETAGER NUMMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-Ek-QMj">
                                         <rect key="frame" x="8" y="12.5" width="192.5" height="15.5"/>
@@ -272,7 +272,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                     <connections>
                         <outlet property="bottomConstraint" destination="fOd-b4-bA2" id="2W6-PE-Xwt"/>
                         <outlet property="input" destination="vss-bk-fu0" id="QbS-wt-pBn"/>
-                        <segue destination="Ixz-NQ-UTM" kind="showDetail" identifier="Next" id="b0Q-sa-bJJ"/>
+                        <segue destination="Ixz-NQ-UTM" kind="presentation" identifier="Next" modalPresentationStyle="fullScreen" id="b0Q-sa-bJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yif-Km-fLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,7 +293,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="Ixz-NQ-UTM" userLabel="Email Address Controller" customClass="EmailController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2GX-rW-ACA" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZo-Ri-ceC">
@@ -303,7 +303,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdM-W4-BAw">
-                                <rect key="frame" x="20" y="232" width="280" height="90"/>
+                                <rect key="frame" x="20" y="252" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-uD-OIh">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -351,13 +351,13 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vi deler ikke din e-mailadresse med andre og vi sender dig kun information, der er relevant for undersøgelsen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axV-Mp-kFH">
-                                <rect key="frame" x="20" y="163" width="280" height="49"/>
+                                <rect key="frame" x="20" y="183" width="280" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAc-u6-awK">
-                                <rect key="frame" x="20" y="332" width="280" height="40"/>
+                                <rect key="frame" x="20" y="352" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UGYLDIG EMAIL ADRESSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-ic-Koc">
                                         <rect key="frame" x="8" y="12" width="165.5" height="16"/>
@@ -401,7 +401,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                         <outlet property="bottomConstraint" destination="bTY-Q1-zbS" id="JA7-gk-Yrk"/>
                         <outlet property="errorMessage" destination="kAc-u6-awK" id="iza-gw-x2V"/>
                         <outlet property="input" destination="4Fv-yz-4ay" id="m5V-GE-2Fy"/>
-                        <segue destination="3Yj-rZ-q2t" kind="showDetail" identifier="Next" id="5cM-e0-iiU"/>
+                        <segue destination="3Yj-rZ-q2t" kind="presentation" identifier="Next" modalPresentationStyle="fullScreen" id="5cM-e0-iiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxX-FD-QLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -422,7 +422,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="3Yj-rZ-q2t" userLabel="Password Controller" customClass="PasswordController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsm-1q-MXo" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-FZ-TE6">
@@ -432,7 +432,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lX6-an-auy">
-                                <rect key="frame" x="20" y="232" width="280" height="90"/>
+                                <rect key="frame" x="20" y="252" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-4x-JpY">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -480,13 +480,13 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angiv et sikkert kodeord" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL1-fo-WG2">
-                                <rect key="frame" x="20" y="195.5" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="215.5" width="280" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBB-sy-koD">
-                                <rect key="frame" x="20" y="332" width="280" height="40"/>
+                                <rect key="frame" x="20" y="352" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KODEORDET MÅ IKKE VÆRE TOMT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ei-Sc-4Cq">
                                         <rect key="frame" x="8" y="12" width="220" height="16"/>
@@ -530,8 +530,8 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                         <outlet property="bottomConstraint" destination="Ca0-SV-P6h" id="M9w-OM-Sdn"/>
                         <outlet property="errorMessage" destination="mBB-sy-koD" id="tUf-ub-vJ4"/>
                         <outlet property="input" destination="LcU-4j-fsL" id="wyr-ow-S9u"/>
-                        <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Done" modalTransitionStyle="coverVertical" id="ko5-Dr-Vna"/>
-                        <segue destination="DdB-Sv-DXY" kind="showDetail" identifier="Next" id="fQt-tb-njy"/>
+                        <segue destination="Zdc-GO-Yz3" kind="presentation" identifier="Done" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="ko5-Dr-Vna"/>
+                        <segue destination="DdB-Sv-DXY" kind="presentation" identifier="Next" modalPresentationStyle="fullScreen" id="fQt-tb-njy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUv-uM-Lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -552,18 +552,18 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController id="Zdc-GO-Yz3" customClass="MainController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HF2-Lf-0Re" customClass="MainView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="P1u-JX-bMS">
-                                <rect key="frame" x="-400" y="174" width="700" height="200"/>
+                                <rect key="frame" x="-400" y="184" width="700" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="rLQ-6F-c62"/>
                                     <constraint firstAttribute="height" constant="200" id="sdp-ke-gI4"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-88-h1c">
-                                <rect key="frame" x="0.0" y="186.5" width="320" height="361.5"/>
+                                <rect key="frame" x="0.0" y="193" width="320" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-HP-gKv">
@@ -574,7 +574,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-Gc-5ck">
-                                <rect key="frame" x="0.0" y="136.5" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="143" width="320" height="50"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-nn-uCb">
                                         <rect key="frame" x="8" y="38" width="304" height="2"/>
@@ -1013,7 +1013,7 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <tableViewController id="NTm-eE-UlK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lfz-a7-zXC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -1055,7 +1055,7 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <navigationController id="mZL-kd-dup" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVL-BB-a2J">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1237,9 +1237,9 @@ ved at trykke på ikonerne ovenfor</string>
                         <outlet property="tabBarDelegate" destination="zIo-Ck-JDa" id="79U-vc-Tnm"/>
                         <outlet property="toggleButton" destination="HXA-E4-UFh" id="8XX-iX-YRL"/>
                         <outlet property="unrestDuration" destination="9HB-uX-Kqy" id="EF2-N9-ci5"/>
-                        <segue destination="tJf-EV-xWc" kind="presentation" identifier="Questionnaire" id="vGx-Pf-IGP"/>
-                        <segue destination="r18-Fj-tIG" kind="presentation" identifier="History" id="NFu-UR-7Jg"/>
-                        <segue destination="mZL-kd-dup" kind="presentation" identifier="Calls" id="o0E-cS-7U2"/>
+                        <segue destination="tJf-EV-xWc" kind="presentation" identifier="Questionnaire" modalPresentationStyle="fullScreen" id="vGx-Pf-IGP"/>
+                        <segue destination="r18-Fj-tIG" kind="presentation" identifier="History" modalPresentationStyle="fullScreen" id="NFu-UR-7Jg"/>
+                        <segue destination="mZL-kd-dup" kind="presentation" identifier="Calls" modalPresentationStyle="fullScreen" id="o0E-cS-7U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeZ-1p-s7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1257,7 +1257,7 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <tableViewController id="kDE-ws-1w5" customClass="HistoryController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="buw-On-FxX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="sqf-T6-bsJ">
@@ -1409,7 +1409,7 @@ skærmtid</string>
             <objects>
                 <navigationController id="r18-Fj-tIG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Z5-MI-UIp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1441,7 +1441,7 @@ skærmtid</string>
             <objects>
                 <navigationController id="tJf-EV-xWc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S89-tz-SuE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2141,11 +2141,11 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
             <objects>
                 <viewController id="ZVq-v1-8he" customClass="QuestionnarieController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bvP-Hn-rGF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWd-BG-0Va">
-                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2176,7 +2176,7 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="DdB-Sv-DXY" userLabel="Password Controller" customClass="RequestAccessController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hLN-hI-a1R" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-u7-07B">
@@ -2186,13 +2186,13 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="749" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="77x-oV-k1M">
-                                <rect key="frame" x="135" y="91" width="50" height="127"/>
+                                <rect key="frame" x="135" y="91" width="50" height="147"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bJk-Ma-zS6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="260" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Fj-rbU">
-                                <rect key="frame" x="20" y="218" width="280" height="260"/>
+                                <rect key="frame" x="20" y="238" width="280" height="260"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2489,7 +2489,7 @@ Cg
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-oD-HMZ">
-                                <rect key="frame" x="20" y="498" width="280" height="40"/>
+                                <rect key="frame" x="20" y="518" width="280" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7RL-jw-yx2"/>
@@ -2507,7 +2507,7 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Zdc-GO-Yz3" kind="showDetail" id="IpQ-s4-hrr"/>
+                                    <segue destination="Zdc-GO-Yz3" kind="presentation" modalPresentationStyle="fullScreen" id="IpQ-s4-hrr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2554,6 +2554,6 @@ Cg
     <inferredMetricsTieBreakers>
         <segue reference="4JK-S0-mxc"/>
         <segue reference="aMX-Tt-NDO"/>
-        <segue reference="ko5-Dr-Vna"/>
+        <segue reference="IpQ-s4-hrr"/>
     </inferredMetricsTieBreakers>
 </document>
