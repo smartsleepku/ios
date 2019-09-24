@@ -142,10 +142,8 @@ class TonightController: UIViewController {
     }
     
     func updateToggleLabel() {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let service = delegate.audioService
-        NSLog("toggle, recording \(service.recording)")
-        if service.recording {
+        let ud = UserDefaults()
+        if (ud.valueFor(.paused) ?? false) == false {
             toggleButton.setTitle("✕", for: .normal)
             toggleButton.tintColor = .red
         } else {
@@ -158,13 +156,17 @@ class TonightController: UIViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let audio = delegate.audioService
         NSLog("toggle, recording \(audio.recording)")
-        if audio.recording {
+        let ud = UserDefaults()
+        if (ud.valueFor(.paused) ?? false) == false {
+            ud.setValueFor(.paused, to: true)
+            ud.synchronize()
             audio.stopRecording()
+            delegate.locationService.stop()
         } else {
-            audio.startRecording()
-            let ud = UserDefaults()
             ud.setValueFor(.paused, to: false)
             ud.synchronize()
+            audio.startRecording()
+            delegate.locationService.start()
         }
         updateToggleLabel()
     }
@@ -192,6 +194,7 @@ class TonightController: UIViewController {
                                         ud.setValueFor(.paused, to: true)
                                         ud.synchronize()
                                         let delegate = UIApplication.shared.delegate as! AppDelegate
+                                        delegate.locationService.stop()
                                         delegate.audioService.stopRecording()
                                         AudioObserver.removeNotifications()
                                         self.updateToggleLabel()

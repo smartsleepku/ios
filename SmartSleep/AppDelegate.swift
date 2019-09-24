@@ -147,8 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ud = UserDefaults()
         if (ud.valueFor(.paused) ?? false) == false {
             audioService.startRecording()
+            locationService.start()
         }
-        locationService.start()
         sleepStatusService.fetchStatus { hasLocation in
             guard hasLocation else { return }
             SleepStatusHelper().registerAppforSleepStatus()

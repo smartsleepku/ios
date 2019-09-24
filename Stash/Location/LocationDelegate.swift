@@ -34,7 +34,10 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
             LocationDelegate.removeNotifications()
         } else {
             LocationDelegate.updatePendingNotification()
-            audioService.startRecording()
+            let ud = UserDefaults()
+            if (ud.valueFor(.paused) ?? false) == false {
+                audioService.startRecording()
+            }
         }
         endBackgroundTask()
         beginBackgroundTask()

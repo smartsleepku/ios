@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gW7-hA-vL5">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gW7-hA-vL5">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,36 +45,36 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="s9h-yE-2l0" customClass="WelcomeController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5M-6Z-wtL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="uzf-68-FNB">
-                                <rect key="frame" x="-400" y="184" width="700" height="200"/>
+                                <rect key="frame" x="-400" y="174" width="700" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="D4n-ev-2Ok"/>
                                     <constraint firstAttribute="height" constant="200" id="flG-Jv-LWg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartSleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF4-0O-TTU">
-                                <rect key="frame" x="20" y="60" width="280" height="40"/>
+                                <rect key="frame" x="20" y="40" width="280" height="40"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EKSPERIMENTET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1K-r6-gkJ">
-                                <rect key="frame" x="20" y="100" width="280" height="27"/>
+                                <rect key="frame" x="20" y="80" width="280" height="27"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sover du godt nok?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdl-CO-gH8">
-                                <rect key="frame" x="20" y="433.5" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="413.5" width="280" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoR-1j-uIZ">
-                                <rect key="frame" x="20" y="470" width="280" height="40"/>
+                                <rect key="frame" x="20" y="450" width="280" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zjg-U8-jGp"/>
@@ -98,7 +96,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY0-LM-GOH">
-                                <rect key="frame" x="20" y="530" width="280" height="33"/>
+                                <rect key="frame" x="20" y="510" width="280" height="33"/>
                                 <string key="text">Læs mere om smartsleep undersøgelsen på
 smartsleep.ku.dk</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -106,7 +104,7 @@ smartsleep.ku.dk</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-57-cES">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="488" width="320" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FNX-sb-ngy"/>
                                 </constraints>
@@ -151,17 +149,17 @@ smartsleep.ku.dk</string>
             <objects>
                 <viewController id="sUn-01-jPO" userLabel="Attendee Number Controller" customClass="AttendeeNumberController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBX-Ez-i5I" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZD-VP-rhL">
-                                <rect key="frame" x="20" y="60" width="280" height="41"/>
+                                <rect key="frame" x="20" y="40" width="280" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43j-c5-thQ">
-                                <rect key="frame" x="20" y="252" width="280" height="90"/>
+                                <rect key="frame" x="20" y="232" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWZ-0V-bIW">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -209,7 +207,7 @@ smartsleep.ku.dk</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-j7-faJ">
-                                <rect key="frame" x="20" y="150" width="280" height="82"/>
+                                <rect key="frame" x="20" y="130" width="280" height="82"/>
                                 <string key="text">Du skal have et deltagernummer for at kunne bruge app’en.
 
 Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
@@ -218,7 +216,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKe-be-gYX">
-                                <rect key="frame" x="0.0" y="157" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="137" width="320" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="XtX-aH-PYc"/>
                                 </constraints>
@@ -228,7 +226,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf0-H8-aFD">
-                                <rect key="frame" x="20" y="352" width="280" height="40"/>
+                                <rect key="frame" x="20" y="332" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UGYLDIGT DETAGER NUMMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-Ek-QMj">
                                         <rect key="frame" x="8" y="12.5" width="192.5" height="15.5"/>
@@ -295,17 +293,17 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="Ixz-NQ-UTM" userLabel="Email Address Controller" customClass="EmailController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2GX-rW-ACA" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZo-Ri-ceC">
-                                <rect key="frame" x="20" y="60" width="280" height="41"/>
+                                <rect key="frame" x="20" y="40" width="280" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdM-W4-BAw">
-                                <rect key="frame" x="20" y="252" width="280" height="90"/>
+                                <rect key="frame" x="20" y="232" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-uD-OIh">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -353,13 +351,13 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vi deler ikke din e-mailadresse med andre og vi sender dig kun information, der er relevant for undersøgelsen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axV-Mp-kFH">
-                                <rect key="frame" x="20" y="183" width="280" height="49"/>
+                                <rect key="frame" x="20" y="163" width="280" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAc-u6-awK">
-                                <rect key="frame" x="20" y="352" width="280" height="40"/>
+                                <rect key="frame" x="20" y="332" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UGYLDIG EMAIL ADRESSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-ic-Koc">
                                         <rect key="frame" x="8" y="12" width="165.5" height="16"/>
@@ -424,17 +422,17 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="3Yj-rZ-q2t" userLabel="Password Controller" customClass="PasswordController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsm-1q-MXo" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-FZ-TE6">
-                                <rect key="frame" x="20" y="60" width="280" height="41"/>
+                                <rect key="frame" x="20" y="40" width="280" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lX6-an-auy">
-                                <rect key="frame" x="20" y="252" width="280" height="90"/>
+                                <rect key="frame" x="20" y="232" width="280" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-4x-JpY">
                                         <rect key="frame" x="8" y="81" width="264" height="1"/>
@@ -482,13 +480,13 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angiv et sikkert kodeord" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL1-fo-WG2">
-                                <rect key="frame" x="20" y="215.5" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="195.5" width="280" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBB-sy-koD">
-                                <rect key="frame" x="20" y="352" width="280" height="40"/>
+                                <rect key="frame" x="20" y="332" width="280" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KODEORDET MÅ IKKE VÆRE TOMT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ei-Sc-4Cq">
                                         <rect key="frame" x="8" y="12" width="220" height="16"/>
@@ -554,29 +552,29 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
             <objects>
                 <viewController id="Zdc-GO-Yz3" customClass="MainController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HF2-Lf-0Re" customClass="MainView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="P1u-JX-bMS">
-                                <rect key="frame" x="-400" y="184" width="700" height="200"/>
+                                <rect key="frame" x="-400" y="174" width="700" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="700" id="rLQ-6F-c62"/>
                                     <constraint firstAttribute="height" constant="200" id="sdp-ke-gI4"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-88-h1c">
-                                <rect key="frame" x="0.0" y="193" width="320" height="375"/>
+                                <rect key="frame" x="0.0" y="186.5" width="320" height="361.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-HP-gKv">
-                                <rect key="frame" x="278" y="40" width="22" height="22"/>
+                                <rect key="frame" x="275" y="20" width="25" height="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="q4A-1O-3yB" kind="custom" identifier="Configure" customClass="ConfigurationSegue" customModule="SmartSleep" customModuleProvider="target" id="pXC-BK-k6a"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-Gc-5ck">
-                                <rect key="frame" x="0.0" y="143" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="136.5" width="320" height="50"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vKW-nn-uCb">
                                         <rect key="frame" x="8" y="38" width="304" height="2"/>
@@ -600,7 +598,7 @@ Du får et deltagernummer, hvis du bliver inviteret til undersøgelsen.</string>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzX-kq-idn">
-                                <rect key="frame" x="280" y="41" width="20" height="20"/>
+                                <rect key="frame" x="280" y="22" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="4UB-gB-D2w"/>
                                     <constraint firstAttribute="height" constant="20" id="O8c-lI-m0c"/>
@@ -956,9 +954,6 @@ ved at trykke på ikonerne ovenfor</string>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="W8H-LO-aFd">
                                 <rect key="frame" x="0.0" y="129" width="310" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="573166272.84081304">
-                                    <!--2019-03-01 20:51:12 +0000-->
-                                </date>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-BH-UG4">
                                 <rect key="frame" x="0.0" y="310" width="310" height="1"/>
@@ -1018,21 +1013,21 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <tableViewController id="NTm-eE-UlK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lfz-a7-zXC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="xob-9h-hAF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyState" textLabel="pSV-gU-5El" rowHeight="300" style="IBUITableViewCellStyleDefault" id="XP0-ql-nll">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XP0-ql-nll" id="Ixn-xd-CaI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ingen ubesvarede opkald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pSV-gU-5El">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="299.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="300"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1060,7 +1055,7 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <navigationController id="mZL-kd-dup" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVL-BB-a2J">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1162,7 +1157,7 @@ ved at trykke på ikonerne ovenfor</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-E4-UFh">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-E4-UFh">
                                 <rect key="frame" x="265" y="266" width="50" height="50"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1262,11 +1257,11 @@ ved at trykke på ikonerne ovenfor</string>
             <objects>
                 <tableViewController id="kDE-ws-1w5" customClass="HistoryController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="buw-On-FxX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="sqf-T6-bsJ">
-                            <rect key="frame" x="0.0" y="122" width="320" height="5"/>
+                            <rect key="frame" x="0.0" y="150" width="320" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -1275,11 +1270,11 @@ ved at trykke på ikonerne ovenfor</string>
                                 <rect key="frame" x="0.0" y="28" width="320" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="whC-Ou-WCg" id="bgH-Ed-HhU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7z-2C-Tmz">
-                                            <rect key="frame" x="0.0" y="20" width="106.5" height="73.5"/>
+                                            <rect key="frame" x="0.0" y="20" width="106.5" height="74"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-zA-ogZ">
                                                     <rect key="frame" x="0.0" y="8" width="106.5" height="20"/>
@@ -1288,7 +1283,7 @@ ved at trykke på ikonerne ovenfor</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfK-IL-Phm">
-                                                    <rect key="frame" x="0.0" y="32.5" width="106.5" height="33"/>
+                                                    <rect key="frame" x="0.0" y="33" width="106.5" height="33"/>
                                                     <string key="text">aktiveringer
 af skærm</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1307,10 +1302,10 @@ af skærm</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTH-Ow-J8G">
-                                            <rect key="frame" x="106.5" y="20" width="106.5" height="73.5"/>
+                                            <rect key="frame" x="106.5" y="20" width="106.5" height="74"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-Wy-pxN">
-                                                    <rect key="frame" x="0.0" y="32.5" width="106.5" height="33"/>
+                                                    <rect key="frame" x="0.0" y="33" width="106.5" height="33"/>
                                                     <string key="text">længste
 skærmfri</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1335,7 +1330,7 @@ skærmfri</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOq-zu-f1Z">
-                                            <rect key="frame" x="213.5" y="20" width="106.5" height="73.5"/>
+                                            <rect key="frame" x="213.5" y="20" width="106.5" height="74"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ech-o3-CJb">
                                                     <rect key="frame" x="0.0" y="8" width="106.5" height="20"/>
@@ -1344,7 +1339,7 @@ skærmfri</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-DW-wC2">
-                                                    <rect key="frame" x="0.0" y="32.5" width="106.5" height="33"/>
+                                                    <rect key="frame" x="0.0" y="33" width="106.5" height="33"/>
                                                     <string key="text">minutters
 skærmtid</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -1414,7 +1409,7 @@ skærmtid</string>
             <objects>
                 <navigationController id="r18-Fj-tIG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Z5-MI-UIp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1430,7 +1425,7 @@ skærmtid</string>
             <objects>
                 <navigationController id="oq8-P6-TUR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C0F-V4-tJS">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1446,7 +1441,7 @@ skærmtid</string>
             <objects>
                 <navigationController id="tJf-EV-xWc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S89-tz-SuE">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1462,11 +1457,11 @@ skærmtid</string>
             <objects>
                 <viewController id="sRF-g0-Ssi" customClass="ExplanationController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzY-ni-idD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiF-5t-92Y">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -2146,11 +2141,11 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
             <objects>
                 <viewController id="ZVq-v1-8he" customClass="QuestionnarieController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bvP-Hn-rGF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWd-BG-0Va">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -2181,23 +2176,23 @@ Der bliver på intet tidspunkt optaget samtaler, musik eller anden information i
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="DdB-Sv-DXY" userLabel="Password Controller" customClass="RequestAccessController" customModule="SmartSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hLN-hI-a1R" customClass="GradientView" customModule="SmartSleep" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-u7-07B">
-                                <rect key="frame" x="20" y="60" width="280" height="41"/>
+                                <rect key="frame" x="20" y="40" width="280" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="749" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="77x-oV-k1M">
-                                <rect key="frame" x="135" y="111" width="50" height="127"/>
+                                <rect key="frame" x="135" y="91" width="50" height="127"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bJk-Ma-zS6"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="260" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1P7-Fj-rbU">
-                                <rect key="frame" x="20" y="238" width="280" height="260"/>
+                                <rect key="frame" x="20" y="218" width="280" height="260"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2494,7 +2489,7 @@ Cg
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZt-oD-HMZ">
-                                <rect key="frame" x="20" y="518" width="280" height="40"/>
+                                <rect key="frame" x="20" y="498" width="280" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7RL-jw-yx2"/>
