@@ -71,12 +71,14 @@ class AudioObserver: NSObject {
     }
     
     static func removeNotifications() {
-        let nc = UNUserNotificationCenter.current()
-        nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
-        nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
-        nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
-        nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
-        UIApplication.shared.applicationIconBadgeNumber = 0
+        DispatchQueue.main.async {
+            let nc = UNUserNotificationCenter.current()
+            nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
+            nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.interrupted"])
+            nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
+            nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.audio.gotosleep"])
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
     }
     
     @objc func started() {
