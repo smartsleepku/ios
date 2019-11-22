@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let sleepStatusService = SleepStatusService()
     let attendeeService = AttendeeService()
+    let heartbeatService = HeartbeatService()
     private let activityService = ActivityService()
     private let authService = AuthenticationService()
     let audioService = AudioService()
@@ -27,11 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let activityUpdates = PublishSubject<ActivityProgressUpdate>()
     let sleepUpdates = PublishSubject<SleepProgressUpdate>()
+    let heartbeatUpdates = PublishSubject<HeartbeatProgressUpdate>()
     let tonight = PublishSubject<Night>()
+    
+    private var heartbeatStarted = false
     
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.setMinimumBackgroundFetchInterval(3600)
         started()
         attendeeService.configure()
         return true
@@ -67,6 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler()
     }
     
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        HeartbeatService.backgroundSync()
+        //NSLog("HEARTBEAT: heartbeat push")
+        completionHandler(.newData)
+    }
+    
     func synchronizeSleep() {
         sleepStatusService.fetchStatus { hasLocation in
             if hasLocation == true {
@@ -84,6 +95,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .subscribe(onNext: { [weak self] update in
                 self?.activityUpdates.on(.next(update))
             }).disposed(by: self.bag)
+        heartbeatService.sync()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { update in
+                self.heartbeatUpdates.on(.next(update))
+            }).disposed(by: self.bag)
+        if !heartbeatStarted {
+            // set heartbeat interval to 5 minutes
+            Timer.scheduledTimer(withTimeInterval: 300, repeats: true, block: {_ in
+                HeartbeatService.storeHeartbeatUpdate()
+            })
+            heartbeatStarted = true
+        }
     }
     
     func generateNights() {

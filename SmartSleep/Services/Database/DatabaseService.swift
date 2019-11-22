@@ -32,6 +32,7 @@ class DatabaseService {
             Rest.initializeDatabase(with: self.db!)
             Night.initializeDatabase(with: self.db!)
             Sleep.initializeDatabase(with: self.db!)
+            Heartbeat.initializeDatabase(with: self.db!)
         }
     }
     

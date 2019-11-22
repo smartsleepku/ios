@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56B75D042378981F00CD74FE /* HeartbeatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B75D032378981F00CD74FE /* HeartbeatService.swift */; };
+		56B75D062378983600CD74FE /* Heartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B75D052378983600CD74FE /* Heartbeat.swift */; };
+		56B75D082378997600CD74FE /* HeartbeatTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B75D072378997600CD74FE /* HeartbeatTable.swift */; };
+		56B75D0A23789A5B00CD74FE /* HeartbeatProgressUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B75D0923789A5B00CD74FE /* HeartbeatProgressUpdate.swift */; };
 		D572DED8F8BCE42354148569 /* Pods_SmartSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7600AF90B3EB4D847DCBEFF /* Pods_SmartSleep.framework */; };
 		F20AD0262221D6A0007C63C5 /* AttendeeNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0252221D6A0007C63C5 /* AttendeeNumberController.swift */; };
 		F20AD0292221DAB9007C63C5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20AD0282221DAB9007C63C5 /* GradientView.swift */; };
@@ -93,6 +97,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56B75D032378981F00CD74FE /* HeartbeatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatService.swift; sourceTree = "<group>"; };
+		56B75D052378983600CD74FE /* Heartbeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heartbeat.swift; sourceTree = "<group>"; };
+		56B75D072378997600CD74FE /* HeartbeatTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatTable.swift; sourceTree = "<group>"; };
+		56B75D0923789A5B00CD74FE /* HeartbeatProgressUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatProgressUpdate.swift; sourceTree = "<group>"; };
 		B7600AF90B3EB4D847DCBEFF /* Pods_SmartSleep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartSleep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD98197203214F3BD91DDCA /* Pods-SmartSleep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartSleep.release.xcconfig"; path = "Target Support Files/Pods-SmartSleep/Pods-SmartSleep.release.xcconfig"; sourceTree = "<group>"; };
 		F20AD0252221D6A0007C63C5 /* AttendeeNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeNumberController.swift; sourceTree = "<group>"; };
@@ -185,6 +193,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56B75D02237897F200CD74FE /* Heartbeat */ = {
+			isa = PBXGroup;
+			children = (
+				56B75D032378981F00CD74FE /* HeartbeatService.swift */,
+				56B75D052378983600CD74FE /* Heartbeat.swift */,
+				56B75D0923789A5B00CD74FE /* HeartbeatProgressUpdate.swift */,
+			);
+			path = Heartbeat;
+			sourceTree = "<group>";
+		};
 		B3C4D68B0650C7401647F77E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +329,7 @@
 		F21C99212205B27B003D5243 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				56B75D02237897F200CD74FE /* Heartbeat */,
 				F278FEF12325863800770C6F /* Location */,
 				F2C7602F2271A7B900FC71FE /* Audio */,
 				F28E13B022592A17001075A8 /* Database */,
@@ -370,6 +389,7 @@
 				F28E13B122592A34001075A8 /* RestTable.swift */,
 				F28E13B322594F58001075A8 /* NightTable.swift */,
 				F26DF891226766E300D7E23F /* SleepTable.swift */,
+				56B75D072378997600CD74FE /* HeartbeatTable.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -608,6 +628,7 @@
 				F27077542221CC3200CAE2D5 /* UserDefaults+Keys.swift in Sources */,
 				F28E13C122636790001075A8 /* SleepStatusService.swift in Sources */,
 				F20AD03A2222B6F5007C63C5 /* EmailDelegate.swift in Sources */,
+				56B75D042378981F00CD74FE /* HeartbeatService.swift in Sources */,
 				F243258422AC20DA005F64D1 /* CALayer+UIColor.swift in Sources */,
 				F20AD04D2229C5AC007C63C5 /* DashedLineView.swift in Sources */,
 				F28E13C5226367C5001075A8 /* SleepStatusHelper.m in Sources */,
@@ -618,8 +639,10 @@
 				F20AD04922273040007C63C5 /* ConfigureController.swift in Sources */,
 				F20AD03E2222B9B4007C63C5 /* PasswordDelegate.swift in Sources */,
 				F2950B6C222A91BA00BE391C /* TonightController.swift in Sources */,
+				56B75D082378997600CD74FE /* HeartbeatTable.swift in Sources */,
 				F20AD02B2221EAB7007C63C5 /* OnboardingTextDelegate.swift in Sources */,
 				F21C99092205A504003D5243 /* AppDelegate.swift in Sources */,
+				56B75D0A23789A5B00CD74FE /* HeartbeatProgressUpdate.swift in Sources */,
 				F28E13BD225A9000001075A8 /* HistoryDelegate.swift in Sources */,
 				F2C760392272200400FC71FE /* SleepStatusUpdate.swift in Sources */,
 				F2D004CB22D1FAE800993B1F /* TonightView.swift in Sources */,
@@ -637,6 +660,7 @@
 				F28E13AF22592852001075A8 /* DatabaseService.swift in Sources */,
 				F264C474222C3DD300860767 /* RestService.swift in Sources */,
 				F28E13B9225A8AE9001075A8 /* HistoryDataSource.swift in Sources */,
+				56B75D062378983600CD74FE /* Heartbeat.swift in Sources */,
 				F270774E2221BEE200CAE2D5 /* WelcomeController.swift in Sources */,
 				F28E13B7225A88E2001075A8 /* HistoryController.swift in Sources */,
 				F26DF892226766E300D7E23F /* SleepTable.swift in Sources */,
