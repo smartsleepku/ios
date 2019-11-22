@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+    <string>INSERT UNIT ID HERE</string>
+    <key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+    <string>INSERT UNIT ID HERE</string>
+    <key>CLIENT_ID</key>
+    <string>INSERT CLIENT ID HERE</string>
+    <key>REVERSED_CLIENT_ID</key>
+    <string>INSERT REVERSED CLIENT ID HERE</string>
+    <key>API_KEY</key>
+    <string>INSERT API KEY HERE</string>
+    <key>GCM_SENDER_ID</key>
+    <string>INSERT SENDER ID HERE</string>
+    <key>PLIST_VERSION</key>
+    <string>1</string>
+    <key>BUNDLE_ID</key>
+    <string>INSERT BUNDLE ID HERE</string>
+    <key>PROJECT_ID</key>
+    <string>INSERT PROJECT ID HERE</string>
+    <key>STORAGE_BUCKET</key>
+    <string>INSERT PROJECT ID HERE.appspot.com</string>
+    <key>IS_ADS_ENABLED</key>
+    <true></true>
+    <key>IS_ANALYTICS_ENABLED</key>
+    <false></false>
+    <key>IS_APPINVITE_ENABLED</key>
+    <false></false>
+    <key>IS_GCM_ENABLED</key>
+    <true></true>
+    <key>IS_SIGNIN_ENABLED</key>
+    <true></true>
+    <key>GOOGLE_APP_ID</key>
+    <string>INSERT APP ID HERE</string>
+    <key>DATABASE_URL</key>
+    <string>https://INSERT PROJECT ID HERE.firebaseio.com</string>
+</dict>
+</plist>
