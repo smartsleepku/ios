@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         HeartbeatService.backgroundSync()
-        //NSLog("HEARTBEAT: heartbeat push")
         completionHandler(.newData)
     }
     
@@ -102,7 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }).disposed(by: self.bag)
         if !heartbeatStarted {
             // set heartbeat interval to 5 minutes
-            Timer.scheduledTimer(withTimeInterval: 300, repeats: true, block: {_ in
+            HeartbeatService.storeHeartbeatUpdate()
+            Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: {_ in
                 HeartbeatService.storeHeartbeatUpdate()
             })
             heartbeatStarted = true
