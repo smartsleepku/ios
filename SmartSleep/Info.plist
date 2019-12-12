@@ -27,13 +27,13 @@
 	<key>NSCameraUsageDescription</key>
 	<string>SmartSleep needs to record volume levels to monitor your sleep patterrns</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose &quot;Always Allow&quot; to ensure that sleep patterns are correctly monitored.</string>
+	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose &quot;Always Allow&quot; to ensure that sleep patterns are correctly monitored.</string>
+	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</string>
 	<key>NSLocationUsageDescription</key>
 	<string>SmartSleep needs location information to monitor your sleep patterrns</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose &quot;Always Allow&quot; to ensure that sleep patterns are correctly monitored.</string>
+	<string>SmartSleep needs location information to monitor your sleep patterrns. Choose "Always Allow" to ensure that sleep patterns are correctly monitored.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>SmartSleep needs to record volume levels to monitor your sleep patterrns</string>
 	<key>NSMotionUsageDescription</key>
