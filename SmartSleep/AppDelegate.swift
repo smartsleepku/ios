@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sleepUpdates = PublishSubject<SleepProgressUpdate>()
     let heartbeatUpdates = PublishSubject<HeartbeatProgressUpdate>()
     let tonight = PublishSubject<Night>()
-    
+
     private var heartbeatStarted = false
-    
+
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         attendeeService.configure()
         return true
     }
-    
+
     func application(_ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-        
+
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {
                 NSLog("Error fetching remote instance ID: \(error)")
@@ -55,28 +55,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     func application(_ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error) {
         attendeeService.sync(deviceToken: nil)
     }
-    
+
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         startOperations()
+        HeartbeatService.storeHeartbeatUpdate()
+        HeartbeatService.backgroundSync()
         completionHandler(.newData)
     }
-    
+
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
         NSLog("handleEventsForBackgroundURLSession: \(identifier)")
         startOperations()
         completionHandler()
     }
-    
+
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        HeartbeatService.backgroundSync()
+        // HeartbeatService.backgroundSync()
         completionHandler(.newData)
     }
-    
+
     func synchronizeSleep() {
         sleepStatusService.fetchStatus { hasLocation in
             if hasLocation == true {
@@ -101,14 +103,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }).disposed(by: self.bag)
         if !heartbeatStarted {
             // set heartbeat interval to 5 minutes
-            HeartbeatService.storeHeartbeatUpdate()
-            Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: {_ in
-                HeartbeatService.storeHeartbeatUpdate()
-            })
+            // HeartbeatService.storeHeartbeatUpdate()
+            // Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: {_ in
+            //     HeartbeatService.storeHeartbeatUpdate()
+            // })
             heartbeatStarted = true
         }
     }
-    
+
     func generateNights() {
         nightService.generateNights().andThen(Completable.create { completable in
             defer {
@@ -120,12 +122,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return Disposables.create()
         }).observeOn(MainScheduler.instance).subscribe().disposed(by: bag)
     }
-    
-    
+
+
     func applicationWillTerminate(_ application: UIApplication) {
         ended()
     }
-    
+
     func ended() {
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = NSLocalizedString("Title",
@@ -148,14 +150,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     func started() {
         FirebaseApp.configure()
         let nc = UNUserNotificationCenter.current()
         nc.removePendingNotificationRequests(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
         nc.removeDeliveredNotifications(withIdentifiers: ["dk.ku.sund.SmartSleep.app.interrupted"])
     }
-    
+
     func synchronizeToken() {
         let ud = UserDefaults()
         let credentialsManager = CredentialsService()
@@ -163,7 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let code: String = ud.valueFor(.attendeeCode) else { return }
         authService.postCredentials(toAttendee: code)
     }
-    
+
     func startOperations() {
         synchronizeToken()
         synchronizeSleep()
@@ -178,4 +180,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
