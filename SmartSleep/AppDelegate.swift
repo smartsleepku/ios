@@ -122,10 +122,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }).disposed(by: self.bag)
         if !heartbeatStarted {
             // set heartbeat interval to 5 minutes
-            // HeartbeatService.storeHeartbeatUpdate()
-            // Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: {_ in
-            //     HeartbeatService.storeHeartbeatUpdate()
-            // })
+            HeartbeatService.storeHeartbeatUpdate()
+            Timer.scheduledTimer(withTimeInterval: 300, repeats: true, block: {_ in
+                HeartbeatService.storeHeartbeatUpdate()
+                HeartbeatService.backgroundSync()
+            })
             heartbeatStarted = true
         }
     }
