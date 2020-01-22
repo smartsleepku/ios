@@ -127,7 +127,7 @@ class NightService {
                     let first = self.restService.fetchFirstRestTime()
                     repeat {
                         (from, to) = NightService.nightThresholds(of: now, config: ConfigurationService.configuration ?? ConfigurationService.defaultConfiguration)
-                        NSLog("generating night from \(from) to \(to)...")
+                        //NSLog("generating night from \(from) to \(to)...")
                         now = now.addingTimeInterval(-24 * 60 * 60)
                         let night = Night(
                             from: from,

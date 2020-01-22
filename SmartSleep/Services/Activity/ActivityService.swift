@@ -179,7 +179,7 @@ class ActivityService {
                 }
                 sleepCount += 1
                 
-                NSLog("\(activity.startDate) - stationary: \(activity.stationary), confidence: \(activity.confidence.rawValue)")
+                //NSLog("\(activity.startDate) - stationary: \(activity.stationary), confidence: \(activity.confidence.rawValue)")
             })
         }
         

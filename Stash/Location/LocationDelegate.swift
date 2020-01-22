@@ -29,7 +29,7 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        NSLog("updating location at \(Date())")
+        //NSLog("updating location at \(Date())")
         if audioService.recording {
             LocationDelegate.removeNotifications()
         } else {

@@ -109,7 +109,7 @@ class MainController: UIViewController {
                 self?.total = max(self?.total ?? 0, update.remaining)
             }
             let progress = Float((self?.total ?? 0) - update.remaining) / Float(self?.total ?? 1)
-            NSLog("\(update.remaining) remaining of \(self!.total): \(progress)")
+            //NSLog("\(update.remaining) remaining of \(self!.total): \(progress)")
             mainView.progress.progress = progress
         }).disposed(by: bag)
         delegate.synchronizeSleep()
