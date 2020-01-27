@@ -165,6 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard credentialsManager.credentials != nil else { return }
         guard let code: String = ud.valueFor(.attendeeCode) else { return }
         authService.postCredentials(toAttendee: code)
+        attendeeService.postDebugInfo()
     }
 
     func startOperations() {

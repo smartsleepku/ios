@@ -26,6 +26,15 @@ struct Attendee: Codable {
     var devices = [Device]()
 }
 
+struct Debug: Codable {
+    var id: String?
+    var time: Date?
+    var model: String?
+    var manufacturer: String?
+    var systemVersion: String?
+    var systemName: String?
+}
+
 fileprivate class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     weak var service: AttendeeService?
@@ -111,6 +120,28 @@ class AttendeeService {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         guard let json = try? encoder.encode(attendee) else { return }
+        let task = session.uploadTask(with: request, from: json)
+        task.resume()
+    }
+    
+    func postDebugInfo() {
+        let url = URL(string: baseUrl + "/debug")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer " + (TokenService().token ?? ""), forHTTPHeaderField: "Authorization")
+        
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        let debug = Debug(
+            id: nil,
+            time: Date(),
+            model: UIDevice.current.model + " - " + UIDevice.current.name,
+            manufacturer: "Apple",
+            systemVersion: UIDevice.current.systemVersion,
+            systemName: UIDevice.current.systemName
+        )
+        guard let json = try? encoder.encode(debug) else { return }
         let task = session.uploadTask(with: request, from: json)
         task.resume()
     }
