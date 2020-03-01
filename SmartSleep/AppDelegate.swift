@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let tonight = PublishSubject<Night>()
 
     private var heartbeatStarted = false
+    private var debugPosted = false
 
     var window: UIWindow?
 
@@ -165,7 +166,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard credentialsManager.credentials != nil else { return }
         guard let code: String = ud.valueFor(.attendeeCode) else { return }
         authService.postCredentials(toAttendee: code)
-        attendeeService.postDebugInfo()
+        if (!debugPosted) {
+            attendeeService.postDebugInfo()
+            debugPosted = true
+        }
     }
 
     func startOperations() {

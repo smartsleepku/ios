@@ -133,10 +133,13 @@ class AttendeeService {
         
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let modelName = String(bytes: Data(bytes: &systemInfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
         let debug = Debug(
             id: nil,
             time: Date(),
-            model: UIDevice.current.model + " - " + UIDevice.current.name,
+            model: modelName,
             manufacturer: "Apple",
             systemVersion: UIDevice.current.systemVersion,
             systemName: UIDevice.current.systemName
